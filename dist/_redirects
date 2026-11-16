@@ -1,0 +1,4 @@
+# Cloudflare Pages — SPA fallback + API route
+/*  /index.html  200
+# Enquiry API (Cloudflare Function, see wrangler.toml)
+/api/enquiry  /api/enquiry  200
