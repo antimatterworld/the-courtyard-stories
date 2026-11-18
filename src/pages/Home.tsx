@@ -1,7 +1,7 @@
 import { useState, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Page } from "../components/Chrome";
-import { CinematicHeroScroll } from "../components/CinematicHeroScroll";
+import { FrameScrollScrubber } from "../components/FrameScrollScrubber";
 import { WorkGallery } from "../components/Work";
 import { FAQAccordion } from "../components/FAQ";
 import { useReveal } from "../lib/hooks";
@@ -25,8 +25,8 @@ export default function Home() {
       schema={[localBusiness(), faqJSONLD(SITE_FAQS)]}
     >
       <div ref={reveal}>
-        {/* ————— CINEMATIC FIXED HERO SCROLL ————— */}
-        <CinematicHeroScroll />
+        {/* ————— SCROLL-SCRUBBED FRAME-BY-FRAME DRONE FLYTHROUGH ————— */}
+        <FrameScrollScrubber />
 
         {/* ————— EDITORIAL SETS SHOWCASE (Clean Light Aesthetic, Zero Black Boxes) ————— */}
         <section className="section" id="sets" aria-label="Architectural sets and zones">
