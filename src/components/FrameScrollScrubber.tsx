@@ -6,10 +6,7 @@ interface StoryBeat {
   start: number;
   end: number;
   align: "right" | "left";
-  tag: string;
-  step: string;
   title: string;
-  sub: string;
 }
 
 const STORY_BEATS: StoryBeat[] = [
@@ -18,40 +15,28 @@ const STORY_BEATS: StoryBeat[] = [
     start: 0.0,
     end: 0.22,
     align: "right",
-    tag: "THE COURTYARD STORIES · SOUTH DELHI",
-    step: "01 / 04",
     title: "Where Heritage Architecture Meets Cinematic Space",
-    sub: "12,000+ square feet of authentic outdoor sets, sculpted for haute couture lookbooks, luxury campaigns, and film productions.",
   },
   {
     id: "beat-light",
     start: 0.25,
     end: 0.46,
     align: "left",
-    tag: "NATURAL LIGHT & TACTILE CRAFT",
-    step: "02 / 04",
     title: "Carved Jharokhas, Terracotta Jalis & Sandstone Verandas",
-    sub: "Handcrafted architectural relief engineered to capture natural sunbeams and dramatic shadow play from dawn to golden hour.",
   },
   {
     id: "beat-airspace",
     start: 0.49,
     end: 0.70,
     align: "right",
-    tag: "AERIAL & PRODUCTION FREEDOM",
-    step: "03 / 04",
     title: "Unrestricted 360° Drone Flight Airspace",
-    sub: "Secluded estate footprint in Saket with unobstructed open sky for sweeping tracking passes, crane rigs, and heavy production setups.",
   },
   {
     id: "beat-estate",
     start: 0.73,
     end: 0.88,
     align: "left",
-    tag: "SECLUDED ESTATE BUYOUT",
-    step: "04 / 04",
     title: "Five Contiguous Worlds on One Private Estate",
-    sub: "Double-story haveli, terracotta colonnade, Moroccan suite, and starlit courtyards ready for multi-camera day-to-night shoots.",
   },
 ];
 
@@ -106,15 +91,12 @@ export function FrameScrollScrubber() {
     };
   }, []);
 
-  // 2. High-performance Canvas Render
+  // 2. High-performance Direct Canvas Render (1920x1080 native 1:1 hardware blit)
   const drawFrame = (frameIndex: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
-
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = "medium";
 
     const images = imagesRef.current;
     let img = images[frameIndex];
@@ -135,51 +117,21 @@ export function FrameScrollScrubber() {
 
     if (!img) return;
 
-    const cw = canvas.width;
-    const ch = canvas.height;
-    const iw = img.naturalWidth || 1920;
-    const ih = img.naturalHeight || 1080;
-
-    // object-fit: cover math
-    const hRatio = cw / iw;
-    const vRatio = ch / ih;
-    const ratio = Math.max(hRatio, vRatio);
-
-    const nw = iw * ratio;
-    const nh = ih * ratio;
-    const cx = (cw - nw) / 2;
-    const cy = (ch - nh) / 2;
-
-    ctx.drawImage(img, 0, 0, iw, ih, cx, cy, nw, nh);
+    // Fast 1:1 hardware blit directly onto 1920x1080 canvas (zero CPU scaling overhead)
+    ctx.drawImage(img, 0, 0, 1920, 1080);
     lastDrawnFrameRef.current = frameIndex;
   };
 
-  // 3. Canvas resize handler for sharp Retina displays
+  // 3. Canvas setup: fixed 1920x1080 native internal buffer, CSS object-fit scales via GPU
   useEffect(() => {
-    const updateCanvasSize = () => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-
-      // Redraw current frame
-      if (lastDrawnFrameRef.current >= 0) {
-        drawFrame(lastDrawnFrameRef.current);
-      } else {
-        drawFrame(0);
-      }
-    };
-
-    window.addEventListener("resize", updateCanvasSize);
-    updateCanvasSize();
-    return () => window.removeEventListener("resize", updateCanvasSize);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    canvas.width = 1920;
+    canvas.height = 1080;
+    drawFrame(0);
   }, []);
 
-  // 4. Snappy responsive scroll tracking (0.32 lerp for instant feel without lag)
+  // 4. Snappy responsive scroll tracking (0.45 lerp for instant feel without lag)
   useEffect(() => {
     let rafId: number;
 
@@ -199,12 +151,12 @@ export function FrameScrollScrubber() {
       const current = currentProgressRef.current;
       const diff = target - current;
 
-      // Snappy 0.32 lerp: instantaneous response to wheel/scroll, eliminating sluggish delay
-      const nextProgress = current + diff * 0.32;
+      // Snappy 0.45 lerp: immediate response to wheel/scroll, zero sluggish drag
+      const nextProgress = current + diff * 0.45;
       currentProgressRef.current = nextProgress;
 
       // Throttled state update for high performance
-      if (Math.abs(nextProgress - progress) > 0.002) {
+      if (Math.abs(nextProgress - progress) > 0.003) {
         setProgress(nextProgress);
       }
 
@@ -266,14 +218,14 @@ export function FrameScrollScrubber() {
         {/* High-definition frame canvas */}
         <canvas ref={canvasRef} className="frame-scrub-canvas" />
 
-        {/* Minimalist alternating story text (Right -> Left -> Right -> Left) */}
+        {/* Minimalist alternating heading-only text (NO containers, NO subheadings) */}
         <div className="frame-scrub-text-stage">
           {STORY_BEATS.map((beat) => {
             const state = getBeatState(beat);
             return (
               <div
                 key={beat.id}
-                className={`frame-minimal-text align-${beat.align}`}
+                className={`frame-pure-heading-wrap align-${beat.align}`}
                 style={{
                   opacity: state.opacity,
                   transform: `translate3d(0, ${state.translateY}px, 0)`,
@@ -281,13 +233,7 @@ export function FrameScrollScrubber() {
                   visibility: state.opacity > 0.01 ? "visible" : "hidden",
                 }}
               >
-                <div className="minimal-text-meta">
-                  <span className="minimal-text-tag">{beat.tag}</span>
-                  <span className="minimal-text-sep">·</span>
-                  <span className="minimal-text-step">{beat.step}</span>
-                </div>
-                <h2 className="minimal-text-headline">{beat.title}</h2>
-                <p className="minimal-text-sub">{beat.sub}</p>
+                <h2 className="scrub-pure-heading">{beat.title}</h2>
               </div>
             );
           })}

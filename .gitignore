@@ -8,3 +8,7 @@ drive_raw/
 src_backup_*/
 .wrangler/
 
+.env
+.env.*
+*.bak
+dist/
