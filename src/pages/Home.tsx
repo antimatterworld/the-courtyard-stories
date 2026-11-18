@@ -41,10 +41,19 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="editorial-sets-grid">
+            <div className="bento-sets-grid">
               {ARCHITECTURAL_SETS.map((set, idx) => (
-                <article key={set.id} className="editorial-set-card reveal">
-                  <div className="editorial-set-media">
+                <article
+                  key={set.id}
+                  className={`bento-set-card bento-card-${set.id} reveal`}
+                  style={{
+                    ["--set-accent" as string]: set.palette.accent,
+                    ["--set-accent-light" as string]: set.palette.accentLight,
+                    ["--set-bg-tint" as string]: set.palette.bgTint,
+                    ["--set-border-tint" as string]: set.palette.borderTint,
+                  } as CSSProperties}
+                >
+                  <div className="bento-set-media">
                     <video
                       src={set.video}
                       poster={set.img}
@@ -52,22 +61,44 @@ export default function Home() {
                       loop
                       muted
                       playsInline
-                      className="editorial-set-video"
+                      className="bento-set-video"
                     />
-                    <span className="editorial-set-tag">{set.tag}</span>
+                    <span
+                      className="bento-set-tag"
+                      style={{
+                        borderColor: set.palette.borderTint,
+                        color: set.palette.accentLight,
+                      }}
+                    >
+                      {set.tag}
+                    </span>
                   </div>
-                  <div className="editorial-set-info">
-                    <div className="editorial-set-header">
-                      <span className="editorial-set-num">0{idx + 1}</span>
-                      <h3 className="editorial-set-title">{set.name}</h3>
+                  <div className="bento-set-info">
+                    <div className="bento-set-header">
+                      <span
+                        className="bento-set-num"
+                        style={{ color: set.palette.accent }}
+                      >
+                        0{idx + 1}
+                      </span>
+                      <h3 className="bento-set-title">{set.name}</h3>
                     </div>
-                    <p className="editorial-set-desc">{set.short}</p>
-                    <div className="editorial-set-meta">
-                      <span className="meta-label">NATURAL LIGHT:</span>
+                    <p className="bento-set-desc">{set.short}</p>
+                    <div className="bento-set-meta">
+                      <span
+                        className="meta-label"
+                        style={{ color: set.palette.accent }}
+                      >
+                        NATURAL LIGHT:
+                      </span>
                       <span className="meta-value">{set.lighting}</span>
                     </div>
-                    <div className="editorial-set-actions">
-                      <Link to={`/enquire?set=${set.id}`} className="link-arrow">
+                    <div className="bento-set-actions">
+                      <Link
+                        to={`/enquire?set=${set.id}`}
+                        className="link-arrow"
+                        style={{ color: set.palette.accent }}
+                      >
                         Book this set <ArrowSvg />
                       </Link>
                     </div>

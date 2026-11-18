@@ -66,8 +66,11 @@ export function TopBar() {
   const [theme, toggle] = useTheme();
   const location = useLocation();
 
+  const isHome = location.pathname === "/";
+  const isHeroTransparent = isHome && !scrolled;
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -96,7 +99,7 @@ export function TopBar() {
 
   return (
     <>
-      <header className={`topbar ${scrolled ? "scrolled" : ""}`}>
+      <header className={`topbar ${scrolled ? "scrolled" : ""} ${isHeroTransparent ? "is-hero-transparent" : ""}`}>
         <div className="topbar-inner">
           <Link to="/" className="brand" aria-label="The Courtyard Stories — home">
             <span className="brand-name">The Courtyard Stories</span>

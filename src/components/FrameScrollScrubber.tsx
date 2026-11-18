@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { FRAME_COUNT, getFramePath } from "../lib/frames";
-import { waLink } from "../data/content";
 
 interface StoryBeat {
   id: string;
@@ -10,11 +8,7 @@ interface StoryBeat {
   tag: string;
   step: string;
   title: string;
-  desc: string;
-  pills: string[];
-  ctaText?: string;
-  ctaLink?: string;
-  waPrompt?: string;
+  sub: string;
 }
 
 const STORY_BEATS: StoryBeat[] = [
@@ -25,50 +19,34 @@ const STORY_BEATS: StoryBeat[] = [
     tag: "THE ESTATE · SOUTH DELHI",
     step: "01 / 04",
     title: "12,000+ Square Feet of Heritage Architecture",
-    desc: "A secluded outdoor production enclave in Saket, custom-sculpted for high-fashion lookbooks, period commercials, and luxury celebrations.",
-    pills: ["5 Contiguous Worlds", "Natural Light Sunpath", "Complete Privacy"],
-    ctaText: "Enquire For Dates",
-    ctaLink: "/enquire",
-    waPrompt: "Hi, I would like to plan a shoot at The Courtyard Stories.",
+    sub: "Secluded outdoor production enclave custom-sculpted for haute couture lookbooks, period commercials, and cinematic campaigns.",
   },
   {
     id: "beat-haveli",
-    start: 0.26,
-    end: 0.50,
+    start: 0.25,
+    end: 0.46,
     tag: "ZONE 01 · ROYAL PALACE",
     step: "02 / 04",
     title: "Double-Story Ochre Haveli & Jharokhas",
-    desc: "Authentic Rajasthani architecture with hand-painted floral niches, carved wooden portals, central charpai patio, and grand exterior stone staircase.",
-    pills: ["Carved Balconies", "Stone Staircase", "Courtyard Patio"],
-    ctaText: "Explore Royal Haveli",
-    ctaLink: "/services/studio",
-    waPrompt: "Hi, I'd like to book a walkthrough for the Royal Haveli set.",
+    sub: "Authentic Rajasthani stone facade, carved floral portals, woven charpai patio, and grand exterior stone staircase.",
   },
   {
     id: "beat-colonnade",
-    start: 0.54,
-    end: 0.77,
+    start: 0.49,
+    end: 0.70,
     tag: "ZONE 02 · MUGHAL COLONNADE",
     step: "03 / 04",
-    title: "Terracotta Geometric Jalis & Brass Lanterns",
-    desc: "Full-height carved terracotta jali screens casting hypnotic geometric lace shadows across patterned veranda stone as the Delhi sun moves across the sky.",
-    pills: ["Terracotta Jalis", "Moroccan Lanterns", "Raking Light"],
-    ctaText: "View Colonnade Set",
-    ctaLink: "/services/studio",
-    waPrompt: "Hi, I'm interested in the Mughal Colonnade set for a shoot.",
+    title: "Carved Terracotta Geometric Jalis",
+    sub: "Full-height screens casting hypnotic architectural lace shadows across stone verandas under the Delhi sun.",
   },
   {
     id: "beat-airspace",
-    start: 0.81,
-    end: 0.96,
+    start: 0.73,
+    end: 0.88,
     tag: "PRODUCTION SPEC · AIRSPACE",
     step: "04 / 04",
     title: "Unrestricted 360° Drone Flight Clearance",
-    desc: "Unobstructed open-sky clearance for sweeping crane shots, aerial establishing passes, and dynamic tracking takes with 25+ crew parking.",
-    pills: ["4K 50fps Drone Ready", "Silent Gen-Set Tie-in", "Day to Night Rigs"],
-    ctaText: "Schedule Technical Recce",
-    ctaLink: "/visit",
-    waPrompt: "Hi, I'd like to schedule a DP & director technical recce.",
+    sub: "Open-sky flight clearance for dynamic tracking passes, crane shots, and silent gen-set power tie-ins.",
   },
 ];
 
@@ -234,27 +212,27 @@ export function FrameScrollScrubber() {
     };
   }, []);
 
-  // Helper to compute card opacity & translateY for each story beat
+  // Helper to compute text opacity & translateY for each story beat
   const getBeatState = (beat: StoryBeat) => {
     const p = progress;
     if (p < beat.start || p > beat.end) {
-      return { opacity: 0, translateY: 24, active: false };
+      return { opacity: 0, translateY: 16, active: false };
     }
 
-    const fadeDur = 0.04;
+    const fadeDur = 0.035;
     let opacity = 1;
     let translateY = 0;
 
     if (p < beat.start + fadeDur) {
-      // Fading in
+      // Smooth fade in
       const t = (p - beat.start) / fadeDur;
       opacity = t;
-      translateY = (1 - t) * 20;
+      translateY = (1 - t) * 16;
     } else if (p > beat.end - fadeDur) {
-      // Fading out
+      // Smooth fade out
       const t = (beat.end - p) / fadeDur;
       opacity = t;
-      translateY = (1 - t) * -20;
+      translateY = (1 - t) * -16;
     }
 
     return { opacity, translateY, active: opacity > 0.05 };
@@ -267,36 +245,17 @@ export function FrameScrollScrubber() {
       aria-label="Scroll-driven drone architectural flight"
     >
       <div className="frame-scrub-sticky">
-        {/* Canvas for frame-by-frame rendering */}
+        {/* High-definition frame canvas */}
         <canvas ref={canvasRef} className="frame-scrub-canvas" />
 
-        {/* Soft atmospheric gradient */}
-        <div className="frame-scrub-vignette" aria-hidden="true" />
-
-        {/* HUD progress scrubber indicator */}
-        <div className="frame-scrub-timeline" aria-hidden="true">
-          <div className="timeline-track">
-            <div
-              className="timeline-fill"
-              style={{ width: `${Math.round(progress * 100)}%` }}
-            />
-          </div>
-          <div className="timeline-labels">
-            <span>01 AERIAL</span>
-            <span>02 HAVELI</span>
-            <span>03 COLONNADE</span>
-            <span>04 AIRSPACE</span>
-          </div>
-        </div>
-
-        {/* Story beats: EXACT text synchronized to drone frames */}
-        <div className="frame-scrub-story-wrap">
+        {/* Minimalist right-aligned story text (zero overlays, zero boxes) */}
+        <div className="frame-scrub-text-stage">
           {STORY_BEATS.map((beat) => {
             const state = getBeatState(beat);
             return (
               <div
                 key={beat.id}
-                className="frame-scrub-card"
+                className="frame-minimal-text"
                 style={{
                   opacity: state.opacity,
                   transform: `translate3d(0, ${state.translateY}px, 0)`,
@@ -304,57 +263,29 @@ export function FrameScrollScrubber() {
                   visibility: state.opacity > 0.01 ? "visible" : "hidden",
                 }}
               >
-                <div className="card-glass-body">
-                  <div className="card-top-row">
-                    <span className="card-tag">{beat.tag}</span>
-                    <span className="card-step-badge">{beat.step}</span>
-                  </div>
-
-                  <h2 className="card-headline">{beat.title}</h2>
-                  <p className="card-desc">{beat.desc}</p>
-
-                  <div className="card-pills">
-                    {beat.pills.map((pill) => (
-                      <span key={pill} className="pill-item">
-                        {pill}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="card-bottom-actions">
-                    {beat.ctaLink && (
-                      <Link to={beat.ctaLink} className="btn btn-primary btn-sm">
-                        {beat.ctaText}
-                      </Link>
-                    )}
-                    {beat.waPrompt && (
-                      <a
-                        href={waLink(beat.waPrompt)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-wa btn-sm"
-                      >
-                        WhatsApp Desk
-                      </a>
-                    )}
-                  </div>
+                <div className="minimal-text-meta">
+                  <span className="minimal-text-tag">{beat.tag}</span>
+                  <span className="minimal-text-sep">·</span>
+                  <span className="minimal-text-step">{beat.step}</span>
                 </div>
+                <h2 className="minimal-text-headline">{beat.title}</h2>
+                <p className="minimal-text-sub">{beat.sub}</p>
               </div>
             );
           })}
         </div>
 
-        {/* Scroll prompt cue at bottom (only visible at the very start) */}
+        {/* Scroll cue (visible only at the very top, fades out quickly) */}
         <div
           className="frame-scrub-hint"
           style={{
-            opacity: Math.max(0, 1 - progress * 8),
+            opacity: Math.max(0, 1 - progress * 12),
             pointerEvents: "none",
           }}
           aria-hidden="true"
         >
           <span className="scroll-arrow-down" />
-          <span>SCROLL TO GLIDE THROUGH ESTATE</span>
+          <span>SCROLL TO EXPLORE ESTATE</span>
         </div>
       </div>
     </section>

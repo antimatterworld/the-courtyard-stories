@@ -41,6 +41,13 @@ export type ArchitecturalSet = {
   lighting: string;
   img: string;
   video: string;
+  palette: {
+    accent: string;
+    accentLight: string;
+    bgTint: string;
+    borderTint: string;
+    name: string;
+  };
 };
 
 export const ARCHITECTURAL_SETS: ArchitecturalSet[] = [
@@ -60,6 +67,13 @@ export const ARCHITECTURAL_SETS: ArchitecturalSet[] = [
     lighting: "Direct morning sunlight through 12:00; soft ambient courtyard shadows afternoon; lantern-lit night.",
     img: "/assets/real/flythrough-02-haveli.webp",
     video: "/assets/real/flythrough-02-haveli.mp4",
+    palette: {
+      accent: "#C28B38",
+      accentLight: "#D4A359",
+      bgTint: "rgba(194, 139, 56, 0.10)",
+      borderTint: "rgba(194, 139, 56, 0.35)",
+      name: "Ochre Sandstone",
+    },
   },
   {
     id: "mughal-colonnade",
@@ -77,6 +91,13 @@ export const ARCHITECTURAL_SETS: ArchitecturalSet[] = [
     lighting: "Dramatically raking sunbeams through jalis at morning & golden hour.",
     img: "/assets/real/flythrough-03-colonnade.webp",
     video: "/assets/real/flythrough-03-colonnade.mp4",
+    palette: {
+      accent: "#C86244",
+      accentLight: "#D97355",
+      bgTint: "rgba(200, 98, 68, 0.10)",
+      borderTint: "rgba(200, 98, 68, 0.35)",
+      name: "Terracotta Jali",
+    },
   },
   {
     id: "chefchaouen-suite",
@@ -94,6 +115,13 @@ export const ARCHITECTURAL_SETS: ArchitecturalSet[] = [
     lighting: "Even, high-saturation daylight with crisp architectural contrast.",
     img: "/assets/real/flythrough-04-mediterranean.webp",
     video: "/assets/real/flythrough-04-mediterranean.mp4",
+    palette: {
+      accent: "#1E4B94",
+      accentLight: "#356BBF",
+      bgTint: "rgba(30, 75, 148, 0.10)",
+      borderTint: "rgba(30, 75, 148, 0.35)",
+      name: "Moroccan Cobalt",
+    },
   },
   {
     id: "rustic-village",
@@ -111,6 +139,13 @@ export const ARCHITECTURAL_SETS: ArchitecturalSet[] = [
     lighting: "Warm golden tones, filtered light under reed thatch.",
     img: "/assets/real/portfolio-thatched-tower.webp",
     video: "/assets/real/portfolio-thatched-tower.mp4",
+    palette: {
+      accent: "#8B6F47",
+      accentLight: "#A8895E",
+      bgTint: "rgba(139, 111, 71, 0.10)",
+      borderTint: "rgba(139, 111, 71, 0.35)",
+      name: "Natural Thatch & Jute",
+    },
   },
   {
     id: "night-gala",
@@ -128,6 +163,13 @@ export const ARCHITECTURAL_SETS: ArchitecturalSet[] = [
     lighting: "Golden 2700K tungsten practicals, fairy lights, candlelit ambiance.",
     img: "/assets/real/flythrough-05-nightgala.webp",
     video: "/assets/real/flythrough-05-nightgala.mp4",
+    palette: {
+      accent: "#D99B26",
+      accentLight: "#E8B84B",
+      bgTint: "rgba(217, 155, 38, 0.10)",
+      borderTint: "rgba(217, 155, 38, 0.35)",
+      name: "Tungsten Amber & Brass",
+    },
   },
 ];
 

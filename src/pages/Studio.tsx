@@ -121,46 +121,66 @@ export default function Studio() {
                 Each zone is constructed with authentic tactile materials, deep architectural relief, and deliberate sun path orientation. Multiple camera units can shoot in parallel across the estate.
               </p>
             </div>
-            <div className="card-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
-              {ARCHITECTURAL_SETS.map((set) => (
-                <article key={set.id} className="card reveal" style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                  <div style={{ position: "relative", width: "100%", aspectRatio: "16/10", overflow: "hidden" }}>
-                    <img
-                      src={set.img}
-                      alt={set.name}
-                      loading="lazy"
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            <div className="bento-sets-grid">
+              {ARCHITECTURAL_SETS.map((set, idx) => (
+                <article
+                  key={set.id}
+                  className={`bento-set-card bento-card-${set.id} reveal`}
+                  style={{
+                    ["--set-accent" as string]: set.palette.accent,
+                    ["--set-accent-light" as string]: set.palette.accentLight,
+                    ["--set-bg-tint" as string]: set.palette.bgTint,
+                    ["--set-border-tint" as string]: set.palette.borderTint,
+                  } as CSSProperties}
+                >
+                  <div className="bento-set-media">
+                    <video
+                      src={set.video}
+                      poster={set.img}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="bento-set-video"
                     />
                     <span
+                      className="bento-set-tag"
                       style={{
-                        position: "absolute",
-                        top: 12,
-                        left: 12,
-                        background: "rgba(20, 18, 16, 0.75)",
-                        backdropFilter: "blur(6px)",
-                        color: "var(--gold-soft, #D8AE72)",
-                        fontFamily: "var(--font-mono)",
-                        fontSize: "0.72rem",
-                        padding: "3px 8px",
-                        borderRadius: "2px",
-                        letterSpacing: "0.06em",
+                        borderColor: set.palette.borderTint,
+                        color: set.palette.accentLight,
                       }}
                     >
                       {set.tag}
                     </span>
                   </div>
-                  <div style={{ padding: "var(--s-6)", display: "flex", flexDirection: "column", flexGrow: 1 }}>
-                    <h3 className="h3" style={{ fontSize: "1.2rem" }}>{set.name}</h3>
-                    <p className="muted" style={{ marginTop: 8, fontSize: "var(--t-small)", lineHeight: 1.6, flexGrow: 1 }}>
-                      {set.short}
-                    </p>
-                    <div style={{ marginTop: "var(--s-4)", paddingTop: "var(--s-4)", borderTop: "1px solid var(--line-soft)" }}>
-                      <p style={{ fontFamily: "var(--font-mono)", fontSize: "var(--t-micro)", color: "var(--accent-deep)", letterSpacing: "0.08em" }}>
-                        BEST FOR
-                      </p>
-                      <p className="muted" style={{ marginTop: 4, fontSize: "0.8rem", lineHeight: 1.5 }}>
-                        {set.bestFor.join(" · ")}
-                      </p>
+                  <div className="bento-set-info">
+                    <div className="bento-set-header">
+                      <span
+                        className="bento-set-num"
+                        style={{ color: set.palette.accent }}
+                      >
+                        0{idx + 1}
+                      </span>
+                      <h3 className="bento-set-title">{set.name}</h3>
+                    </div>
+                    <p className="bento-set-desc">{set.short}</p>
+                    <div className="bento-set-meta">
+                      <span
+                        className="meta-label"
+                        style={{ color: set.palette.accent }}
+                      >
+                        BEST FOR:
+                      </span>
+                      <span className="meta-value">{set.bestFor.join(" · ")}</span>
+                    </div>
+                    <div className="bento-set-actions">
+                      <Link
+                        to={`/enquire?set=${set.id}`}
+                        className="link-arrow"
+                        style={{ color: set.palette.accent }}
+                      >
+                        Enquire for this set <ArrowSvg />
+                      </Link>
                     </div>
                   </div>
                 </article>
@@ -244,5 +264,13 @@ export default function Studio() {
         </section>
       </div>
     </Page>
+  );
+}
+
+function ArrowSvg() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M5 12h14M12 5l7 7-7 7" />
+    </svg>
   );
 }
