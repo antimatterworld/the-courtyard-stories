@@ -27,6 +27,7 @@ export type Motif =
   | "commercial"
   | "crew"
   | "lens"
+  | "events"
   | "studio";
 
 const MOTIF_TINT: Record<Motif, [string, string]> = {
@@ -37,6 +38,7 @@ const MOTIF_TINT: Record<Motif, [string, string]> = {
   commercial: ["#efe2cf", "#b08653"],
   crew: ["#e6d9c2", "#c2a478"],
   lens: ["#2a2620", "#141210"],
+  events: ["#f7d7aa", "#8c4a22"],
   studio: ["#f2ead9", "#c9a878"],
 };
 

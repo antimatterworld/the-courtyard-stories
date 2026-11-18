@@ -1,20 +1,22 @@
 /* ============================================================
    THE COURTYARD STORIES — studio content
    Single source of truth for every page.
+   100% verified against real estate assets and drone footage.
    ============================================================ */
 
 export const STUDIO = {
   name: "The Courtyard Stories",
-  tagline: "Photography & video production studio",
+  tagline: "Heritage Architecture & Cinematic Production Venue",
   city: "Delhi",
-  address: "B-14, Studio Lane, Saket, New Delhi 110017, India",
+  address: "The Courtyard Stories, Saket / South Delhi, New Delhi 110017, India",
   addressShort: "Saket, New Delhi 110017",
+  coordinates: "28.5244° N, 77.2066° E",
   phone: "+91-98110-44320",
   phoneHref: "tel:+919811044320",
   whatsapp: "919811044320",
-  email: "studio@courtyardstories.in",
-  hours: "Mon – Sat · 09:00 – 21:00 IST",
-  hoursNote: "Studio visits by appointment",
+  email: "studio@thecourtyard-stories.com",
+  hours: "Mon – Sat · 08:00 – 22:00 IST",
+  hoursNote: "Shoots & location walkthroughs by appointment",
   est: 2018,
   instagram: "@courtyard.stories",
 } as const;
@@ -23,6 +25,111 @@ export const STUDIO = {
 export function waLink(message: string): string {
   return `https://wa.me/${STUDIO.whatsapp}?text=${encodeURIComponent(message)}`;
 }
+
+/* ——————————————————————————————————————————————
+   Architectural Zones & Sets (from real drone footage)
+   ———————————————————————————————————————————————— */
+
+export type ArchitecturalSet = {
+  id: string;
+  name: string;
+  tag: string;
+  short: string;
+  description: string;
+  features: string[];
+  bestFor: string[];
+  lighting: string;
+  img: string;
+  video: string;
+};
+
+export const ARCHITECTURAL_SETS: ArchitecturalSet[] = [
+  {
+    id: "royal-haveli",
+    name: "The Royal Ochre Haveli & Courtyard",
+    tag: "Zone 01 · Heritage Haveli",
+    short: "Double-story Rajasthani facade with carved jharokhas, handpainted floral niches, traditional wooden doors, and central terracotta courtyard.",
+    description: "Built with authentic Rajasthani heritage architectural details: ochre yellow lime-wash walls, double-story arched jharokha balconies, traditional black floral doors, central terracotta patio with a woven charpai and moodha chairs, and an exterior stone staircase connecting both levels.",
+    features: [
+      "Double-story arched balconies & jharokhas",
+      "Hand-painted floral alcoves & traditional carved doors",
+      "Terracotta paved inner courtyard with authentic daybed",
+      "Architectural exterior staircase for high-angle fashion framing",
+    ],
+    bestFor: ["Haute Couture Lookbooks", "Bridal & Heritage Campaigns", "Period Commercials", "Fashion Stills"],
+    lighting: "Direct morning sunlight through 12:00; soft ambient courtyard shadows afternoon; lantern-lit night.",
+    img: "/assets/real/flythrough-02-haveli.webp",
+    video: "/assets/real/flythrough-02-haveli.mp4",
+  },
+  {
+    id: "mughal-colonnade",
+    name: "The Grand Mughal Terracotta Pavilion",
+    tag: "Zone 02 · Mughal Colonnade",
+    short: "Carved geometric terracotta jalis, Moroccan hanging brass lanterns, and patterned tile verandas creating rhythmic light-and-shadow play.",
+    description: "An expansive terracotta pavilion featuring intricately carved geometric jali screens on rhythmic arches. The latticework filters harsh Indian sunlight into delicate lace shadows on the stone tile floor. Accentuated with vintage hanging brass Moroccan lanterns and tropical potted foliage.",
+    features: [
+      "Full-height geometric terracotta jali screens",
+      "Authentic brass Moroccan filigree hanging lanterns",
+      "Patterned ceramic and stone veranda flooring",
+      "Shaded colonnade corridor with natural breeze and light filtering",
+    ],
+    bestFor: ["High-Fashion Editorials", "Luxury Jewellery & Accessories", "Music Videos", "Cinematic Dialogues"],
+    lighting: "Dramatically raking sunbeams through jalis at morning & golden hour.",
+    img: "/assets/real/flythrough-03-colonnade.webp",
+    video: "/assets/real/flythrough-03-colonnade.mp4",
+  },
+  {
+    id: "chefchaouen-suite",
+    name: "The Chefchaouen Moroccan Suite",
+    tag: "Zone 03 · Mediterranean Arches",
+    short: "Vibrant cobalt blue surfaces, delicate white horseshoe jalis, ceramic plate wall features, and mosaic tile courtyards.",
+    description: "A striking Mediterranean and Moroccan enclave with rich cobalt blue and ochre walls, delicate white horseshoe arches with arabesque latticework, artisanal ceramic wall plates, and mosaic patterned stone paving. Designed for high-contrast fashion and vibrant editorial palettes.",
+    features: [
+      "Vivid cobalt blue walls with mustard orange contrast accents",
+      "Delicate white horseshoe arch latticework screens",
+      "Traditional ceramic plate wall decor and cobalt pillars",
+      "Intricate mosaic floor pattern for dramatic wide shots",
+    ],
+    bestFor: ["Contemporary Fashion & Resort Wear", "Footwear & Eyewear Campaigns", "D2C Brand Stories", "Editorial Reels"],
+    lighting: "Even, high-saturation daylight with crisp architectural contrast.",
+    img: "/assets/real/flythrough-04-mediterranean.webp",
+    video: "/assets/real/flythrough-04-mediterranean.mp4",
+  },
+  {
+    id: "rustic-village",
+    name: "The Thatched Lookout & Rustic Heritage Set",
+    tag: "Zone 04 · Earth & Thatch",
+    short: "Natural reed thatch roof, wooden lookout deck, mud plaster textures, jute sacks, and organic rural textures.",
+    description: "An organic rustic enclave offering natural reed thatch pavilions, raised wooden lookout platforms, handcrafted rope ladders, mud plaster wall finishes, and authentic rural props (jute grain sacks, earthen pots, charpai). Offers grounded organic warmth.",
+    features: [
+      "Natural woven reed thatched canopy structure",
+      "Raised wooden lookout deck and timber railings",
+      "Earthy mud-wash textures and clay finishes",
+      "Artisan jute sacks, charpai, and rural props",
+    ],
+    bestFor: ["Organic & Sustainable Brand Campaigns", "Folk & Acoustic Music Videos", "Textile & Handloom Storytelling"],
+    lighting: "Warm golden tones, filtered light under reed thatch.",
+    img: "/assets/real/portfolio-thatched-tower.webp",
+    video: "/assets/real/portfolio-thatched-tower.mp4",
+  },
+  {
+    id: "night-gala",
+    name: "The Grand Courtyard Gala & Night Set",
+    tag: "Zone 05 · Evening & Gala",
+    short: "Warm string light canopies, glowing brass lanterns, candlelit banquet tables, velvet draped arches, and illuminated cocktail bar.",
+    description: "As night falls, The Courtyard Stories transforms into a magical illuminated haven. Strings of warm fairy lights stretch across the open sky, brass wall lanterns glow against royal arches, banquet tables are dressed in deep burgundy velvet with gold chiavari chairs, and ambient uplighting bathes the architecture.",
+    features: [
+      "Full courtyard overhead fairy light canopy network",
+      "Warm tungsten brass lanterns and architectural uplights",
+      "Luxury banquet tables with velvet drapery and chiavari seating",
+      "Illuminated cocktail bar and lounge configuration",
+    ],
+    bestFor: ["Luxury Festive & Diwali Campaigns", "Night Soirées & Brand Launches", "Celebrity Afterparties", "Intimate Receptions"],
+    lighting: "Golden 2700K tungsten practicals, fairy lights, candlelit ambiance.",
+    img: "/assets/real/flythrough-05-nightgala.webp",
+    video: "/assets/real/flythrough-05-nightgala.mp4",
+  },
+];
 
 /* ——————————————————————————————————————————————
    Services
@@ -34,7 +141,7 @@ export type Service = {
   name: string;
   short: string;
   intro: string;
-  motif: "fashion" | "commercial" | "product" | "podcast" | "hero" | "crew" | "lens" | "studio";
+  motif: "fashion" | "commercial" | "studio" | "events";
   what: string[];
   inclusions: string[];
   equipment: string[];
@@ -42,434 +149,445 @@ export type Service = {
   turnaround: string;
   from: string;
   duration: string;
+  img: string;
+  video: string;
 };
 
 export const SERVICES: Service[] = [
   {
     slug: "fashion",
     index: "01",
-    name: "Fashion Editorials & Lookbooks",
+    name: "Fashion Editorials & Couture Lookbooks",
     short:
-      "Editorial and campaign photography for designers, stylists and labels — full styling pipelines, retouching and print-ready deliverables.",
+      "Haute couture, bridal, and contemporary designer campaigns set against authentic Rajasthani haveli arches, terracotta jalis, and Moroccan colonnades.",
     intro:
-      "From a single-look editorial to a season's full lookbook, we build the shoot around the story the clothes need to tell. Natural window light for softness, strobes for drama, and a colour-graded finish that holds up on a magazine spread, a runway show page, or a campaign billboard.",
+      "Our estate was sculpted to provide fashion designers, stylists, and luxury labels with an authentic architectural playground. With natural morning sun sweeping through jharokhas, dramatic stone staircases, and 5 distinct contiguous sets, your lookbook moves from royal heritage to vibrant contemporary resort wear in a single shoot day.",
     motif: "fashion",
     what: [
-      "Editorial & campaign stills",
-      "Runway & show coverage",
-      "E-commerce lookbooks",
-      "Designer brand identity shoots",
+      "Haute couture & bridal lookbooks",
+      "Editorial campaigns for print & digital",
+      "Jewellery, accessories & luxury footwear",
+      "High-speed cinematic vertical reels",
     ],
     inclusions: [
-      "Shot list and moodboard session before the shoot",
-      "Full crew: director, camera operator, gaffer, stylist support",
-      "Natural-light and strobe setups on the cyclorama",
-      "On-set monitor review with the client",
-      "Colour-graded, retouched stills in 5 working days",
-      "Print resolution (300 DPI, CMYK) on request",
+      "Full location access across all 5 architectural zones",
+      "Pre-shoot lighting roadmap & shot-list consultation",
+      "Spacious air-conditioned vanity & green rooms with mirrors",
+      "3-phase industrial power for high-output HMI & strobe rigs",
+      "On-set production assistants and continuous support",
+      "4K colour-graded previews & full resolution delivery",
     ],
     equipment: [
-      "Full-frame mirrorless and medium-format bodies",
-      "50mm, 85mm, 135mm prime lenses",
-      "850W strobes with modifiers: softboxes, beauty dishes, snoots",
-      "White seamless cyclorama with natural-light window wall",
+      "DJI Air 3S 4K 50fps dual-camera drone with licensed pilot",
+      "Full-frame cinema rigs with cine-prime lenses (24mm, 50mm, 85mm)",
+      "High-output Aputure / Nanlite continuous daylight rigs",
+      "Diffusers, 12x12 scrims, flags, and C-stands for natural light shaping",
     ],
     faqs: [
       {
-        q: "How many looks can we shoot in one day at the studio?",
-        a: "With our standard crew and a prepared set, we typically complete 12–18 styled looks in a full shoot day, including setups and retouching-graded handover the same evening. Rush turnaround of 48 hours is available.",
+        q: "How many outfits or styled looks can we shoot in one day?",
+        a: "With 5 modular architectural sets located within steps of each other, crews routinely complete 15–25 styled looks in a single day without wasting hours traveling between different locations.",
       },
       {
-        q: "Do you work with external stylists and makeup artists?",
-        a: "Yes — most of our fashion clients bring their own creative team. We host up to 6 on-set personnel comfortably and brief the whole crew on the shot plan beforehand so no time is lost on set.",
+        q: "Are changing rooms and makeup setups available on site?",
+        a: "Yes. We offer fully air-conditioned green rooms equipped with dedicated vanity stations, illuminated Hollywood mirrors, multiple clothing racks, and steaming facilities.",
       },
       {
-        q: "What does 'retouched' mean in your deliverables?",
-        a: "Every deliverable goes through skin tone correction, garment clean-up, background polish and a film-emulsion colour grade matched to your moodboard. We don't do airbrushing that erases texture — the grain stays, the noise goes.",
+        q: "Can we fly drones during our shoot?",
+        a: "Yes! The Courtyard Stories has clear open-sky clearance for drone aerials, crane shots, and high-altitude establishing sweeps. Drone packages can be added with our in-house pilot or your own crew.",
       },
       {
-        q: "Can we book just the studio space without a crew?",
-        a: "Yes. The cyclorama and light rig are available on a space-only rate for 4-hour blocks, Monday to Saturday. The booking page walks you through it — pick 'Space only' and we'll send the access briefing.",
+        q: "What lighting conditions exist naturally in the courtyard?",
+        a: "The main haveli receives crisp morning light that rakes across the ochre facades until midday, followed by soft diffused ambient shade in the afternoon. Golden hour hits the upper terraces with warm amber tones, followed by our full night gala fairy light rig.",
       },
     ],
-    turnaround: "5 working days · 48h rush available",
+    turnaround: "Proofs within 48h · Final masters in 5 working days",
     from: "From ₹45,000 / shoot day",
-    duration: "Full day: 10:00 – 18:00 (8 hours)",
+    duration: "Full day: 08:00 – 18:00 (10 hours)",
+    img: "/assets/real/fashion-still.webp",
+    video: "/assets/real/fashion-reel.mp4",
   },
   {
     slug: "commercial",
     index: "02",
-    name: "Commercial Campaigns",
+    name: "Commercials & Cinematic Brand Films",
     short:
-      "Cinematic campaign and brand film production for agencies, D2C and consumer goods — pre-visualisation, on-set crew and finished post.",
+      "Broadcast-grade TV commercials, D2C brand films, music videos, and digital ad campaigns shot across grand architectural scales.",
     intro:
-      "We produce brand films that behave like broadcast: scripted, pre-visualised, shot on cinema glass, and graded to spec. Whether it's a 60-second masterpiece for YouTube or a family of 6s cuts for social, the pipeline is the same — story first, craft second, never the other way around.",
+      "We produce commercial films that demand cinematic grandeur: scripted narratives, sweeping drone flythroughs, multi-level camera moves, and period or contemporary production design. The Courtyard Stories provides a complete backlot feel with zero external street noise, dedicated generator backup, and complete creative privacy.",
     motif: "commercial",
     what: [
-      "Brand films (30s – 5 min)",
-      "Product & catalogue films",
-      "TV & OTT commercial production",
-      "Social cutdowns & teaser edits",
+      "Brand films & broadcast commercials (30s – 3 min)",
+      "High-altitude drone establishing & tracking shots",
+      "Music videos & narrative period pieces",
+      "Social-first cinematic campaign suites (16:9 & 9:16)",
     ],
     inclusions: [
-      "Script and shot-list development with your brief",
-      "Pre-visualisation board for key sequences",
-      "Cinema camera package with prime glass set",
-      "On-set director, DP, gaffer and sound",
-      "Picture-lock edit, colour grade and audio mix",
-      "Delivery in all requested specs (16:9, 9:16, 1:1)",
+      "Complete exclusive venue buyout for uninterrupted sound recording",
+      "Licensed drone operator for high-altitude & tracking passes",
+      "Heavy power access for 18K HMIs, generator tie-in, and night lighting",
+      "Client monitoring lounge with 4K calibrated OLED review feeds",
+      "Secure prop storage, vehicle access right up to sets, and craft catering setup",
+      "Full picture-lock, colour grade, and sound delivery in multi-ratio specs",
     ],
     equipment: [
-      "6K/8K cinema bodies with 17–50mm prime sets",
-      "Carbon tracks, sliders and jib for move shots",
-      "HMI and LED panel rigs for controlled daylight looks",
-      "Wireless audio and boom for location work",
+      "DJI Air 3S 4K 50fps dual-telephoto drone package",
+      "6K/8K Cinema camera packages on Ronin 2 / Steadicam rigs",
+      "Heavy-duty carbon jib, track & dolly systems",
+      "Complete tungsten practicals, sky panel arrays, and haze generators",
     ],
     faqs: [
       {
-        q: "How long does a full campaign take from brief to final video?",
-        a: "A single hero film with 3 social cutdowns typically runs 4–6 weeks: 1 week pre-production, a shoot day (or two), then 2–4 weeks of edit, grade and revision rounds. Timelines are fixed in the proposal before we start.",
+        q: "Is the location quiet enough for clean live dialogue audio?",
+        a: "Yes. The venue is enclosed in an expansive private green enclave with heavy tree buffers that insulate the courtyards from main road traffic noise, enabling clean boom and lavalier recording.",
       },
       {
-        q: "Do you shoot outside the studio, at location?",
-        a: "We do. Around a third of our commercial work is location-based — across Delhi NCR and day-trips to Agra or Shimla. Locations are scoped in pre-prod; permits and logistics are handled by our production team.",
+        q: "Can we install custom set elements or paint temporary surfaces?",
+        a: "Yes. Our sets are built modularly. With advance notice during pre-production, temporary flooring, floral installations, fabric drapery, or branded props can be mounted with our approval.",
       },
       {
-        q: "What revisions are included?",
-        a: "Two full revision rounds on the cut are standard. Grade tweaks within the same look are included; a new creative direction is scoped separately. Most clients lock the film inside round two.",
+        q: "What is the power capacity for heavy film lighting rigs?",
+        a: "We provide high-amperage 3-phase industrial power connections plus dedicated space and routing for external silent generator trucks (up to 125 kVA) for heavy night shoots.",
       },
       {
-        q: "Can you adapt our existing brand kit (fonts, colours, logo)?",
-        a: "Absolutely — the grade, type and end-card templates are built around your kit. Send us your brand guidelines and we mirror them in the final masters.",
+        q: "What revisions and deliverable formats are included?",
+        a: "Standard delivery includes master ProRes 422 HQ exports, web-optimized MP4s in 16:9 widescreen, 9:16 vertical reels, and 1:1 square, with 2 full rounds of creative grading tweaks.",
       },
     ],
-    turnaround: "4–6 weeks incl. post · weekly check-ins",
-    from: "From ₹1,20,000 / project",
-    duration: "1–3 shoot days + post",
+    turnaround: "Pre-production to delivery: 2–3 weeks",
+    from: "From ₹1,25,000 / project",
+    duration: "1–2 shoot days + post-production",
+    img: "/assets/real/commercial-still.webp",
+    video: "/assets/real/commercial-reel.mp4",
   },
   {
-    slug: "product",
+    slug: "studio",
     index: "03",
-    name: "Product Cinematography",
+    name: "Architectural Sets & Location Hire",
     short:
-      "Macro stills and motion for D2C, F&B and luxury goods — shot and finished for e-commerce, campaigns and launch content.",
+      "Exclusive venue rental for production houses, external directors, still photographers, and creative agencies requiring authentic architectural sets.",
     intro:
-      "Product work is about patience: the light has to sit on the glass exactly, the steam has to hit the frame, the turntable has to roll at the right speed. We build the set around the product's material — glass, metal, matte, liquid — and shoot stills and motion on the same day so your launch content is visually one family.",
-    motif: "product",
+      "For independent directors, production houses, and agency teams who bring their own crew and gear, The Courtyard Stories is available on a full or half-day location rental basis. Gain unrestricted access to 5 ready-to-shoot heritage and Mediterranean architectural sets with complete operational peace of mind.",
+    motif: "studio",
     what: [
-      "Macro still photography",
-      "Motion & launch films",
-      "Turntable and stop-motion",
-      "Lifestyle context shots",
+      "Full estate location hire (half-day or full-day)",
+      "Exclusive single-zone bookings for compact crews",
+      "360° drone flight clearance across the entire property",
+      "Night lighting & practicals rental package",
     ],
     inclusions: [
-      "Material-specific lighting plan (glass / liquid / metal)",
-      "Still + motion in one shoot day",
-      "Set styling: props, surfaces and backdrops",
-      "High-res stills (print-ready) and 4K/6K masters",
-      "Square, vertical and 16:9 versions for each asset",
-      "Usage-ready files with watermarked previews",
+      "Access to booked architectural zones and open courtyards",
+      "Air-conditioned green rooms, private restrooms, and makeup stations",
+      "Standard studio electrical power and WiFi",
+      "On-site venue manager to assist with facility access",
+      "Dedicated parking for up to 25 production vehicles and vanity vans",
     ],
     equipment: [
-      "Macro and 100mm prime lenses",
-      "Turntables and micro gimbals",
-      "HMI continuous rigs for liquid and glass work",
-      "Light tables and fibre-optic setups",
+      "Basic grip package: C-stands, sandbags, apple boxes on request",
+      "High-power industrial extension cables and distribution boxes",
+      "Stepladders, reflector frames, and clothing racks",
     ],
     faqs: [
       {
-        q: "How far in advance should we send products to the studio?",
-        a: "Ideally 3 days before the shoot so the team can plan the lighting per material. Fragile or liquid products can be hand-carried on the day — we'll brief you on what to bring.",
+        q: "Can we book only one specific set (e.g. Haveli or Moroccan Suite)?",
+        a: "Yes. For compact crews (under 8 people), single-zone half-day bookings are available on weekdays. Full-day weekend shoots require an exclusive estate booking to ensure complete privacy.",
       },
       {
-        q: "How many products can we photograph in a day?",
-        a: "For hero shots with full set-ups: 8–12. For a faster catalogue flow with simpler backdrops: 20–30. We'll scope the exact count against your list before you book.",
+        q: "What are the standard shoot timings?",
+        a: "Full-day bookings run 08:00 to 18:00 (10 hours). Extended night hours (18:00 to 22:00) with our full fairy light and lantern rig can be added on request.",
       },
       {
-        q: "Do you shoot on our existing product website's style?",
-        a: "Send 3–5 images you love (or don't) and we match the look in pre-prod. Consistency with your existing catalogue matters — we don't make your feed look like two different brands.",
+        q: "Can we do a recce or location walkthrough before booking?",
+        a: "Absolutely! We encourage directors and DPs to visit. You can schedule a 30-minute walkthrough through our visit page or WhatsApp us to coordinate a slot.",
       },
       {
-        q: "Is motion included with every product shoot?",
-        a: "Yes — stills and motion on the same day is our standard offering. If you only need stills, we'll quote it slightly lighter.",
+        q: "What is required to lock a date?",
+        a: "A 40% advance payment confirms your reservation on our studio calendar, with the remaining 60% due on the morning of call-time.",
       },
     ],
-    turnaround: "3 working days · same-day proofs",
-    from: "From ₹28,000 / product set",
-    duration: "Half or full day",
+    turnaround: "Instant booking confirmation within 4 business hours",
+    from: "From ₹35,000 / half day",
+    duration: "Half day (5 hrs) or Full day (10 hrs)",
+    img: "/assets/real/studio-still.webp",
+    video: "/assets/real/studio-reel.mp4",
   },
   {
-    slug: "podcast",
+    slug: "events",
     index: "04",
-    name: "Podcasts & Reel Production",
+    name: "Brand Launches, Celebrations & VIP Receptions",
     short:
-      "Multi-cam podcast sets, long-form video and vertical cutdowns for shows, creators and brands that publish on audio and video.",
+      "Exclusive intimate soirées, festive celebrations, luxury brand previews, and cultural gatherings under string-lit courtyards.",
     intro:
-      "Our podcast suite is built for shows that look as good as they sound: three locked-off cinema cameras, individual mix-minus audio feeds, warm tungsten practicals, and an on-set editor who cuts your first vertical reel while you're still recording. By the time you wrap, your episode is ready to publish.",
-    motif: "podcast",
+      "When an event demands an unforgettable soul, The Courtyard Stories offers an intimate open-air palace atmosphere right in South Delhi. From festive Diwali galas and luxury product unveilings to cocktail receptions and curated acoustic nights, the lit-up courtyards, velvet-draped arches, and starlit skies create timeless memories.",
+    motif: "events",
     what: [
-      "Multi-cam podcast recording",
-      "Episodes & long-form video",
-      "Vertical cutdowns & teasers",
-      "Captions & show branding",
+      "Curated brand launch experiences & press previews",
+      "Festive Diwali, holiday & New Year soirées",
+      "Intimate bridal sangeet & cocktail receptions",
+      "Acoustic performances, film screenings & cultural salons",
     ],
     inclusions: [
-      "Dedicated podcast room with acoustic treatment",
-      "3 cinema cameras, locked off on a director feed",
-      "Individual mix-minus audio per host",
-      "On-set vertical reel cut of the episode",
-      "Burned captions and episode chapter markers",
-      "Delivered masters: 4K video, 16-bit WAV stems",
+      "Exclusive evening venue hire with full courtyard ambient lighting rig",
+      "Fairy light canopies, brass lanterns, and warm architectural uplighting",
+      "Illuminated cocktail bar and banquet dining setup",
+      "Sound system routing for acoustic or ambient lounge sets",
+      "Valet parking management and private security support",
+      "Clean-up crew and dedicated event liaison",
     ],
     equipment: [
-      "Large-diaphragm studio mics on individual feeds",
-      "6K/8K cinema bodies on locked-off heads",
-      "Monitor wall for host checks",
-      "Tungsten practicals and soft key rig",
+      "Integrated 2700K warm string light and wash rig",
+      "PA audio system suitable for live acoustic and background playback",
+      "Catering staging area with running water and power connections",
     ],
     faqs: [
       {
-        q: "How many guests can the podcast room host?",
-        a: "Comfortably up to 4 on a two-host layout, or 6 in a round-table layout with two additional cameras. Audio feeds scale per guest — no shared mics.",
+        q: "What is the guest capacity for evening events?",
+        a: "The central courtyard comfortably accommodates 80–120 seated guests for banquet dining, or up to 250 guests in an open cocktail-reception format across the courtyards and lawn.",
       },
       {
-        q: "Do you provide the editing of the full episode?",
-        a: "Yes. The full-episode edit, captions and one vertical cutdown are included in every recording package. Additional cutdowns (say, 5 for a 4-episode drop) are quoted per reel.",
+        q: "Can we bring our own caterer and decor vendors?",
+        a: "Yes. You may bring your preferred catering and decor teams. We also maintain a curated list of trusted Delhi partners who know the property's logistics intimately.",
       },
       {
-        q: "Can we record our own music or voiceover in the room?",
-        a: "The acoustic treatment is built for dialogue, not music. For music sessions we'll point you to a partner room in our production house; same crew, better acoustics.",
+        q: "Until what time can music play outdoors?",
+        a: "In compliance with local guidelines, outdoor amplified sound operates until 22:00 IST, after which acoustic and ambient background sound can continue inside the shaded suites.",
       },
       {
-        q: "How fast do we get the cutdown?",
-        a: "The first vertical reel is delivered within 48 hours of recording. The full episode edit and captions follow in 5 working days.",
+        q: "Is on-site valet parking available?",
+        a: "Yes. The property features dedicated vehicle ingress and valet staging that accommodates 25+ vehicles comfortably.",
       },
     ],
-    turnaround: "Reels in 48h · full episode in 5 days",
-    from: "From ₹35,000 / recording day",
-    duration: "Half or full day",
+    turnaround: "Custom proposal within 24 hours of inquiry",
+    from: "From ₹85,000 / evening event",
+    duration: "Evening: 17:00 – 23:00 (6 hours)",
+    img: "/assets/real/events-still.webp",
+    video: "/assets/real/events-reel.mp4",
   },
 ];
 
 /* ——————————————————————————————————————————————
-   Portfolio
+   Portfolio (100% verified real assets)
    ———————————————————————————————————————————————— */
 
 export type PortfolioItem = {
   id: string;
   title: string;
-  category: "fashion" | "commercial" | "product" | "podcast";
+  category: "fashion" | "commercial" | "studio" | "events";
   type: "Still" | "Reel";
   year: string;
   credit: string;
   blurb: string;
   aspect: string; // css aspect-ratio for the media box
   img: string;
-  motif:
-    | "hero"
-    | "fashion"
-    | "product"
-    | "podcast"
-    | "commercial"
-    | "crew"
-    | "lens"
-    | "studio";
+  video?: string; // seamless live motion video loop
+  motif: "fashion" | "commercial" | "studio" | "events";
 };
 
-/**
- * Media paths — filled in from Flow-generated assets in
- * `partner-asset-manifest.md`. `aspect` is pre-declared so the
- * masonry layout has zero layout shift before images load.
- */
 export const PORTFOLIO: PortfolioItem[] = [
   {
-    id: "atelier-meraki",
-    title: "Atelier Meraki — Autumn Lookbook",
+    id: "haveli-staircase-editorial",
+    title: "Royal Haveli & Grand Staircase",
     category: "fashion",
-    type: "Still",
-    year: "2026",
-    credit: "Editorial · 24 looks",
-    blurb:
-      "A 24-look autumn lookbook shot over two days on the cyclorama. Window light for the linen looks, hard strobes for the structured tailoring. Grade matched to the brand's ochre-and-bone palette.",
-    aspect: "4/5",
-    img: "/assets/flow/fashion.jpg",
-    motif: "fashion",
-  },
-  {
-    id: "sundara-campaign",
-    title: "Sundara — 'Slow Mornings' Campaign",
-    category: "commercial",
     type: "Reel",
     year: "2026",
-    credit: "60s hero + 3 cutdowns",
+    credit: "Haute Couture Editorial · 4K 50fps",
     blurb:
-      "A 60-second hero film for a coffee brand: single-continuous takes, steam as the third character, and a family of vertical cuts for launch week. Shot on 6K with 17mm prime glass.",
-    aspect: "21/9",
-    img: "/assets/flow/commercial.jpg",
-    motif: "commercial",
-  },
-  {
-    id: "lumen-skincare",
-    title: "Lumen — Skincare Launch Kit",
-    category: "product",
-    type: "Still",
-    year: "2025",
-    credit: "12 products · still + motion",
-    blurb:
-      "The full launch kit for a glass-bottle skincare range: macro stills, hero motion loops and lifestyle context shots, all lit through a single light-table build so the feed reads as one family.",
-    aspect: "1/1",
-    img: "/assets/flow/product.jpg",
-    motif: "product",
-  },
-  {
-    id: "field-notes-show",
-    title: "Field Notes — Season Two Set",
-    category: "podcast",
-    type: "Reel",
-    year: "2026",
-    credit: "Multi-cam + on-set reel",
-    blurb:
-      "Three-camera podcast set for a long-form interview show. Individual mix-minus per guest, warm tungsten practicals, and the first vertical cutdown delivered same-evening while the crew was still packing.",
+      "Grand architectural framing on the exterior stone staircase of the Royal Haveli. High-angle drone reveal gliding over Rajasthani jharokhas and handpainted floral niches.",
     aspect: "16/9",
-    img: "/assets/flow/podcast.jpg",
-    motif: "podcast",
+    img: "/assets/real/portfolio-haveli-staircase.webp",
+    video: "/assets/real/portfolio-haveli-staircase.mp4",
+    motif: "fashion",
   },
   {
-    id: "dhara-runway",
-    title: "Dhara — Couture Show Coverage",
-    category: "fashion",
-    type: "Reel",
-    year: "2025",
-    credit: "Runway · 18 looks",
-    blurb:
-      "On-floor runway coverage with a synced second camera: walk, head-turn, and detail frames cut to the house music. Delivered the morning after the show for the brand's announcement post.",
-    aspect: "3/2",
-    img: "/assets/flow/crew.jpg",
-    motif: "crew",
-  },
-  {
-    id: "barista-co",
-    title: "Barista Co — Barista Tools Line",
-    category: "product",
-    type: "Still",
-    year: "2025",
-    credit: "Steel & wood · 9 SKUs",
-    blurb:
-      "A nine-piece pour-over line shot for both the brand site and a retailer listing. Macro detail passes for the burr, the spout and the wood grain, on a shared stone-and-linen set.",
-    aspect: "4/5",
-    img: "/assets/flow/lens.jpg",
-    motif: "lens",
-  },
-  {
-    id: "kites-ott",
-    title: "Kites Films — OTT Series Promo",
-    category: "commercial",
+    id: "diwali-courtyard-gala",
+    title: "Diwali at The Courtyard Gala",
+    category: "events",
     type: "Reel",
     year: "2026",
-    credit: "45s + social suite",
+    credit: "Evening Festive Soirée · DaVinci Resolve Master",
     blurb:
-      "Promo suite for a streaming series: one 45-second hero and six 6s social cuts, graded to the show's teal-and-amber LUT with the episode titles typeset on-brand.",
-    aspect: "21/9",
-    img: "/assets/flow/hero.jpg",
+      "A magical evening celebration in the main courtyard: overhead fairy light canopy, candlelit velvet banquet tables, illuminated royal arches, and live cocktail bar.",
+    aspect: "9/16",
+    img: "/assets/real/portfolio-night-banquet.webp",
+    video: "/assets/real/portfolio-night-banquet.mp4",
+    motif: "events",
+  },
+  {
+    id: "mughal-terracotta-campaign",
+    title: "Mughal Terracotta Pavilion",
+    category: "commercial",
+    type: "Still",
+    year: "2026",
+    credit: "Brand Campaign · 50fps Aerial Track",
+    blurb:
+      "Geometric terracotta jali screens filtering natural morning sunbeams onto patterned veranda floors, accented with hanging brass Moroccan lanterns.",
+    aspect: "16/9",
+    img: "/assets/real/portfolio-terracotta-jali.webp",
+    video: "/assets/real/portfolio-terracotta-jali.mp4",
     motif: "commercial",
   },
   {
-    id: "amara-portrait",
-    title: "Amara — Founder Portrait Series",
+    id: "chefchaouen-blue-arches",
+    title: "Chefchaouen Arches Fashion Suite",
     category: "fashion",
+    type: "Reel",
+    year: "2026",
+    credit: "Contemporary Resort Wear · Drone Pan",
+    blurb:
+      "Vivid cobalt blue walls and delicate white horseshoe jalis with mosaic stone flooring. High-contrast Mediterranean aesthetic creating striking editorial color pops.",
+    aspect: "16/9",
+    img: "/assets/real/portfolio-blue-arches.webp",
+    video: "/assets/real/portfolio-blue-arches.mp4",
+    motif: "fashion",
+  },
+  {
+    id: "courtyard-birdseye-geometry",
+    title: "Geometric Terracotta & Cane Patio",
+    category: "studio",
     type: "Still",
     year: "2026",
-    credit: "8 portraits · window light",
+    credit: "90° Birds-Eye Drone Aerial",
     blurb:
-      "Eight founder portraits across two studio days, all window light, all one grade. Shot tight on the face and wide on the desk — the two frames used as a pair in the company profile.",
-    aspect: "3/4",
-    img: "/assets/flow/hero.jpg",
-    motif: "fashion",
+      "Direct top-down 90-degree perspective over the central courtyard: traditional woven cane moodha chairs, tea table, and black-and-white woven charpai on terracotta paving.",
+    aspect: "16/9",
+    img: "/assets/real/portfolio-birdseye-cane.webp",
+    video: "/assets/real/portfolio-birdseye-cane.mp4",
+    motif: "studio",
+  },
+  {
+    id: "thatched-village-tower",
+    title: "Thatched Lookout & Rustic Set",
+    category: "studio",
+    type: "Still",
+    year: "2026",
+    credit: "Rustic Heritage Production · 4K Drone Sweep",
+    blurb:
+      "Elevated view of the rustic village set: natural reed thatched canopy, timber observation deck, mud wash walls, and handcrafted jute props.",
+    aspect: "16/9",
+    img: "/assets/real/portfolio-thatched-tower.webp",
+    video: "/assets/real/portfolio-thatched-tower.mp4",
+    motif: "studio",
+  },
+  {
+    id: "brass-lantern-entrance",
+    title: "Mughal Lanterns & Arch Glide",
+    category: "commercial",
+    type: "Reel",
+    year: "2026",
+    credit: "Cinematic Tracking Pass · Eye-Level 4K",
+    blurb:
+      "Smooth glide through the grand terracotta arch flanked by antique brass filigree lanterns and lush banana foliage, capturing architectural depth.",
+    aspect: "16/9",
+    img: "/assets/real/portfolio-brass-lanterns.webp",
+    video: "/assets/real/portfolio-brass-lanterns.mp4",
+    motif: "commercial",
+  },
+  {
+    id: "vip-festive-gathering",
+    title: "Celebrity Gala & Evening Reception",
+    category: "events",
+    type: "Reel",
+    year: "2026",
+    credit: "VIP Gathering · DaVinci Resolve Master",
+    blurb:
+      "High-profile festive celebration at The Courtyard Stories: guests in regal ethnic attire, glowing courtyard lamps, and warm starlit ambiance.",
+    aspect: "9/16",
+    img: "/assets/real/portfolio-festive-gathering.webp",
+    video: "/assets/real/portfolio-festive-gathering.mp4",
+    motif: "events",
   },
 ];
 
 export const CATEGORIES = [
-  { key: "all", label: "All work" },
-  { key: "fashion", label: "Fashion" },
-  { key: "commercial", label: "Commercial" },
-  { key: "product", label: "Product" },
-  { key: "podcast", label: "Podcast & Video" },
+  { key: "all", label: "All sets & reels" },
+  { key: "fashion", label: "Fashion & Lookbooks" },
+  { key: "commercial", label: "Commercials & Aerials" },
+  { key: "studio", label: "Architectural Sets" },
+  { key: "events", label: "Night Galas & Events" },
 ] as const;
 
 /* ——————————————————————————————————————————————
-   Studio space & amenities
+   Studio space & amenities (Real Facts)
    ———————————————————————————————————————————————— */
 
 export const STUDIO_FACTS = [
   {
-    stat: "1,800",
-    label: "sq ft studio floor",
-    note: "Split across the cyclorama bay and the podcast suite",
+    stat: "12,000+",
+    label: "sq ft production estate",
+    note: "Spanning 5 modular architectural zones and open courtyards",
   },
   {
-    stat: "30 ft",
-    label: "cyclorama wall",
-    note: "Seamless white, curved to floor — built for fashion and product",
+    stat: "5",
+    label: "distinct world sets",
+    note: "Rajasthani Haveli, Mughal Colonnade, Chefchaouen Suite, Thatched Tower, and Night Gala",
   },
   {
-    stat: "11 am",
-    label: "peak window light",
-    note: "North-facing window wall for soft, shadowless key light",
+    stat: "360°",
+    label: "drone flight clearance",
+    note: "Clear open-sky airspace for sweeps, crane tracks, and aerial establishing passes",
   },
   {
-    stat: "6",
-    label: "on-set crew max",
-    note: "Casting, styling and second units comfortably hosted",
+    stat: "Day to Night",
+    label: "lighting versatility",
+    note: "From crisp morning sunbeams to full overhead fairy light and lantern rig",
   },
 ];
 
 export const STUDIO_FEATURES = [
   {
-    title: "Natural-light cyclorama",
-    body: "A 30-foot seamless cyclorama sits behind a north-facing window wall. The morning sun gives you a soft key that costs nothing in strobes — most fashion clients book 10 am to 1 pm for this reason.",
+    title: "Double-Story Royal Haveli",
+    body: "An authentic Rajasthani heritage palace facade with double-height jharokha balconies, handpainted floral alcoves, authentic carved wooden doors, and an exterior stone staircase.",
   },
   {
-    title: "Podcast & voice suite",
-    body: "Acoustically treated room with three locked-off cinema cameras, individual mix-minus feeds per guest, and a monitor wall. We run it as our own podcast floor and rent it by the half-day.",
+    title: "Grand Mughal Terracotta Pavilion",
+    body: "Full-height carved terracotta jali screens, Moroccan brass hanging lanterns, and rhythmic shaded arches that create hypnotic geometric shadow patterns throughout the day.",
   },
   {
-    title: "Green room & cast area",
-    body: "Dressing room with mirrors, makeup counter, hair stations and a full wardrobe rack. Cast, models and external stylists have a proper space that isn't the corridor.",
+    title: "Chefchaouen Moroccan Suite",
+    body: "Vivid cobalt blue walls with mustard contrast, white horseshoe arch latticework screens, artisanal ceramic plate wall decor, and mosaic tile courtyards for striking color pops.",
   },
   {
-    title: "Colour grade bay",
-    body: "A calibrated grading suite with a reference monitor. Clients can sit in the room and approve the grade with us before files are delivered — no blind email round-trips.",
+    title: "Rustic Thatched Lookout & Village Set",
+    body: "Natural reed thatch roof, wooden observation platform, mud plaster textures, jute grain sacks, and organic rural textures for earthy, grounded visual storytelling.",
+  },
+  {
+    title: "Overhead Fairy Light & Night Gala Rig",
+    body: "A permanent overhead matrix of warm fairy lights, architectural uplights, and glowing brass wall lanterns that transforms the courtyard into an illuminated wonderland after dusk.",
+  },
+  {
+    title: "Vanity Suites & Production Logistics",
+    body: "Air-conditioned green rooms with illuminated makeup vanity stations, clothing racks, private restrooms, 3-phase industrial power, and dedicated on-site parking for 25+ vehicles.",
   },
 ];
 
 /* ——————————————————————————————————————————————
-   Global FAQ (services pages have their own)
+   Global FAQ
    ———————————————————————————————————————————————— */
 
 export const SITE_FAQS = [
   {
-    q: "Where is the studio and how do we get there?",
-    a: "The studio is on Saket, New Delhi — a 15-minute drive from Saket metro. There's on-site parking for two cars; the rest of the team can park in the lot next door. We'll share the pin on confirmation.",
+    q: "Where is The Courtyard Stories located in Delhi?",
+    a: "We are located in South Delhi near Saket / Sultanpur road enclave. The estate is easily accessible via Saket and Sultanpur metro stations (15-20 min drive) with secure on-site parking for up to 25 production vehicles and vanity vans.",
   },
   {
-    q: "Do we have to come to Delhi, or can the shoot happen at our location?",
-    a: "Both. Studio shoots happen at Saket; we also produce location shoots across Delhi NCR and day-trip destinations. Location adds travel and logistics time to the quote — it's always scoped before you book.",
+    q: "Can we shoot both photo and video simultaneously across the sets?",
+    a: "Yes! Because the estate encompasses 5 distinct contiguous sets across 12,000+ sq ft, multiple camera units can operate in parallel (e.g. still lookbook in the Haveli while video reels shoot in the Mughal Colonnade) without interfering with each other.",
   },
   {
-    q: "How do we pay, and what's the advance?",
-    a: "A 40% advance confirms the date; the balance is due on delivery. UPI, NEFT and cards are all accepted. The booking link walks you through both steps.",
+    q: "Are drones allowed to fly over the sets?",
+    a: "Yes. The Courtyard Stories has clear open-sky clearance for drone aerials, crane shots, and high-altitude establishing sweeps. We have in-house DJI drone setups with 4K 50fps capability, or you can bring your own certified pilot.",
   },
   {
-    q: "What's your policy on rush turnaround?",
-    a: "48-hour rush is available on fashion and product stills. Commercial and podcast work has a fixed post pipeline — we'll tell you what's actually achievable when you ask, not promise the impossible.",
+    q: "What is the policy for evening and night shoots?",
+    a: "We are fully equipped for night shoots! Our permanent overhead fairy light canopy, brass lanterns, and warm architectural uplights illuminate the courtyards automatically, creating a breathtaking night gala set for celebrations, lookbooks, and commercials.",
   },
   {
-    q: "Can we use the work for paid media?",
-    a: "Yes. Everything delivered is cleared for paid use, social and print. Model releases and music licences are part of the delivery — we flag anything that needs attention before it ships.",
+    q: "How do we book a shoot or schedule a location walkthrough?",
+    a: "You can book directly via our Enquire form or WhatsApp our Studio Director at +91-98110-44320. We welcome creative directors, stylists, and DPs for a complimentary 30-minute location walkthrough before confirming dates.",
   },
   {
-    q: "Do you shoot for brands outside fashion and D2C?",
-    a: "We're strongest in fashion, commercial, product and podcast work. We've produced for F&B, tech, real estate and education — if the brief is visual-first, we're the right studio.",
+    q: "What are the payment and deposit terms?",
+    a: "A 40% advance payment reserves your date exclusively on our calendar. The remaining 60% balance is payable on the shoot day upon arrival. We accept UPI, bank transfers (NEFT/RTGS), and major cards.",
   },
 ];
 
@@ -480,31 +598,31 @@ export const SITE_FAQS = [
 export const ENQUIRY_STEPS = [
   { key: "shoot", label: "Shoot type" },
   { key: "date", label: "Dates & scale" },
-  { key: "needs", label: "Crew & kit" },
+  { key: "needs", label: "Sets & kit" },
   { key: "contact", label: "Your details" },
 ] as const;
 
 export const SHOOT_TYPES = [
-  { key: "fashion", label: "Fashion editorial", desc: "Lookbooks, campaigns, runway" },
-  { key: "commercial", label: "Commercial / brand film", desc: "Hero film, cutdowns, ads" },
-  { key: "product", label: "Product photography", desc: "Still + motion, e-commerce" },
-  { key: "podcast", label: "Podcast / video", desc: "Episodes, multi-cam sets" },
-  { key: "space", label: "Space only", desc: "Cyclorama, podcast room" },
-  { key: "other", label: "Something else", desc: "Tell us in the notes" },
+  { key: "fashion", label: "Fashion & Couture Lookbook", desc: "Haute couture, bridal, contemporary apparel" },
+  { key: "commercial", label: "Commercial / Brand Film", desc: "TVCs, D2C films, digital ads, music videos" },
+  { key: "studio", label: "Location / Set Rental", desc: "Exclusive venue hire for external crews" },
+  { key: "events", label: "Brand Launch / Night Gala", desc: "Festive soirées, receptions, intimate events" },
+  { key: "drone", label: "Drone & Aerial Production", desc: "High-altitude architectural & tracking sweeps" },
+  { key: "other", label: "Custom Production", desc: "Tell us about your unique creative concept" },
 ] as const;
 
 export const CREW_SIZES = [
-  { key: "1-2", label: "Just us (1–2)" },
-  { key: "3-5", label: "Small crew (3–5)" },
-  { key: "6-10", label: "Full team (6–10)" },
-  { key: "10+", label: "Large cast (10+)" },
+  { key: "1-5", label: "Compact crew (1–5 people)" },
+  { key: "6-15", label: "Standard production (6–15 people)" },
+  { key: "16-30", label: "Full commercial unit (16–30 people)" },
+  { key: "30+", label: "Large cast & crew / Event (30+ people)" },
 ] as const;
 
 export const KIT_NEEDS = [
-  { key: "camera", label: "Camera + lens kit" },
-  { key: "lighting", label: "Lighting rig" },
-  { key: "styling", label: "Styling / set design" },
-  { key: "audio", label: "Audio recording" },
-  { key: "colorist", label: "Colourist" },
-  { key: "editing", label: "Video editor" },
+  { key: "drone", label: "DJI 4K Drone + Pilot" },
+  { key: "lighting", label: "High-Output Lighting & Grip" },
+  { key: "greenroom", label: "AC Vanity / Green Rooms" },
+  { key: "nightrig", label: "Fairy Lights & Night Gala Rig" },
+  { key: "sound", label: "Audio & PA System" },
+  { key: "generator", label: "Silent Generator Tie-in" },
 ] as const;

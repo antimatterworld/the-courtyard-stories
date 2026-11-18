@@ -24,9 +24,9 @@ export default function ServiceDetail() {
         serviceJSONLD(s.slug) ?? {},
         faqJSONLD(s.faqs),
         breadcrumbJSONLD([
-          { name: STUDIO.name, url: "https://courtyardstories.in/" },
-          { name: "Services", url: "https://courtyardstories.in/services" },
-          { name: s.name, url: `https://courtyardstories.in/services/${s.slug}` },
+          { name: STUDIO.name, url: "https://thecourtyard-stories.com/" },
+          { name: "Services", url: "https://thecourtyard-stories.com/services" },
+          { name: s.name, url: `https://thecourtyard-stories.com/services/${s.slug}` },
         ]),
       ]}
     >
@@ -69,6 +69,18 @@ export default function ServiceDetail() {
                 <b>{s.duration}</b>
                 <span>On set</span>
               </div>
+            </div>
+            <div className="reveal" style={{ marginTop: "var(--s-7)" }}>
+              <video
+                src={s.video}
+                poster={s.img}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                style={{ width: "100%", maxHeight: "440px", objectFit: "cover", borderRadius: "var(--radius)", border: "1px solid var(--line-soft)" }}
+              />
             </div>
           </div>
         </section>

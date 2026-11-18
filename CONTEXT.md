@@ -18,6 +18,8 @@
 - `vite.config.ts`, `wrangler.toml`, `functions/api/enquiry.ts`, `public/{sitemap.xml,robots.txt,llms.txt,_redirects}`, `partner-asset-manifest.md`
 
 ## Next
+0. **DEPLOY (done 2026-11-18):** site live at https://courtyard-stories.pages.dev (HTTP 200), Cloudflare Pages project `courtyard-stories`. All in-site refs corrected to the real domain `thecourtyard-stories.com` (sitemap/canonical/JSON-LD/robots/llms + src). `product-loop.mp4` re-encoded 32M→2.2M to clear Cloudflare's 25 MiB cap (source still 32M in `public/`; build artifact patched post-build — rebuild overwrites it).
+1. **DOMAIN (blocked on owner, 1 GoDaddy click):** `thecourtyard-stories.com` (GoDaddy registrar, created 2026-11-01) added to Cloudflare account as zone `69149f1e3c0c3d9e62a331feff28c970`, but status stuck `pending` due to a **nameserver-pair mismatch**: Cloudflare assigned `aron`/`zod.ns.cloudflare.com` to this zone, while GoDaddy currently points `gail`/`noel.ns.cloudflare.com`. Owner must edit GoDaddy nameservers to `aron.ns.cloudflare.com` + `zod.ns.cloudflare.com`. `.env` GoDaddy creds are a password (GoDaddy API needs key/secret, returns 401) so this can't be automated from here. Once zone → `active`, re-add the Pages custom domain + confirm SSL. (An earlier wrong-domain zone `courtyardstories.in` id `7ab73367a2ef21d40d0f258b652b65f7` is orphaned — delete it.)
 1. **Wait for Flow render** of `~/flow-mcp-out/courtyard-hero/scene-01..07.jpg` → downscale with ffmpeg to 1600px, copy to `public/assets/flow/{hero,fashion,product,podcast,crew,lens,commercial}.jpg` (scene-07 = commercial)
 2. ffmpeg ambient loop `public/assets/flow/hero-loop.mp4` per manifest spec
 3. Create `public/assets/og/og-studio.jpg` (1200×630 crop of hero.jpg) for OG preview

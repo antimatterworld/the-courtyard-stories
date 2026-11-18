@@ -178,7 +178,7 @@ export function Footer() {
                 Photography &amp; video production studio · {STUDIO.city}
               </span>
             </div>
-            <p style={{ marginTop: "var(--s-5)", maxWidth: "38ch", color: "color-mix(in srgb, var(--bg) 75%, transparent)", fontSize: "var(--t-small)", lineHeight: 1.7 }}>
+            <p style={{ marginTop: "var(--s-5)", maxWidth: "38ch", color: "var(--footer-ink-soft)", fontSize: "var(--t-small)", lineHeight: 1.7 }}>
               High-end fashion editorials, commercial campaigns, product
               cinematography and podcast production — shot on film-grain craft
               and delivered with a colourist's eye.
@@ -219,7 +219,7 @@ export function Footer() {
 
           <div>
             <h4>Visit the studio</h4>
-            <address style={{ fontSize: "var(--t-small)", fontStyle: "normal", color: "color-mix(in srgb, var(--bg) 75%, transparent)", lineHeight: 1.9 }}>
+            <address style={{ fontSize: "var(--t-small)", fontStyle: "normal", color: "var(--footer-ink-soft)", lineHeight: 1.9 }}>
               {STUDIO.address}
               <br />
               {STUDIO.hours}

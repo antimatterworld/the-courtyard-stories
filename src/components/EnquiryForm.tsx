@@ -56,7 +56,7 @@ export function EnquiryForm({ initial }: { initial?: Prefill }) {
     notes: initial?.notes ?? "",
   });
 
-  const isSpaceOnly = form.shootType === "space";
+  const isSpaceOnly = form.shootType === "space" || form.shootType === "studio";
   const isPodcast = form.shootType === "podcast";
   const isOther = form.shootType === "other";
 

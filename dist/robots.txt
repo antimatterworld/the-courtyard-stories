@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://courtyardstories.in/sitemap.xml
+Sitemap: https://thecourtyard-stories.com/sitemap.xml
 
 # AI engines: allow full crawl of citation-optimized content
 User-agent: GPTBot

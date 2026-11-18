@@ -42,16 +42,25 @@ export default function ServicesHub() {
         </section>
 
         {SERVICES.map((s, i) => (
-          <section key={s.slug} className={i % 2 ? "studio-band" : ""} aria-label={s.name}>
+          <section key={s.slug} className={`section ${i % 2 ? "studio-band" : ""}`} aria-label={s.name}>
             <div className="container split split-rev">
               <div className="split-media reveal">
                 <StudioImage
                   className="plate-media"
-                  src={`/assets/flow/${s.slug}.jpg`}
+                  src={s.img}
                   alt={`${s.name} at The Courtyard Stories`}
                   motif={s.motif}
                   eager={i === 0}
                   tag={`Craft ${s.index} of 04`}
+                />
+                <video
+                  className="plate-video is-active"
+                  src={s.video}
+                  poster={s.img}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
               <div>

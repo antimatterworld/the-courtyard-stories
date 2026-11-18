@@ -2,7 +2,7 @@ import { SERVICES, SITE_FAQS, STUDIO, PORTFOLIO } from "../data/content";
 
 export type JSONLD = Record<string, unknown>;
 
-const SITE = "https://courtyardstories.in";
+const SITE = "https://thecourtyard-stories.com";
 
 /* — LocalBusiness / PhotographyStudio (all pages) — */
 export function localBusiness(): JSONLD {
@@ -12,8 +12,8 @@ export function localBusiness(): JSONLD {
     "@id": `${SITE}/#studio`,
     name: STUDIO.name,
     url: SITE,
-    logo: `${SITE}/assets/og-studio.jpg`,
-    image: SERVICES.map((s) => `${SITE}/assets/flow/${s.slug}.jpg`),
+    logo: `${SITE}/assets/og/og-courtyard.jpg`,
+    image: SERVICES.map((s) => `${SITE}${s.img}`),
     telephone: STUDIO.phone,
     email: STUDIO.email,
     address: {
@@ -33,17 +33,17 @@ export function localBusiness(): JSONLD {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "09:00",
+        opens: "08:00",
         closes: "21:00",
       },
     ],
     priceRange: "₹₹₹",
     areaServed: "Delhi NCR",
     description:
-      "The Courtyard Stories is a premium photography and video production studio in Saket, New Delhi — fashion editorials, commercial campaigns, product cinematography and podcast production on a natural-light cyclorama.",
+      "The Courtyard Stories is an authentic 12,000+ sq ft architectural production estate in Saket, New Delhi — featuring 5 heritage sets (Rajasthani Haveli, Mughal Terracotta Colonnade, Chefchaouen Moroccan Suite, Thatched Village Set, and Night Gala Rig), 360° drone clearance, fashion lookbooks, commercial films, and luxury event production.",
     sameAs: [`https://instagram.com/${STUDIO.instagram.replace("@", "")}`],
     foundingDate: String(STUDIO.est),
-    knowsAbout: ["fashion photography", "commercial film", "product cinematography", "podcast production"],
+    knowsAbout: ["architectural sets", "drone cinematography", "fashion lookbooks", "commercial films", "location hire", "luxury gala events"],
   };
 }
 

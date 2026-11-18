@@ -1,28 +1,11 @@
 # The Courtyard Stories — Cloudflare Pages + Functions
-# Deploy: npx wrangler pages deploy dist
-# Enquiry POSTs hit /api/enquiry (Functions) and forward to the
-# configured collector (email/Google-Sheet/whatsapp-webhook).
+# Deploy: npx wrangler pages deploy dist --project-name courtyard-stories
 
 name = "courtyard-stories"
 compatibility_date = "2025-06-01"
-
 pages_build_output_dir = "dist"
 
 [vars]
 # Collect enquiry JSON where the team reads it. Swap for a
 # Make/Zapier/Google-Apps-Script webhook in production.
 ENQUIRY_COLLECTOR_URL = "https://courtyardstories-internal.dev/hooks/enquiry"
-
-# Security headers
-[headers]
-  "/*" = [
-    "X-Content-Type-Options: nosniff",
-    "Referrer-Policy: strict-origin-when-cross-origin",
-    "Permissions-Policy: camera=(self), microphone=(self)",
-  ]
-  "/assets/*" = [
-    "Cache-Control: public, max-age=31536000, immutable",
-  ]
-  "/llms.txt" = [
-    "Cache-Control: public, max-age=3600",
-  ]

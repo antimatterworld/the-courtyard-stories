@@ -4,3 +4,7 @@ _dist
 _tasks
 .DS_Store
 *.log
+drive_raw/
+src_backup_*/
+.wrangler/
+

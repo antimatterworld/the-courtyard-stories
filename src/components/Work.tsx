@@ -20,7 +20,7 @@ export function WorkGallery({ embedded = false }: { embedded?: boolean }) {
   );
 
   return (
-    <section className={embedded ? "" : "section"} id="work">
+    <section className={embedded ? "section-work-embedded" : "section"} id="work">
       <div className="container">
         {!embedded && (
           <div className="reveal" style={{ marginBottom: "var(--s-8)", display: "flex", flexWrap: "wrap", alignItems: "end", justifyContent: "space-between", gap: "var(--s-5)" }}>
@@ -35,7 +35,7 @@ export function WorkGallery({ embedded = false }: { embedded?: boolean }) {
           </div>
         )}
 
-        <div className="reveal" style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: "var(--s-7)" }} role="group" aria-label="Filter work by category">
+        <div className="reveal work-filter-tabs" role="group" aria-label="Filter work by category">
           {CATEGORIES.map((c) => (
             <button
               key={c.key}
@@ -65,6 +65,9 @@ export function WorkGallery({ embedded = false }: { embedded?: boolean }) {
 }
 
 function WorkItem({ item, index, onOpen }: { item: PortfolioItem; index: number; onOpen: () => void }) {
+  const isReel = item.type === "Reel";
+  const hasVideo = !!item.video;
+
   const media = (
     <div className="masonry-media" style={{ aspectRatio: item.aspect }}>
       <StudioImage
@@ -74,13 +77,24 @@ function WorkItem({ item, index, onOpen }: { item: PortfolioItem; index: number;
         motif={item.motif}
         eager={index < 2}
       />
+      {hasVideo && isReel && (
+        <video
+          className="plate-video is-active"
+          src={item.video}
+          poster={item.img}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      )}
       <span className="masonry-type">
-        {item.type === "Reel" ? "● Reel" : "Frame"} {item.year}
+        {isReel ? "● Live Reel" : "Frame"} {item.year}
       </span>
-      {item.type === "Reel" && (
+      {isReel && (
         <div className="video-scrub" aria-hidden="true">
-          <span>00:00 / 0:15</span>
-          <span className="vbar"><i style={{ ["--v" as string]: "0.35" } as CSSProperties} /></span>
+          <span>{hasVideo ? "● SEAMLESS LOOP" : "00:00 / 0:15"}</span>
+          <span className="vbar"><i style={{ ["--v" as string]: "0.45" } as CSSProperties} /></span>
           <span>Reel</span>
         </div>
       )}
@@ -150,7 +164,20 @@ function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: () => v
       <div className="modal-backdrop" onClick={onClose} />
       <div className="modal-panel" onClick={stop}>
         <div className="modal-media">
-          <StudioImage className="plate-fill" src={item.img} alt={item.title} motif={item.motif} eager />
+          {item.video ? (
+            <video
+              className="modal-video-player"
+              src={item.video}
+              poster={item.img}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          ) : (
+            <StudioImage className="plate-fill" src={item.img} alt={item.title} motif={item.motif} eager />
+          )}
           {isReel && (
             <div
               style={{
@@ -163,7 +190,7 @@ function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: () => v
                 display: "flex",
                 alignItems: "center",
                 gap: 10,
-                background: "rgba(20,17,13,.7)",
+                background: "rgba(20,17,13,.75)",
                 fontFamily: "var(--font-mono)",
                 fontSize: 10,
                 letterSpacing: "0.14em",
@@ -171,7 +198,7 @@ function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: () => v
               }}
               aria-hidden="true"
             >
-              <span style={{ opacity: 0.7 }}>▸ PREVIEW LOOP</span>
+              <span style={{ opacity: 0.9, color: "var(--accent)" }}>▸ 4K 50FPS · PRODUCTION MASTER</span>
               <span style={{ flex: 1, height: 2, background: "rgba(244,239,231,.25)", overflow: "hidden" }}>
                 <span
                   style={{
@@ -185,7 +212,7 @@ function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: () => v
                   }}
                 />
               </span>
-              <span>{String(Math.floor((progress * 15) / 60)).padStart(2, "0")}:{String(Math.floor(progress * 15) % 60).padStart(2, "0")}</span>
+              <span>ESTATE FOOTAGE</span>
             </div>
           )}
         </div>

@@ -6,10 +6,10 @@ import { localBusiness } from "../lib/schema";
 import { STUDIO, waLink } from "../data/content";
 
 const VISIT_TYPES = [
-  { key: "walkthrough", label: "Studio walkthrough", desc: "20 min · cyclorama, podcast suite, grade bay" },
-  { key: "quote", label: "Quote meeting", desc: "Bring the brief · we scope the floor + crew" },
-  { key: "recce", label: "Location recce", desc: "For shoots we'll plan outside the studio" },
-  { key: "delivery", label: "File pickup / grade review", desc: "Sit in the grade bay, approve before delivery" },
+  { key: "walkthrough", label: "Estate Walkthrough", desc: "30 min · Walk the 5 architectural sets, check sun angles & drone clearances" },
+  { key: "quote", label: "Production Scoping", desc: "Bring the brief · We align shot list, crew sizes & day/night lighting setups" },
+  { key: "recce", label: "Director & DP Technical Recce", desc: "Technical recce · Camera tracks, drone takeoff points, power tie-ins & grip" },
+  { key: "event", label: "Event & Gala Walkthrough", desc: "Walkthrough for luxury brand launches, private soirées & night banquets" },
 ] as const;
 
 export default function Visit() {
@@ -17,8 +17,8 @@ export default function Visit() {
 
   return (
     <Page
-      title="Visit the Studio & Book a Walkthrough · The Courtyard Stories, Saket"
-      description={`Walkthroughs, quote meetings and grade reviews at ${STUDIO.addressShort}. ${STUDIO.hours}. Book online or WhatsApp the desk.`}
+      title="Visit the Estate & Book a Walkthrough · The Courtyard Stories, South Delhi"
+      description={`Estate walkthroughs, production recces and technical scoping at ${STUDIO.addressShort}. ${STUDIO.hours}. Book online or WhatsApp the studio desk.`}
       schema={[localBusiness()]}
     >
       <div ref={reveal}>
@@ -27,13 +27,13 @@ export default function Visit() {
             06
           </span>
           <div className="container">
-            <p className="eyebrow reveal">Visit &amp; book</p>
+            <p className="eyebrow reveal">Visit &amp; recce</p>
             <h1 className="h1 reveal">
-              Come see the light <span className="serif-italic">before you book it</span>
+              Come walk the sets <span className="serif-italic">before you shoot</span>
             </h1>
-            <p className="lead reveal" style={{ marginTop: "var(--s-5)", maxWidth: "48ch" }}>
-              Most of our clients start in the grade bay or on the cyclorama — a short
-              walkthrough beats a long email. Pick the kind of visit that fits.
+            <p className="lead reveal" style={{ marginTop: "var(--s-5)", maxWidth: "50ch" }}>
+              Most productions begin with an estate walkthrough — standing in the Royal Haveli,
+              testing drone sightlines, and watching the sun hit the terracotta jali beats a pitch deck every time.
             </p>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function Visit() {
               <div>
                 <p className="eyebrow reveal">Direct lines</p>
                 <h2 className="h2 reveal">
-                  The desk, <span className="serif-italic">not a mailbox</span>
+                  The desk, <span className="serif-italic">not a ticketing queue</span>
                 </h2>
                 <div className="card reveal" style={{ padding: "var(--s-6)", marginTop: "var(--s-6)", display: "grid", gap: "var(--s-5)" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
@@ -90,29 +90,34 @@ export default function Visit() {
                   </div>
                   <a
                     className="btn btn-wa"
-                    href={waLink("Hi — I'd like to book a studio walkthrough at The Courtyard Stories.")}
+                    href={waLink("Hi — I'd like to book an estate walkthrough at The Courtyard Stories.")}
                     target="_blank"
                     rel="noreferrer"
                     style={{ justifyContent: "flex-start" }}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.45 1.34 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.23c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Z" /></svg>
-                    WhatsApp the studio desk
+                    WhatsApp the estate desk
                   </a>
                 </div>
               </div>
 
               <div className="reveal">
-                <p className="eyebrow">Getting here</p>
+                <p className="eyebrow">Location &amp; Access</p>
                 <div className="card" style={{ padding: "var(--s-6)" }}>
-                  <h3 className="h3">From Saket metro</h3>
+                  <img
+                    src="/assets/real/space-panoramic-estate.webp"
+                    alt="The Courtyard Stories 12,000 sq ft production estate in South Delhi"
+                    style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", borderRadius: "var(--radius)", marginBottom: "var(--s-5)" }}
+                  />
+                  <h3 className="h3">Getting here &amp; logistics</h3>
                   <ul style={{ marginTop: "var(--s-4)", display: "grid", gap: 10, fontSize: "var(--t-small)", color: "var(--ink-soft)" }}>
-                    <li>· 40 min by cab via the ring road (Saket → Studio Lane)</li>
-                    <li>· 2 on-site car spaces · lot next door for the crew</li>
-                    <li>· 10 min from a 24-hour pharmacy &amp; two cafés</li>
+                    <li>· 15–20 min drive from Saket &amp; Sultanpur metro stations</li>
+                    <li>· Dedicated on-site parking for up to 25 production vehicles &amp; vanity vans</li>
+                    <li>· Drive-in equipment unloading directly adjacent to architectural sets</li>
+                    <li>· 3-phase industrial power tie-ins &amp; silent generator parking</li>
                   </ul>
                   <p style={{ marginTop: "var(--s-4)", fontSize: "var(--t-small)", color: "var(--ink-soft)", lineHeight: 1.7 }}>
-                    The pin lands at the lane entrance — we share the exact drop-off
-                    address on confirmation, along with the parking lot code.
+                    Exact gate directions and access codes are shared immediately upon booking confirmation to ensure complete privacy for active productions.
                   </p>
                   <address style={{ marginTop: "var(--s-5)", paddingTop: "var(--s-4)", borderTop: "1px solid var(--line-soft)", fontSize: "var(--t-small)", color: "var(--ink-soft)", lineHeight: 1.9, fontStyle: "normal" }}>
                     {STUDIO.name}<br />

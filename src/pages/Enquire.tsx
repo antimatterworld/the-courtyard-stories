@@ -9,16 +9,15 @@ import { SERVICES, SHOOT_TYPES, SITE_FAQS, STUDIO, waLink } from "../data/conten
 const SERVICE_KEY_TO_SHOOT: Record<string, string> = {
   fashion: "fashion",
   commercial: "commercial",
-  product: "product",
-  podcast: "podcast",
-  space: "space",
+  studio: "studio",
+  events: "events",
 };
 
 const VISIT_LABELS: Record<string, string> = {
-  walkthrough: "a studio walkthrough",
-  quote: "a quote meeting",
-  recce: "a location recce",
-  delivery: "a file pickup / grade review",
+  walkthrough: "an estate walkthrough",
+  quote: "a production scoping meeting",
+  recce: "a technical director & DP recce",
+  event: "an event & gala walkthrough",
 };
 
 export default function Enquire() {
