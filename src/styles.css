@@ -592,16 +592,16 @@ ol {
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--dur-med), background var(--dur-med), backdrop-filter var(--dur-med), box-shadow var(--dur-med);
+  border-bottom: none !important;
+  transition: background var(--dur-med), backdrop-filter var(--dur-med), box-shadow var(--dur-med);
 }
 
 .topbar.scrolled {
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom-color: var(--line-soft);
-  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.15);
+  border-bottom: none !important;
+  box-shadow: 0 4px 24px -10px rgba(0, 0, 0, 0.12);
 }
 
 /* Over transparent drone hero (crystal-clear readability without dark tinting) */
@@ -1990,7 +1990,7 @@ ol {
   z-index: 1;
 }
 
-/* Minimalist Right-Aligned Story Typography (Floating over raw drone footage) */
+/* Minimalist Alternating Story Typography (Right -> Left -> Right -> Left) */
 .frame-scrub-text-stage {
   position: absolute;
   inset: 0;
@@ -2003,21 +2003,50 @@ ol {
 
 .frame-minimal-text {
   position: absolute;
-  right: var(--gutter);
   bottom: clamp(48px, 10vh, 120px);
-  max-width: min(600px, calc(100vw - (var(--gutter) * 2)));
-  text-align: right;
+  max-width: min(580px, calc(100vw - (var(--gutter) * 2)));
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  padding: clamp(20px, 2.5vw, 28px) clamp(22px, 3vw, 32px);
+  background: rgba(14, 12, 10, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.65);
   will-change: transform, opacity;
   transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Right alignment */
+.frame-minimal-text.align-right {
+  right: var(--gutter);
+  left: auto;
+  text-align: right;
+  align-items: flex-end;
+  border-right: 3px solid #f7ca7d;
+}
+
+.frame-minimal-text.align-right .minimal-text-meta {
+  justify-content: flex-end;
+}
+
+/* Left alignment */
+.frame-minimal-text.align-left {
+  left: var(--gutter);
+  right: auto;
+  text-align: left;
+  align-items: flex-start;
+  border-left: 3px solid #f7ca7d;
+}
+
+.frame-minimal-text.align-left .minimal-text-meta {
+  justify-content: flex-start;
 }
 
 .minimal-text-meta {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 10px;
   margin-bottom: 8px;
   font-family: var(--font-mono);
@@ -2029,7 +2058,7 @@ ol {
 .minimal-text-tag {
   color: #f7ca7d;
   font-weight: 600;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
 .minimal-text-sep {
@@ -2037,30 +2066,30 @@ ol {
 }
 
 .minimal-text-step {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 10px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
 .minimal-text-headline {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.6vw, 3.4rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.6rem);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.015em;
   color: #ffffff;
   margin: 0 0 10px 0;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .minimal-text-sub {
   font-family: var(--font-sans);
-  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
-  line-height: 1.5;
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  line-height: 1.55;
   color: rgba(255, 255, 255, 0.92);
   margin: 0;
   max-width: 48ch;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
 
 .frame-scrub-hint {
@@ -2095,13 +2124,22 @@ ol {
   .frame-minimal-text {
     bottom: clamp(32px, 6vh, 60px);
     max-width: calc(100vw - 32px);
+    padding: 16px 18px;
+  }
+  .frame-minimal-text.align-right {
+    right: 16px;
+    left: auto;
+  }
+  .frame-minimal-text.align-left {
+    left: 16px;
+    right: auto;
   }
   .minimal-text-headline {
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
   }
   .minimal-text-sub {
-    font-size: 0.9rem;
-    max-width: 36ch;
+    font-size: 0.88rem;
+    max-width: 100%;
   }
 }
 

@@ -9,9 +9,14 @@
 const MAX_BODY = 8 * 1024;
 
 type Env = { ENQUIRY_COLLECTOR_URL?: string };
-type ExecutionContext = { waitUntil?: (fn: Promise<unknown>) => void };
+type EventContext = {
+  request: Request;
+  env: Env;
+  waitUntil: (fn: Promise<unknown>) => void;
+};
 
-export const onRequest = async (request: Request, env: Env, _ctx: ExecutionContext): Promise<Response> => {
+export const onRequest = async (context: EventContext): Promise<Response> => {
+  const { request, env } = context;
   if (request.method !== "POST") {
     return json({ ok: false, error: "method-not-allowed" }, 405);
   }

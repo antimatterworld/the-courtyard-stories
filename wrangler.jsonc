@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "courtyard-stories",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "vars": {
+    "ENQUIRY_COLLECTOR_URL": "https://courtyardstories-internal.dev/hooks/enquiry"
+  }
+}

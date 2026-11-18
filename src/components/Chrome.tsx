@@ -67,14 +67,30 @@ export function TopBar() {
   const location = useLocation();
 
   const isHome = location.pathname === "/";
-  const isHeroTransparent = isHome && !scrolled;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      if (location.pathname === "/") {
+        // Stay completely transparent while anywhere inside the hero flythrough section!
+        // Only become colored/frosted when scrolled out of hero (#sets reaches the topbar)
+        const setsEl = document.getElementById("sets");
+        if (setsEl) {
+          const rect = setsEl.getBoundingClientRect();
+          setScrolled(rect.top <= 72);
+        } else {
+          setScrolled(window.scrollY > window.innerHeight * 3.5);
+        }
+      } else {
+        setScrolled(window.scrollY > 20);
+      }
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [location.pathname]);
+
+  const isHeroTransparent = isHome && !scrolled;
 
   useEffect(() => setDrawer(false), [location.pathname]);
 

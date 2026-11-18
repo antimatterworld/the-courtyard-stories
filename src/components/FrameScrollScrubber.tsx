@@ -5,6 +5,7 @@ interface StoryBeat {
   id: string;
   start: number;
   end: number;
+  align: "right" | "left";
   tag: string;
   step: string;
   title: string;
@@ -13,40 +14,44 @@ interface StoryBeat {
 
 const STORY_BEATS: StoryBeat[] = [
   {
-    id: "beat-estate",
+    id: "beat-heritage",
     start: 0.0,
     end: 0.22,
-    tag: "THE ESTATE · SOUTH DELHI",
+    align: "right",
+    tag: "THE COURTYARD STORIES · SOUTH DELHI",
     step: "01 / 04",
-    title: "12,000+ Square Feet of Heritage Architecture",
-    sub: "Secluded outdoor production enclave custom-sculpted for haute couture lookbooks, period commercials, and cinematic campaigns.",
+    title: "Where Heritage Architecture Meets Cinematic Space",
+    sub: "12,000+ square feet of authentic outdoor sets, sculpted for haute couture lookbooks, luxury campaigns, and film productions.",
   },
   {
-    id: "beat-haveli",
+    id: "beat-light",
     start: 0.25,
     end: 0.46,
-    tag: "ZONE 01 · ROYAL PALACE",
+    align: "left",
+    tag: "NATURAL LIGHT & TACTILE CRAFT",
     step: "02 / 04",
-    title: "Double-Story Ochre Haveli & Jharokhas",
-    sub: "Authentic Rajasthani stone facade, carved floral portals, woven charpai patio, and grand exterior stone staircase.",
-  },
-  {
-    id: "beat-colonnade",
-    start: 0.49,
-    end: 0.70,
-    tag: "ZONE 02 · MUGHAL COLONNADE",
-    step: "03 / 04",
-    title: "Carved Terracotta Geometric Jalis",
-    sub: "Full-height screens casting hypnotic architectural lace shadows across stone verandas under the Delhi sun.",
+    title: "Carved Jharokhas, Terracotta Jalis & Sandstone Verandas",
+    sub: "Handcrafted architectural relief engineered to capture natural sunbeams and dramatic shadow play from dawn to golden hour.",
   },
   {
     id: "beat-airspace",
+    start: 0.49,
+    end: 0.70,
+    align: "right",
+    tag: "AERIAL & PRODUCTION FREEDOM",
+    step: "03 / 04",
+    title: "Unrestricted 360° Drone Flight Airspace",
+    sub: "Secluded estate footprint in Saket with unobstructed open sky for sweeping tracking passes, crane rigs, and heavy production setups.",
+  },
+  {
+    id: "beat-estate",
     start: 0.73,
     end: 0.88,
-    tag: "PRODUCTION SPEC · AIRSPACE",
+    align: "left",
+    tag: "SECLUDED ESTATE BUYOUT",
     step: "04 / 04",
-    title: "Unrestricted 360° Drone Flight Clearance",
-    sub: "Open-sky flight clearance for dynamic tracking passes, crane shots, and silent gen-set power tie-ins.",
+    title: "Five Contiguous Worlds on One Private Estate",
+    sub: "Double-story haveli, terracotta colonnade, Moroccan suite, and starlit courtyards ready for multi-camera day-to-night shoots.",
   },
 ];
 
@@ -61,7 +66,7 @@ export function FrameScrollScrubber() {
   const currentProgressRef = useRef(0);
   const lastDrawnFrameRef = useRef(-1);
 
-  // 1. Preload all frame images progressively
+  // 1. Preload and pre-decode all frame images progressively for 0ms jank
   useEffect(() => {
     const images: (HTMLImageElement | null)[] = new Array(FRAME_COUNT).fill(null);
     imagesRef.current = images;
@@ -71,21 +76,30 @@ export function FrameScrollScrubber() {
     // Load Frame 0 first so the canvas paints immediately
     const firstImg = new Image();
     firstImg.src = getFramePath(0);
-    firstImg.onload = () => {
+    const onFirstLoad = () => {
       if (!mounted) return;
       images[0] = firstImg;
       drawFrame(0);
 
-      // Now load the rest of the frames in the background
+      // Preload & pre-decode rest of frames off the main thread
       for (let i = 1; i < FRAME_COUNT; i++) {
         const img = new Image();
         img.src = getFramePath(i);
-        img.onload = () => {
-          if (!mounted) return;
-          images[i] = img;
-        };
+        img.decode()
+          .then(() => {
+            if (!mounted) return;
+            images[i] = img;
+          })
+          .catch(() => {
+            if (!mounted) return;
+            images[i] = img;
+          });
       }
     };
+
+    firstImg.decode().then(onFirstLoad).catch(() => {
+      firstImg.onload = onFirstLoad;
+    });
 
     return () => {
       mounted = false;
@@ -96,8 +110,11 @@ export function FrameScrollScrubber() {
   const drawFrame = (frameIndex: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
+
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "medium";
 
     const images = imagesRef.current;
     let img = images[frameIndex];
@@ -120,8 +137,8 @@ export function FrameScrollScrubber() {
 
     const cw = canvas.width;
     const ch = canvas.height;
-    const iw = img.naturalWidth || 1280;
-    const ih = img.naturalHeight || 720;
+    const iw = img.naturalWidth || 1920;
+    const ih = img.naturalHeight || 1080;
 
     // object-fit: cover math
     const hRatio = cw / iw;
@@ -133,7 +150,6 @@ export function FrameScrollScrubber() {
     const cx = (cw - nw) / 2;
     const cy = (ch - nh) / 2;
 
-    ctx.clearRect(0, 0, cw, ch);
     ctx.drawImage(img, 0, 0, iw, ih, cx, cy, nw, nh);
     lastDrawnFrameRef.current = frameIndex;
   };
@@ -163,7 +179,7 @@ export function FrameScrollScrubber() {
     return () => window.removeEventListener("resize", updateCanvasSize);
   }, []);
 
-  // 4. Scroll tracking with lerp loop for Apple-smooth momentum
+  // 4. Snappy responsive scroll tracking (0.32 lerp for instant feel without lag)
   useEffect(() => {
     let rafId: number;
 
@@ -181,18 +197,20 @@ export function FrameScrollScrubber() {
     const tick = () => {
       const target = targetProgressRef.current;
       const current = currentProgressRef.current;
+      const diff = target - current;
 
-      // Smooth lerp (0.16 interpolation rate for weighted luxurious feel)
-      const nextProgress = current + (target - current) * 0.16;
+      // Snappy 0.32 lerp: instantaneous response to wheel/scroll, eliminating sluggish delay
+      const nextProgress = current + diff * 0.32;
       currentProgressRef.current = nextProgress;
 
-      if (Math.abs(target - current) > 0.0005) {
+      // Throttled state update for high performance
+      if (Math.abs(nextProgress - progress) > 0.002) {
         setProgress(nextProgress);
       }
 
       const frameIndex = Math.min(
         FRAME_COUNT - 1,
-        Math.max(0, Math.floor(nextProgress * FRAME_COUNT))
+        Math.max(0, Math.round(nextProgress * (FRAME_COUNT - 1)))
       );
 
       if (frameIndex !== lastDrawnFrameRef.current) {
@@ -248,14 +266,14 @@ export function FrameScrollScrubber() {
         {/* High-definition frame canvas */}
         <canvas ref={canvasRef} className="frame-scrub-canvas" />
 
-        {/* Minimalist right-aligned story text (zero overlays, zero boxes) */}
+        {/* Minimalist alternating story text (Right -> Left -> Right -> Left) */}
         <div className="frame-scrub-text-stage">
           {STORY_BEATS.map((beat) => {
             const state = getBeatState(beat);
             return (
               <div
                 key={beat.id}
-                className="frame-minimal-text"
+                className={`frame-minimal-text align-${beat.align}`}
                 style={{
                   opacity: state.opacity,
                   transform: `translate3d(0, ${state.translateY}px, 0)`,
