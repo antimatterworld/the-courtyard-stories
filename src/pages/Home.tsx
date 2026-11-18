@@ -1,7 +1,7 @@
 import { useState, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Page } from "../components/Chrome";
-import { DroneFlythrough } from "../components/DroneFlythrough";
+import { CinematicHeroScroll } from "../components/CinematicHeroScroll";
 import { WorkGallery } from "../components/Work";
 import { FAQAccordion } from "../components/FAQ";
 import { useReveal } from "../lib/hooks";
@@ -17,7 +17,6 @@ const TRUST = [
 
 export default function Home() {
   const reveal = useReveal<HTMLDivElement>();
-  const [activeSetId, setActiveSetId] = useState(ARCHITECTURAL_SETS[0].id);
 
   return (
     <Page
@@ -26,194 +25,73 @@ export default function Home() {
       schema={[localBusiness(), faqJSONLD(SITE_FAQS)]}
     >
       <div ref={reveal}>
-        {/* ————— showpiece hero ————— */}
-        <section className="hero" aria-label="Studio introduction">
-          <video
-            className="hero-ambient-video"
-            src="/assets/real/hero-drone-loop.mp4"
-            poster="/assets/real/hero-drone-poster.webp"
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-          />
-          <div className="hero-veil" aria-hidden="true" />
-          <div className="hero-content">
-            <div className="container">
-              <p className="hero-index">
-                Est. {STUDIO.est} · {STUDIO.addressShort} · 12,000+ Sq Ft Heritage Production Estate
-              </p>
-              <h1 className="h-display">
-                Where heritage architecture <span className="serif-italic">meets cinematic storytelling</span>
-              </h1>
-              <p className="lead hero-lead reveal">
-                Double-story Rajasthani haveli, carved terracotta Mughal colonnade, cobalt Moroccan arches,
-                and open sunlit courtyards — custom-sculpted in South Delhi for high-fashion lookbooks,
-                commercial brand campaigns, and luxury evening celebrations.
-              </p>
-              <div className="hero-ctas reveal">
-                <Link to="/enquire" className="btn btn-primary">
-                  Enquire for a shoot
-                </Link>
-                <Link to="/work" className="btn btn-ghost">
-                  See the reel
-                </Link>
-                <a 
-                  href={waLink("Hi, I'd like to plan a shoot at The Courtyard Stories.")}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn btn-wa"
-                >
-                  WhatsApp Studio Director
-                </a>
-              </div>
-              <div className="hero-meta reveal">
-                <div>
-                  <b>{STUDIO.addressShort}</b>
-                  <span>Location enclave</span>
-                </div>
-                <div>
-                  <b>Mon – Sat</b>
-                  <span>{STUDIO.hours}</span>
-                </div>
-                <div>
-                  <b>360° Clearance</b>
-                  <span>Drone & Crane Ready</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <span className="scroll-hint">Scroll to fly through</span>
-        </section>
+        {/* ————— CINEMATIC FIXED HERO SCROLL ————— */}
+        <CinematicHeroScroll />
 
-        {/* ————— marquee ————— */}
-        <div className="marquee" aria-hidden="true">
-          <div className="marquee-track">
-            {Array.from({ length: 2 }).map((_, half) => (
-              <span key={half} style={{ display: "inline-flex", gap: "var(--s-8)" }}>
-                Royal Haveli <em>·</em> Mughal Colonnade <em>·</em> Moroccan Suite <em>·</em> Thatched Tower
-                <em>·</em> 4K Drone Aerials <em>·</em> Night Gala Rig <em>·</em> Fashion Lookbooks <em>·</em> Commercial Films <em>·</em>
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* ————— SIGNATURE SCROLLYTELLING: AERIAL DRONE FLYTHROUGH ————— */}
-        <DroneFlythrough />
-
-        {/* ————— interactive set architecture zones ————— */}
+        {/* ————— EDITORIAL SETS SHOWCASE (Clean Light Aesthetic, Zero Black Boxes) ————— */}
         <section className="section" id="sets" aria-label="Architectural sets and zones">
           <div className="container">
             <div className="reveal" style={{ maxWidth: "58ch", marginBottom: "var(--s-8)" }}>
               <p className="eyebrow">The 5 Architectural Worlds</p>
               <h2 className="h1">
-                Five contiguous sets, <span className="serif-italic">zero travel between scenes</span>
+                Five contiguous sets, <span className="serif-italic">built for the camera</span>
               </h2>
-              <p className="lead" style={{ marginTop: "var(--s-5)" }}>
-                Every zone is purpose-built as a 360-degree photography and film location. Move your crew
-                from royal Rajasthani arches to vivid Moroccan cobalt walls in 30 seconds.
+              <p className="lead" style={{ marginTop: "var(--s-4)" }}>
+                Each zone is constructed with authentic tactile materials, deep architectural relief, and deliberate sun path orientation across 12,000+ contiguous square feet in South Delhi.
               </p>
             </div>
 
-            {/* Set Tabs */}
-            <div className="work-filter-tabs" role="tablist" aria-label="Architectural zones">
-              {ARCHITECTURAL_SETS.map((set) => (
-                <button
-                  key={set.id}
-                  role="tab"
-                  aria-selected={activeSetId === set.id}
-                  className={`chip ${activeSetId === set.id ? "active" : ""}`}
-                  onClick={() => setActiveSetId(set.id)}
-                >
-                  {set.name.split("—")[0].replace("The ", "")}
-                </button>
-              ))}
-            </div>
-
-            {/* Active Set Spotlight */}
-            {(() => {
-              const currentSet = ARCHITECTURAL_SETS.find((s) => s.id === activeSetId) || ARCHITECTURAL_SETS[0];
-              return (
-                <div className="card reveal" style={{ padding: 0, overflow: "hidden", marginTop: "var(--s-6)" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
-                    <div style={{ position: "relative", minHeight: 380, background: "#000" }}>
-                      <video
-                        src={currentSet.video}
-                        poster={currentSet.img}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                      />
-                      <span 
-                        style={{
-                          position: "absolute",
-                          top: 16,
-                          left: 16,
-                          background: "rgba(18,15,12,0.8)",
-                          backdropFilter: "blur(10px)",
-                          color: "#f7ca7d",
-                          fontFamily: "var(--font-mono)",
-                          fontSize: 11,
-                          letterSpacing: "0.12em",
-                          padding: "4px 12px",
-                          borderRadius: "var(--radius-round)",
-                          border: "1px solid rgba(255,255,255,0.15)",
-                        }}
-                      >
-                        {currentSet.tag}
-                      </span>
+            <div className="editorial-sets-grid">
+              {ARCHITECTURAL_SETS.map((set, idx) => (
+                <article key={set.id} className="editorial-set-card reveal">
+                  <div className="editorial-set-media">
+                    <video
+                      src={set.video}
+                      poster={set.img}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="editorial-set-video"
+                    />
+                    <span className="editorial-set-tag">{set.tag}</span>
+                  </div>
+                  <div className="editorial-set-info">
+                    <div className="editorial-set-header">
+                      <span className="editorial-set-num">0{idx + 1}</span>
+                      <h3 className="editorial-set-title">{set.name}</h3>
                     </div>
-
-                    <div style={{ padding: "clamp(24px, 4vw, 48px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                      <p className="eyebrow" style={{ color: "var(--accent-deep)" }}>Set Showcase</p>
-                      <h3 className="h2" style={{ margin: "var(--s-2) 0 var(--s-4)" }}>{currentSet.name}</h3>
-                      <p style={{ lineHeight: 1.7, color: "var(--ink-soft)", marginBottom: "var(--s-5)" }}>
-                        {currentSet.description}
-                      </p>
-
-                      <div style={{ marginBottom: "var(--s-5)" }}>
-                        <h4 style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-faint)", marginBottom: 8 }}>
-                          Architectural Features
-                        </h4>
-                        <ul style={{ display: "grid", gap: 6, fontSize: "var(--t-small)", color: "var(--ink)" }}>
-                          {currentSet.features.map((feat) => (
-                            <li key={feat} style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-                              <span style={{ color: "var(--accent-deep)" }}>▸</span> {feat}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div style={{ borderTop: "1px solid var(--line-soft)", paddingTop: "var(--s-4)", marginBottom: "var(--s-6)" }}>
-                        <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--accent-deep)" }}>
-                          NATURAL LIGHTING ROADMAP:
-                        </span>
-                        <p style={{ fontSize: "var(--t-small)", color: "var(--ink-soft)", marginTop: 4 }}>
-                          {currentSet.lighting}
-                        </p>
-                      </div>
-
-                      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                        <Link to={`/enquire?set=${currentSet.id}`} className="btn btn-primary">
-                          Book This Set
-                        </Link>
-                        <a 
-                          href={waLink(`Hi, I'd like to check availability for ${currentSet.name} at The Courtyard Stories.`)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn btn-wa"
-                        >
-                          WhatsApp Walkthrough
-                        </a>
-                      </div>
+                    <p className="editorial-set-desc">{set.short}</p>
+                    <div className="editorial-set-meta">
+                      <span className="meta-label">NATURAL LIGHT:</span>
+                      <span className="meta-value">{set.lighting}</span>
+                    </div>
+                    <div className="editorial-set-actions">
+                      <Link to={`/enquire?set=${set.id}`} className="link-arrow">
+                        Book this set <ArrowSvg />
+                      </Link>
                     </div>
                   </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ————— trust badges & estate numbers ————— */}
+        <section className="section-tight" aria-label="Studio by the numbers">
+          <div className="container">
+            <div className="stats reveal">
+              {TRUST.map((t) => (
+                <div key={t.label}>
+                  <b>{t.stat}</b>
+                  <span>{t.label}</span>
+                  <p className="muted" style={{ marginTop: 8, fontSize: "var(--t-micro)", fontFamily: "var(--font-mono)", letterSpacing: "0.08em" }}>
+                    {t.note}
+                  </p>
                 </div>
-              );
-            })()}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -252,23 +130,6 @@ export default function Home() {
                       Explore {s.name.split(" ")[0].toLowerCase()} <ArrowSvg />
                     </Link>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ————— trust badges ————— */}
-        <section className="section-tight" aria-label="Studio by the numbers">
-          <div className="container">
-            <div className="stats reveal">
-              {TRUST.map((t) => (
-                <div key={t.label}>
-                  <b>{t.stat}</b>
-                  <span>{t.label}</span>
-                  <p className="muted" style={{ marginTop: 8, fontSize: "var(--t-micro)", fontFamily: "var(--font-mono)", letterSpacing: "0.08em" }}>
-                    {t.note}
-                  </p>
                 </div>
               ))}
             </div>
