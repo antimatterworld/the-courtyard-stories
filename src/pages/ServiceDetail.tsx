@@ -2,6 +2,7 @@ import { type CSSProperties } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Page } from "../components/Chrome";
 import { FAQAccordion } from "../components/FAQ";
+import { LazyViewportVideo } from "../components/LazyViewportVideo";
 import { useReveal } from "../lib/hooks";
 import { breadcrumbJSONLD, faqJSONLD, localBusiness, serviceJSONLD } from "../lib/schema";
 import { SERVICES, STUDIO, waLink } from "../data/content";
@@ -71,13 +72,10 @@ export default function ServiceDetail() {
               </div>
             </div>
             <div className="reveal" style={{ marginTop: "var(--s-7)" }}>
-              <video
+              <LazyViewportVideo
                 src={s.video}
                 poster={s.img}
-                autoPlay
-                loop
-                muted
-                playsInline
+                playOnHover={false}
                 controls
                 style={{ width: "100%", maxHeight: "440px", objectFit: "cover", borderRadius: "var(--radius)", border: "1px solid var(--line-soft)" }}
               />

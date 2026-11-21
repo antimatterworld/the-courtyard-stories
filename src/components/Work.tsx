@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEvent as ReactMouseEvent } from "react";
 import { CATEGORIES, PORTFOLIO, type PortfolioItem } from "../data/content";
+import { LazyViewportVideo } from "./LazyViewportVideo";
 import { StudioImage } from "./StudioImage";
 
 /* ————————————————————————————————————————————
@@ -78,14 +79,10 @@ function WorkItem({ item, index, onOpen }: { item: PortfolioItem; index: number;
         eager={index < 2}
       />
       {hasVideo && isReel && (
-        <video
+        <LazyViewportVideo
           className="plate-video is-active"
           src={item.video}
           poster={item.img}
-          autoPlay
-          muted
-          loop
-          playsInline
         />
       )}
       <span className="masonry-type">
@@ -121,7 +118,7 @@ function WorkItem({ item, index, onOpen }: { item: PortfolioItem; index: number;
   );
 }
 
-function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: () => void }) {
+export function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -165,14 +162,11 @@ function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: () => v
       <div className="modal-panel" onClick={stop}>
         <div className="modal-media">
           {item.video ? (
-            <video
+            <LazyViewportVideo
               className="modal-video-player"
               src={item.video}
               poster={item.img}
-              autoPlay
-              loop
-              muted
-              playsInline
+              playOnHover={false}
               controls
             />
           ) : (

@@ -31,15 +31,15 @@ export type Motif =
   | "studio";
 
 const MOTIF_TINT: Record<Motif, [string, string]> = {
-  hero: ["#f4e6cf", "#d9b98a"],
-  fashion: ["#efd8c4", "#cf9f7e"],
-  product: ["#e9dcc7", "#b99868"],
-  podcast: ["#3a332b", "#1c1917"],
-  commercial: ["#efe2cf", "#b08653"],
-  crew: ["#e6d9c2", "#c2a478"],
-  lens: ["#2a2620", "#141210"],
-  events: ["#f7d7aa", "#8c4a22"],
-  studio: ["#f2ead9", "#c9a878"],
+  hero: ["#1a2238", "#0a0f1f"],
+  fashion: ["#2a1f18", "#1c1308"],
+  product: ["#1f1828", "#12182c"],
+  podcast: ["#1a1822", "#0a0f1f"],
+  commercial: ["#241c14", "#14110a"],
+  crew: ["#1c1820", "#0d1018"],
+  lens: ["#14182a", "#07142e"],
+  events: ["#1f1428", "#120c1a"],
+  studio: ["#1a2338", "#0a0f1f"],
 };
 
 export function StudioImage({

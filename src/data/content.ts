@@ -8,12 +8,24 @@ export const STUDIO = {
   name: "The Courtyard Stories",
   tagline: "Heritage Architecture & Cinematic Production Venue",
   city: "Delhi",
-  address: "The Courtyard Stories, Saket / South Delhi, New Delhi 110017, India",
-  addressShort: "Saket, New Delhi 110017",
-  coordinates: "28.5244° N, 77.2066° E",
-  phone: "+91-98110-44320",
-  phoneHref: "tel:+919811044320",
-  whatsapp: "919811044320",
+  address:
+    "Farm No. 3, The Courtyard Stories, behind FIMT College, Kapashera, Palam Farms, New Delhi, Delhi 110037, India",
+  addressShort: "Kapashera, New Delhi 110037",
+  streetAddress: "Farm No. 3, The Courtyard Stories, behind FIMT College, Kapashera, Palam Farms",
+  postalCode: "110037",
+  coordinates: "28.5269° N, 77.1858° E",
+  latitude: 28.526851,
+  longitude: 77.185752,
+  plusCode: "G3FC+VC New Delhi",
+  mapsUrl:
+    "https://www.google.com/maps/place/The+Courtyard+Stories/@28.526851,77.185752,17z/data=!4m6!3m5!1s0x390d865b4a3cbb57:0xb5ba7cfac4097493!8m2!3d28.526851!4d77.185752!16s%2Fg%2F11t8w9xqht",
+  mapsEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.46!2d77.185752!3d28.526851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d865b4a3cbb57%3A0xb5ba7cfac4097493!2sThe%20Courtyard%20Stories!5e0!3m2!1sen!2sin!4v1732185600000!5m2!1sen!2sin",
+  metroNote:
+    "Approx. 15–20 min from Dwarka Sector 21 Metro (Blue Line); on the Kapashera–Palam Farms lane behind FIMT College",
+  phone: "+91-98186-37485",
+  phoneHref: "tel:+919818637485",
+  whatsapp: "919818637485",
   email: "studio@thecourtyard-stories.com",
   hours: "Mon – Sat · 08:00 – 22:00 IST",
   hoursNote: "Shoots & location walkthroughs by appointment",
@@ -609,7 +621,7 @@ export const STUDIO_FEATURES = [
 export const SITE_FAQS = [
   {
     q: "Where is The Courtyard Stories located in Delhi?",
-    a: "We are located in South Delhi near Saket / Sultanpur road enclave. The estate is easily accessible via Saket and Sultanpur metro stations (15-20 min drive) with secure on-site parking for up to 25 production vehicles and vanity vans.",
+    a: "We are at Farm No. 3, The Courtyard Stories, behind FIMT College, Kapashera, Palam Farms, New Delhi 110037 (see Google Maps). The estate is about 15–20 minutes from Dwarka Sector 21 Metro (Blue Line), with secure on-site parking for up to 25 production vehicles and vanity vans.",
   },
   {
     q: "Can we shoot both photo and video simultaneously across the sets?",
@@ -625,7 +637,7 @@ export const SITE_FAQS = [
   },
   {
     q: "How do we book a shoot or schedule a location walkthrough?",
-    a: "You can book directly via our Enquire form or WhatsApp our Studio Director at +91-98110-44320. We welcome creative directors, stylists, and DPs for a complimentary 30-minute location walkthrough before confirming dates.",
+    a: "You can book directly via our Enquire form or WhatsApp our Studio Director at +91-98186-37485. We welcome creative directors, stylists, and DPs for a complimentary 30-minute location walkthrough before confirming dates.",
   },
   {
     q: "What are the payment and deposit terms?",

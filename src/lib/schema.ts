@@ -18,17 +18,18 @@ export function localBusiness(): JSONLD {
     email: STUDIO.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "B-14, Studio Lane, Saket",
+      streetAddress: STUDIO.streetAddress,
       addressLocality: "New Delhi",
       addressRegion: "Delhi",
-      postalCode: "110017",
+      postalCode: STUDIO.postalCode,
       addressCountry: "IN",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 28.5282,
-      longitude: 77.2097,
+      latitude: STUDIO.latitude,
+      longitude: STUDIO.longitude,
     },
+    hasMap: STUDIO.mapsUrl,
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -40,7 +41,7 @@ export function localBusiness(): JSONLD {
     priceRange: "₹₹₹",
     areaServed: "Delhi NCR",
     description:
-      "The Courtyard Stories is an authentic 12,000+ sq ft architectural production estate in Saket, New Delhi — featuring 5 heritage sets (Rajasthani Haveli, Mughal Terracotta Colonnade, Chefchaouen Moroccan Suite, Thatched Village Set, and Night Gala Rig), 360° drone clearance, fashion lookbooks, commercial films, and luxury event production.",
+      "The Courtyard Stories is an authentic 12,000+ sq ft architectural production estate in Kapashera, Palam Farms, New Delhi — featuring 5 heritage sets (Rajasthani Haveli, Mughal Terracotta Colonnade, Chefchaouen Moroccan Suite, Thatched Village Set, and Night Gala Rig), 360° drone clearance, fashion lookbooks, commercial films, and luxury event production.",
     sameAs: [`https://instagram.com/${STUDIO.instagram.replace("@", "")}`],
     foundingDate: String(STUDIO.est),
     knowsAbout: ["architectural sets", "drone cinematography", "fashion lookbooks", "commercial films", "location hire", "luxury gala events"],

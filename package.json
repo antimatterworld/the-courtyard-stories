@@ -7,10 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build && npx wrangler pages functions build --outdir=./dist/_worker.js/",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "analyze:videos": "python tools/analyze/analyze_videos.py"
   },
   "dependencies": {
-    "@types/three": "^0.187.0",
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "gsap": "^3.15.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.5",

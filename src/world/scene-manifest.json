@@ -1,0 +1,437 @@
+{
+  "sets": [
+    {
+      "id": "prologue",
+      "sourceVideos": [
+        "public/assets/real/flythrough-01-aerial.mp4"
+      ],
+      "palette": {
+        "dominant": [
+          "#201712",
+          "#392c20",
+          "#513f35",
+          "#61585b",
+          "#7a6547",
+          "#b09d8b"
+        ],
+        "shadow": "#201712",
+        "mid": "#61585b",
+        "highlight": "#b09d8b",
+        "kelvin": 5346
+      },
+      "architecture": {
+        "motion": "crane-drone-rise"
+      },
+      "light": {
+        "fog": "#201712",
+        "fogDensity": 0.032,
+        "accent": "#b09d8b"
+      },
+      "cameraPath": [
+        {
+          "t": 0,
+          "pos": [
+            0,
+            2,
+            14
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 52
+        },
+        {
+          "t": 1,
+          "pos": [
+            0,
+            9,
+            16
+          ],
+          "look": [
+            0,
+            0,
+            0
+          ],
+          "fov": 55
+        }
+      ],
+      "keyframes": [
+        "/assets/world/prologue/kf_001.webp",
+        "/assets/world/prologue/kf_002.webp",
+        "/assets/world/prologue/kf_003.webp",
+        "/assets/world/prologue/kf_004.webp"
+      ]
+    },
+    {
+      "id": "royal-haveli",
+      "sourceVideos": [
+        "public/assets/real/flythrough-02-haveli.mp4"
+      ],
+      "palette": {
+        "dominant": [
+          "#2b1f20",
+          "#55423f",
+          "#756552",
+          "#867f80",
+          "#beb6b2",
+          "#fcfcfc"
+        ],
+        "shadow": "#2b1f20",
+        "mid": "#867f80",
+        "highlight": "#fcfcfc",
+        "kelvin": 4346
+      },
+      "architecture": {
+        "motion": "crane-drone-rise"
+      },
+      "light": {
+        "fog": "#2b1f20",
+        "fogDensity": 0.032,
+        "accent": "#fcfcfc"
+      },
+      "cameraPath": [
+        {
+          "t": 0,
+          "pos": [
+            0,
+            2,
+            14
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 52
+        },
+        {
+          "t": 1,
+          "pos": [
+            0,
+            9,
+            16
+          ],
+          "look": [
+            0,
+            0,
+            0
+          ],
+          "fov": 55
+        }
+      ],
+      "keyframes": [
+        "/assets/world/royal-haveli/kf_001.webp",
+        "/assets/world/royal-haveli/kf_002.webp",
+        "/assets/world/royal-haveli/kf_003.webp",
+        "/assets/world/royal-haveli/kf_004.webp"
+      ]
+    },
+    {
+      "id": "mughal-colonnade",
+      "sourceVideos": [
+        "public/assets/real/flythrough-03-colonnade.mp4"
+      ],
+      "palette": {
+        "dominant": [
+          "#37261e",
+          "#554136",
+          "#805e46",
+          "#998d85",
+          "#cabdb2",
+          "#f9f9f9"
+        ],
+        "shadow": "#37261e",
+        "mid": "#998d85",
+        "highlight": "#f9f9f9",
+        "kelvin": 5306
+      },
+      "architecture": {
+        "motion": "crane-drone-rise"
+      },
+      "light": {
+        "fog": "#37261e",
+        "fogDensity": 0.032,
+        "accent": "#f9f9f9"
+      },
+      "cameraPath": [
+        {
+          "t": 0,
+          "pos": [
+            0,
+            2,
+            14
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 52
+        },
+        {
+          "t": 1,
+          "pos": [
+            0,
+            9,
+            16
+          ],
+          "look": [
+            0,
+            0,
+            0
+          ],
+          "fov": 55
+        }
+      ],
+      "keyframes": [
+        "/assets/world/mughal-colonnade/kf_001.webp",
+        "/assets/world/mughal-colonnade/kf_002.webp",
+        "/assets/world/mughal-colonnade/kf_003.webp",
+        "/assets/world/mughal-colonnade/kf_004.webp"
+      ]
+    },
+    {
+      "id": "chefchaouen-suite",
+      "sourceVideos": [
+        "public/assets/real/flythrough-04-mediterranean.mp4"
+      ],
+      "palette": {
+        "dominant": [
+          "#212940",
+          "#5c553e",
+          "#878483",
+          "#db893b",
+          "#aba9a9",
+          "#e7e9ec"
+        ],
+        "shadow": "#212940",
+        "mid": "#db893b",
+        "highlight": "#e7e9ec",
+        "kelvin": 12160
+      },
+      "architecture": {
+        "motion": "crane-drone-rise"
+      },
+      "light": {
+        "fog": "#212940",
+        "fogDensity": 0.032,
+        "accent": "#878483"
+      },
+      "cameraPath": [
+        {
+          "t": 0,
+          "pos": [
+            0,
+            2,
+            14
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 52
+        },
+        {
+          "t": 1,
+          "pos": [
+            0,
+            9,
+            16
+          ],
+          "look": [
+            0,
+            0,
+            0
+          ],
+          "fov": 55
+        }
+      ],
+      "keyframes": [
+        "/assets/world/chefchaouen-suite/kf_001.webp",
+        "/assets/world/chefchaouen-suite/kf_002.webp",
+        "/assets/world/chefchaouen-suite/kf_003.webp",
+        "/assets/world/chefchaouen-suite/kf_004.webp"
+      ]
+    },
+    {
+      "id": "rustic-village",
+      "sourceVideos": [
+        "public/assets/real/portfolio-thatched-tower.mp4"
+      ],
+      "palette": {
+        "dominant": [
+          "#1d1812",
+          "#373024",
+          "#62544c",
+          "#7c6f6d",
+          "#aa9485",
+          "#e2cdb6"
+        ],
+        "shadow": "#1d1812",
+        "mid": "#7c6f6d",
+        "highlight": "#e2cdb6",
+        "kelvin": 5173
+      },
+      "architecture": {
+        "motion": "crane-drone-rise"
+      },
+      "light": {
+        "fog": "#1d1812",
+        "fogDensity": 0.032,
+        "accent": "#e2cdb6"
+      },
+      "cameraPath": [
+        {
+          "t": 0,
+          "pos": [
+            0,
+            2,
+            14
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 52
+        },
+        {
+          "t": 1,
+          "pos": [
+            0,
+            9,
+            16
+          ],
+          "look": [
+            0,
+            0,
+            0
+          ],
+          "fov": 55
+        }
+      ],
+      "keyframes": [
+        "/assets/world/rustic-village/kf_001.webp",
+        "/assets/world/rustic-village/kf_002.webp",
+        "/assets/world/rustic-village/kf_003.webp"
+      ]
+    },
+    {
+      "id": "night-gala",
+      "sourceVideos": [
+        "public/assets/real/flythrough-05-nightgala.mp4"
+      ],
+      "palette": {
+        "dominant": [
+          "#151202",
+          "#481d06",
+          "#733308",
+          "#a65f1e",
+          "#c88d4a",
+          "#e8cfa9"
+        ],
+        "shadow": "#151202",
+        "mid": "#a65f1e",
+        "highlight": "#e8cfa9",
+        "kelvin": 10093
+      },
+      "architecture": {
+        "motion": "crane-drone-rise"
+      },
+      "light": {
+        "fog": "#151202",
+        "fogDensity": 0.032,
+        "accent": "#e8cfa9"
+      },
+      "cameraPath": [
+        {
+          "t": 0,
+          "pos": [
+            0,
+            2,
+            14
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 52
+        },
+        {
+          "t": 1,
+          "pos": [
+            0,
+            9,
+            16
+          ],
+          "look": [
+            0,
+            0,
+            0
+          ],
+          "fov": 55
+        }
+      ],
+      "keyframes": [
+        "/assets/world/night-gala/kf_001.webp",
+        "/assets/world/night-gala/kf_002.webp",
+        "/assets/world/night-gala/kf_003.webp",
+        "/assets/world/night-gala/kf_004.webp"
+      ]
+    },
+    {
+      "id": "epilogue",
+      "sourceVideos": [],
+      "palette": {
+        "dominant": [
+          "#0A0F1F",
+          "#FF9F1C"
+        ],
+        "shadow": "#0A0F1F",
+        "mid": "#0A0F1F",
+        "highlight": "#FF9F1C",
+        "kelvin": 3000
+      },
+      "light": {
+        "fog": "#0A0F1F",
+        "fogDensity": 0.035,
+        "accent": "#FF9F1C"
+      },
+      "cameraPath": [
+        {
+          "t": 0,
+          "pos": [
+            0,
+            2,
+            14
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 48
+        },
+        {
+          "t": 1,
+          "pos": [
+            0,
+            2.2,
+            13
+          ],
+          "look": [
+            0,
+            1.5,
+            0
+          ],
+          "fov": 46
+        }
+      ],
+      "keyframes": []
+    }
+  ]
+}

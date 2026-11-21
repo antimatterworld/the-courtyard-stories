@@ -127,19 +127,19 @@ export default function Enquire() {
                 <div>
                   <p className="eyebrow" style={{ color: "var(--accent-deep)" }}>Estate Location &amp; Recce</p>
                   <h2 className="h2" style={{ fontSize: "clamp(1.4rem, 2vw, 1.8rem)", margin: "8px 0 12px" }}>
-                    The Courtyard Stories <span className="serif-italic">· South Delhi</span>
+                    The Courtyard Stories <span className="serif-italic">· Kapashera</span>
                   </h2>
                   <p className="muted" style={{ lineHeight: 1.7, fontSize: "var(--t-small)" }}>
                     {STUDIO.address}
                   </p>
                   <div style={{ marginTop: "var(--s-4)", display: "flex", flexDirection: "column", gap: 10, fontSize: "var(--t-small)", color: "var(--ink-soft)" }}>
-                    <div><strong style={{ color: "var(--ink)" }}>Metro Connectivity:</strong> 15 mins from Saket &amp; Sultanpur Metro Stations (Yellow Line)</div>
+                    <div><strong style={{ color: "var(--ink)" }}>Metro connectivity:</strong> {STUDIO.metroNote}</div>
                     <div><strong style={{ color: "var(--ink)" }}>Production Logistics:</strong> Private gated driveway with dedicated parking for 25+ crew vehicles &amp; vanity vans</div>
                     <div><strong style={{ color: "var(--ink)" }}>Power &amp; Genset:</strong> 3-phase industrial power tie-ins &amp; silent generator hookup bays</div>
                   </div>
                   <div style={{ marginTop: "var(--s-5)", display: "flex", gap: 12, flexWrap: "wrap" }}>
                     <a
-                      href="https://maps.google.com/?q=Saket+South+Delhi+New+Delhi"
+                      href={STUDIO.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-primary"
@@ -160,7 +160,7 @@ export default function Enquire() {
                 <div style={{ position: "relative", width: "100%", height: "340px", borderRadius: "var(--radius)", overflow: "hidden", border: "1px solid var(--line-soft)" }}>
                   <iframe
                     title="The Courtyard Stories Estate Location Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14022.45781358327!2d77.1994848!3d28.521235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1f7bb159dd3%3A0xc3f58e469dfc9869!2sSaket%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    src={STUDIO.mapsEmbedUrl}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

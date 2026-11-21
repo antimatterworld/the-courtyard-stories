@@ -1,15 +1,34 @@
-import { type CSSProperties } from "react";
-import { Link } from "react-router-dom";
 import { Page } from "../components/Chrome";
+import { SplitCard } from "../components/SplitCard";
 import { useReveal } from "../lib/hooks";
 import { localBusiness } from "../lib/schema";
 import { STUDIO, waLink } from "../data/content";
 
 const VISIT_TYPES = [
-  { key: "walkthrough", label: "Estate Walkthrough", desc: "30 min · Walk the 5 architectural sets, check sun angles & drone clearances" },
-  { key: "quote", label: "Production Scoping", desc: "Bring the brief · We align shot list, crew sizes & day/night lighting setups" },
-  { key: "recce", label: "Director & DP Technical Recce", desc: "Technical recce · Camera tracks, drone takeoff points, power tie-ins & grip" },
-  { key: "event", label: "Event & Gala Walkthrough", desc: "Walkthrough for luxury brand launches, private soirées & night banquets" },
+  {
+    key: "walkthrough",
+    label: "Estate walkthrough",
+    desc: "30 minutes on the floor: all five sets, sun angles, and drone sightlines.",
+    img: "/assets/real/flythrough-02-haveli.webp",
+  },
+  {
+    key: "quote",
+    label: "Production scoping",
+    desc: "Bring the brief—we align shot lists, crew size, and day or night lighting.",
+    img: "/assets/real/space-panoramic-estate.webp",
+  },
+  {
+    key: "recce",
+    label: "Director & DP recce",
+    desc: "Tracks, drone takeoff points, power tie-ins, and grip logistics on site.",
+    img: "/assets/real/flythrough-03-colonnade.webp",
+  },
+  {
+    key: "event",
+    label: "Event walkthrough",
+    desc: "Evening gala layouts, guest flow, sound limits, and valet staging.",
+    img: "/assets/real/portfolio-night-banquet.webp",
+  },
 ] as const;
 
 export default function Visit() {
@@ -40,22 +59,18 @@ export default function Visit() {
 
         <section className="section" aria-label="Visit types">
           <div className="container">
-            <div className="card-grid">
-              {VISIT_TYPES.map((v, i) => (
-                <div
+            <div className="visit-split-grid">
+              {VISIT_TYPES.map((v) => (
+                <SplitCard
                   key={v.key}
-                  className="card reveal"
-                  style={{ ["--reveal-delay" as string]: `${i * 60}ms` } as CSSProperties}
-                >
-                  <span className="card-index">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="h3">{v.label}</h3>
-                  <p>{v.desc}</p>
-                  <div style={{ marginTop: "var(--s-5)" }}>
-                    <Link to={`/enquire?visit=${v.key}`} className="link-arrow">
-                      Book this <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                    </Link>
-                  </div>
-                </div>
+                  className="visit-split-card reveal"
+                  image={v.img}
+                  title={v.label}
+                  description={v.desc}
+                  href={`/enquire?visit=${v.key}`}
+                  linkLabel="Book this visit"
+                  accent="var(--marigold)"
+                />
               ))}
             </div>
           </div>
@@ -111,7 +126,7 @@ export default function Visit() {
                   />
                   <h3 className="h3">Getting here &amp; logistics</h3>
                   <ul style={{ marginTop: "var(--s-4)", display: "grid", gap: 10, fontSize: "var(--t-small)", color: "var(--ink-soft)" }}>
-                    <li>· 15–20 min drive from Saket &amp; Sultanpur metro stations</li>
+                    <li>· {STUDIO.metroNote}</li>
                     <li>· Dedicated on-site parking for up to 25 production vehicles &amp; vanity vans</li>
                     <li>· Drive-in equipment unloading directly adjacent to architectural sets</li>
                     <li>· 3-phase industrial power tie-ins &amp; silent generator parking</li>

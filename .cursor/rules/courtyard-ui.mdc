@@ -1,0 +1,39 @@
+---
+description: Courtyard Stories UI tokens, nav, Pass 3 motion contract
+globs: src/**/*.{tsx,css}
+alwaysApply: false
+---
+
+# Courtyard Stories — UI & performance (Pass 4)
+
+## Tokens
+
+- Page base **`#07091A`** on landing; nav pill **`#0F1530`**; loader night **`#0A0F1F`**.
+- `data-theme="night"` default (see `public/courtyard-theme-preview.html`).
+- Syne display · Instrument Sans body · marigold CTA `#FF9F1C`.
+
+## Navbar
+
+Centred 56px pill; **Courtyard Stories** one line; Work / Services / Studio / Visit + single Enquire CTA; Menu ≤820px; hide on scroll via `transform` only; **no backdrop-filter**.
+
+## Motion (mandatory)
+
+- **`src/lib/motion.ts`** — scroll-linked writes on **`transform` / `opacity`** only; after GSAP loads, **`gsap.ticker`** drives the same dirty loop (one rAF path).
+- **`src/lib/gsap.ts`** + **`src/components/cards/useCardAnimation.ts`** — Five worlds / `SplitCard` entrance (Pass 5); `ScrollTrigger.refresh()` after loader, fonts, images; **`prefers-reduced-motion`** skips timelines; 1.5s reveal safety still applies.
+- **No per-frame React state** for scroll or drag.
+- Cache layout in **`useMotionSection.ts`** (`ResizeObserver`); no layout reads in the scroll frame.
+- **LazyViewportVideo** — max 2 playing; hero featured set hover only on landing.
+- Studio: drag plane + inertia; keyboard pan; list view for a11y.
+- **No WebGL / Three.js** in the app runtime.
+
+## Landing / Studio
+
+- Section colour bands (`home-landing.css`); `--section-y: clamp(48px, 6vw, 88px)`.
+- **SplitCard** half image / half text for sets, visit grid, portfolio rails.
+- Pinned rail: `scrollProgressWithDwell`, remeasure on `tcs:loader-done` + ResizeObserver.
+- **Reveal:** content visible by default; `html.js-reveal` hides until `.in` + 1500ms safety (`src/lib/reveal.ts`).
+- `/studio`: `html.studio-route` locks scroll; footer hidden; fixed explorer; HUD pills bottom.
+- Loader exit: hold at 100% → arch `.done` settle → smooth overlay fade (`exit-fade`); no slide-up; dispatch `tcs:loader-done`.
+- Route change: focus `#main`, not brand (`:focus-visible` only on nav).
+
+See `FRONTEND-UI-INVENTORY.md` §7.

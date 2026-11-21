@@ -1,16 +1,37 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useTheme } from "../lib/hooks";
 import { STUDIO, waLink } from "../data/content";
 import type { JSONLD } from "../lib/schema";
 
 export const NAV_LINKS = [
   { to: "/work", label: "Work" },
+  { to: "/sets", label: "All sets" },
   { to: "/services", label: "Services" },
-  { to: "/studio", label: "The Studio" },
+  { to: "/studio", label: "Studio" },
   { to: "/visit", label: "Visit" },
-  { to: "/enquire", label: "Enquire" },
 ];
+
+function BrandMark() {
+  return (
+    <svg className="brand-mark" width="20" height="26" viewBox="0 0 20 26" aria-hidden="true">
+      <path
+        d="M2 24V12C2 6.5 5.5 2 10 2s8 4.5 8 10v12"
+        fill="none"
+        stroke="var(--marigold)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M4.5 14c2.2-2.8 4.8-4.2 5.5-4.2S13.2 11.2 15.5 14"
+        fill="none"
+        stroke="var(--marigold)"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.85"
+      />
+    </svg>
+  );
+}
 
 /* ——————————————————————————————
    Page wrapper: sets per-route meta
@@ -51,7 +72,7 @@ export function Page({
       s.textContent = JSON.stringify(block);
       document.head.appendChild(s);
     });
-  }, [location.pathname]); // re-inject on navigation, keyed to route
+  }, [location.pathname]);
 
   return <>{children}</>;
 }
@@ -61,68 +82,50 @@ export function Page({
    —————————————————————————————— */
 
 export function TopBar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [drawer, setDrawer] = useState(false);
-  const [theme, toggle] = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
   const location = useLocation();
 
-  const isHome = location.pathname === "/";
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
+    lastY.current = window.scrollY;
     const onScroll = () => {
-      if (location.pathname === "/") {
-        // Stay completely transparent while anywhere inside the hero flythrough section!
-        // Only become colored/frosted when scrolled out of hero (#sets reaches the topbar)
-        const setsEl = document.getElementById("sets");
-        if (setsEl) {
-          const rect = setsEl.getBoundingClientRect();
-          setScrolled(rect.top <= 72);
-        } else {
-          setScrolled(window.scrollY > window.innerHeight * 3.5);
-        }
-      } else {
-        setScrolled(window.scrollY > 20);
+      const y = window.scrollY;
+      const delta = y - lastY.current;
+      if (y < 80) {
+        setHidden(false);
+      } else if (delta > 6) {
+        setHidden(true);
+      } else if (delta < -6) {
+        setHidden(false);
       }
+      lastY.current = y;
     };
-
-    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [location.pathname]);
 
-  const isHeroTransparent = isHome && !scrolled;
-
-  useEffect(() => setDrawer(false), [location.pathname]);
-
   useEffect(() => {
-    document.body.style.overflow = drawer ? "hidden" : "";
+    document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [drawer]);
-
-  const SunIcon = (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2" />
-    </svg>
-  );
-  const MoonIcon = (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5Z" />
-    </svg>
-  );
+  }, [menuOpen]);
 
   return (
     <>
-      <header className={`topbar ${scrolled ? "scrolled" : ""} ${isHeroTransparent ? "is-hero-transparent" : ""}`}>
+      <header className={`topbar${hidden ? " topbar--hidden" : ""}`}>
         <div className="topbar-inner">
-          <Link to="/" className="brand" aria-label="The Courtyard Stories — home">
-            <span className="brand-name">The Courtyard Stories</span>
-            <span className="brand-sub">Photo · Video · {STUDIO.city}</span>
+          <Link to="/" className="brand" aria-label="Courtyard Stories — home">
+            <BrandMark />
+            <span className="brand-name">Courtyard Stories</span>
           </Link>
 
-          <nav className="nav" aria-label="Primary">
+          <nav className="nav topbar-nav-desktop" aria-label="Primary">
             {NAV_LINKS.map((l) => (
               <NavLink key={l.to} to={l.to} end={l.to === "/work"}>
                 {l.label}
@@ -131,50 +134,31 @@ export function TopBar() {
           </nav>
 
           <div className="topbar-actions">
-            <button
-              className="theme-toggle"
-              onClick={toggle}
-              aria-label={theme === "light" ? "Switch to darkroom mode" : "Switch to studio daylight mode"}
-              title={theme === "light" ? "Darkroom mode" : "Daylight mode"}
-            >
-              {theme === "light" ? MoonIcon : SunIcon}
-            </button>
-            <Link to="/enquire" className="btn btn-primary">
+            <Link to="/enquire" className="btn btn-primary nav-enquire-desktop">
               Enquire
             </Link>
             <button
-              className="burger"
-              aria-expanded={drawer}
-              aria-label="Open menu"
-              onClick={() => setDrawer((d) => !d)}
+              type="button"
+              className="topbar-menu-btn"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((o) => !o)}
             >
-              <span />
+              Menu
             </button>
           </div>
         </div>
       </header>
 
-      <div className={`drawer ${drawer ? "open" : ""}`} aria-hidden={!drawer}>
-        <nav className="drawer-nav" aria-label="Menu">
-          {NAV_LINKS.map((l, i) => (
-            <Link key={l.to} to={l.to} onClick={() => setDrawer(false)}>
-              {l.label}
-              <i>0{i + 1}</i>
-            </Link>
-          ))}
-          <Link to="/enquire" onClick={() => setDrawer(false)}>
-            Enquire for a shoot <i>→</i>
+      <nav className={`menu-overlay${menuOpen ? " open" : ""}`} aria-hidden={!menuOpen}>
+        {NAV_LINKS.map((l) => (
+          <Link key={l.to} to={l.to} onClick={() => setMenuOpen(false)}>
+            {l.label}
           </Link>
-        </nav>
-        <div className="drawer-foot">
-          <a className="btn btn-wa" href={waLink("Hi — I'm planning a shoot with The Courtyard Stories. Can we talk?")} target="_blank" rel="noreferrer">
-            WhatsApp
-          </a>
-          <a className="btn btn-ghost" href={STUDIO.phoneHref}>
-            {STUDIO.phone}
-          </a>
-        </div>
-      </div>
+        ))}
+        <Link to="/enquire" className="menu-overlay-enquire" onClick={() => setMenuOpen(false)}>
+          Enquire for a shoot
+        </Link>
+      </nav>
     </>
   );
 }
@@ -284,10 +268,6 @@ export function WhatsAppFab() {
     </a>
   );
 }
-
-/* ——————————————————————————————
-   Global chrome: film grain overlay
-   —————————————————————————————— */
 
 export function GrainOverlay() {
   return <div className="grain" aria-hidden="true" />;

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
+import { initRevealSystem } from "./reveal";
 
 /* ——————————————————————————————
    Theme (light default, dark = darkroom)
@@ -41,29 +42,7 @@ export function useReveal<T extends HTMLElement>(): RefObject<T | null> {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const targets = el.classList.contains("reveal")
-      ? [el, ...Array.from(el.querySelectorAll<HTMLElement>(".reveal"))]
-      : Array.from(el.querySelectorAll<HTMLElement>(".reveal"));
-    if (targets.length === 0) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      targets.forEach((t) => t.classList.add("in"));
-      return;
-    }
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-    );
-    targets.forEach((t) => io.observe(t));
-    return () => io.disconnect();
+    initRevealSystem(el);
   }, [ref]);
 
   return ref;

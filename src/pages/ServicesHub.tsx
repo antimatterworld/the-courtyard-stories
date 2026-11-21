@@ -1,10 +1,11 @@
 import { type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Page } from "../components/Chrome";
+import { LazyViewportVideo } from "../components/LazyViewportVideo";
 import { StudioImage } from "../components/StudioImage";
 import { useReveal } from "../lib/hooks";
 import { faqJSONLD, localBusiness, servicesListJSONLD } from "../lib/schema";
-import { SERVICES, SITE_FAQS } from "../data/content";
+import { SERVICES, SITE_FAQS, STUDIO } from "../data/content";
 
 export default function ServicesHub() {
   const reveal = useReveal<HTMLDivElement>();
@@ -12,7 +13,7 @@ export default function ServicesHub() {
   return (
     <Page
       title="Services — Fashion, Commercial, Product & Podcast · The Courtyard Stories, Delhi"
-      description="Transparent inclusions for fashion editorials, commercial campaigns, product cinematography and podcast production at The Courtyard Stories, Saket, New Delhi."
+      description={`Transparent inclusions for fashion editorials, commercial campaigns, product cinematography and podcast production at The Courtyard Stories, ${STUDIO.addressShort}.`}
       schema={[localBusiness(), servicesListJSONLD(), faqJSONLD(SITE_FAQS.slice(0, 4))]}
     >
       <div ref={reveal}>
@@ -53,14 +54,10 @@ export default function ServicesHub() {
                   eager={i === 0}
                   tag={`Craft ${s.index} of 04`}
                 />
-                <video
+                <LazyViewportVideo
                   className="plate-video is-active"
                   src={s.video}
                   poster={s.img}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
                 />
               </div>
               <div>

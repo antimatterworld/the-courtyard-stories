@@ -11,7 +11,7 @@ export default function WorkPage() {
   return (
     <Page
       title="Selected Work — Stills & Reels · The Courtyard Stories, Delhi"
-      description={`Filter the studio archive: fashion, commercial, product and podcast work shot at ${STUDIO.name}, Saket, New Delhi. Zero layout shift, every project opens full details.`}
+      description={`Filter the studio archive: fashion, commercial, product and podcast work shot at ${STUDIO.name}, ${STUDIO.addressShort}. Zero layout shift, every project opens full details.`}
       schema={[localBusiness(), portfolioJSONLD()]}
     >
       <div ref={reveal}>

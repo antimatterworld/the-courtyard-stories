@@ -133,7 +133,7 @@ const settle = (page, ms = 400) => page.waitForTimeout(ms);
   // fill valid values
   await page.fill("#name", "Yasir Khan");
   await page.fill("#company", "Meraki Atelier");
-  await page.fill("#contact", "+91 98110 44320");
+  await page.fill("#contact", "+91 98186 37485");
   await page.fill("#notes", "12-look editorial, linen-heavy, ochre grade. References attached to this email.");
   await shot(page, "16-enquire-step4-validated");
 

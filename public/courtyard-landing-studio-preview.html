@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Courtyard Stories — Landing + Studio preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07091A;--ink:#F3EBDD;--muted:#A9A7B8;--mari:#FF9F1C;--pink:#D6336C;--nav:#0F1530;color-scheme:dark;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:inherit;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.55 'Instrument Sans',system-ui,sans-serif;overflow-x:hidden}
+body.st{overflow:hidden;height:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #2F5BD0;outline-offset:3px}
+[hidden]{display:none!important}
+.d{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.04em}
+
+.nav{position:fixed;top:max(14px,env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:26px;height:56px;padding:0 8px 0 20px;width:min(900px,calc(100% - 28px));background:var(--nav);border:1px solid #ffffff1a;border-radius:999px;white-space:nowrap}
+.brand{font:800 1rem 'Syne',sans-serif;display:flex;gap:10px;align-items:center}
+.brand svg{width:18px;height:24px}
+.links{display:flex;gap:24px;margin-left:auto;font-size:.95rem}
+.links a{opacity:.75;padding:8px 2px}.links a.on,.links a:hover{opacity:1}
+.cta{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;background:var(--mari);color:#0A0F1F;font-weight:500}
+@media(max-width:560px){.brand span{display:none}.nav{gap:14px}}
+
+/* LANDING */
+.hero{min-height:100svh;display:grid;align-content:end;gap:28px;padding:120px clamp(20px,5vw,72px) 56px;overflow:hidden}
+.hero h1{font-size:clamp(3rem,13vw,12rem);line-height:.9}
+.hero h1 span{display:block;will-change:transform;white-space:nowrap}
+.hero h1 span+span{color:var(--mari);text-align:right}
+.hrow{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.hrow p{max-width:40ch;color:var(--muted);font-size:1.1rem}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 30px;border-radius:999px;background:var(--ink);color:#07091A;font-weight:500}
+
+.hs{position:relative}
+.stick{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;align-content:center;gap:22px}
+.sh{display:flex;justify-content:space-between;padding:0 clamp(20px,5vw,72px);font:700 1.1rem 'Syne',sans-serif}
+.track{display:flex;gap:20px;padding:0 clamp(20px,5vw,72px);width:max-content;will-change:transform}
+.card{flex:none;width:min(72vw,640px);height:min(62vh,520px);border-radius:28px;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,var(--c),#07091A 130%)}
+.card h3{font:800 clamp(1.8rem,4vw,3rem)/1 'Syne',sans-serif;letter-spacing:-.03em}
+.card p{opacity:.85;margin-top:8px;max-width:34ch}
+.bar{margin:0 clamp(20px,5vw,72px);height:3px;background:#ffffff22;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--mari);transform:scaleX(0);transform-origin:0 50%}
+body.rm .hs{height:auto!important}body.rm .stick{position:static;height:auto;padding:60px 0}body.rm .track{overflow-x:auto;width:auto}
+
+.rows{padding:100px 0;overflow:hidden;display:grid;gap:16px}
+.rows h2{padding:0 clamp(20px,5vw,72px) 24px;font-size:clamp(2rem,6vw,4.5rem);line-height:1}
+.row{display:flex;gap:16px;width:max-content;will-change:transform}
+.row:nth-of-type(2){margin-left:-700px}
+.pill{flex:none;width:clamp(200px,24vw,320px);aspect-ratio:4/5;border-radius:22px;padding:18px;display:flex;align-items:flex-end;font:700 1.1rem 'Syne',sans-serif;background:linear-gradient(150deg,var(--c),#07091A 140%)}
+.pill.w{aspect-ratio:16/10;width:clamp(260px,32vw,440px)}
+
+.svc{padding:60px clamp(20px,5vw,72px) 100px}
+.svc h2{font-size:clamp(2rem,6vw,4.5rem);line-height:1;margin-bottom:36px}
+.svc li{list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-top:1px solid #ffffff22;font:800 clamp(1.8rem,5.5vw,4rem)/1 'Syne',sans-serif;letter-spacing:-.03em}
+.svc li span{font:400 1rem 'Instrument Sans';color:var(--muted);max-width:30ch;opacity:.35;transition:opacity .25s,transform .25s;transform:translateX(12px)}
+.svc li:hover span,.svc li:focus-within span{opacity:1;transform:none}
+.end{padding:80px clamp(20px,5vw,72px) 120px;text-align:center;display:grid;gap:28px;justify-items:center}
+.end h2{font-size:clamp(2.2rem,8vw,6.5rem);line-height:.95;max-width:14ch}
+
+/* STUDIO canvas */
+#studio{position:fixed;inset:0;z-index:5;overflow:hidden;background:var(--bg)}
+#cv{position:absolute;inset:0;cursor:grab;touch-action:none}#cv:active{cursor:grabbing}
+#plane{position:absolute;left:0;top:0;will-change:transform}
+.tile{position:absolute;border:0;border-radius:20px;padding:16px;text-align:left;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;background:linear-gradient(160deg,var(--c1),#07091A 150%);font:inherit;cursor:pointer}
+.tile b{font:700 1.15rem/1.1 'Syne',sans-serif}.tile span{font-size:.85rem;opacity:.8}
+.hud{position:absolute;z-index:6;font-size:.9rem;color:var(--muted);pointer-events:none}
+.hud.t{top:86px;left:50%;transform:translateX(-50%)}
+.hud.b{left:clamp(16px,3vw,40px);bottom:max(18px,env(safe-area-inset-bottom,0px));font-variant-numeric:tabular-nums}
+.hud b{color:var(--ink);font-weight:500}
+#detail{position:absolute;z-index:8;right:clamp(14px,3vw,40px);bottom:clamp(14px,3vw,40px);width:min(420px,calc(100% - 28px));background:var(--nav);border:1px solid #ffffff1f;border-radius:24px;padding:26px;display:grid;gap:10px}
+#detail h2{font:800 2rem/1 'Syne',sans-serif;letter-spacing:-.03em}
+#detail button{justify-self:start;margin-top:8px;min-height:44px;padding:0 20px;border:0;border-radius:999px;background:var(--mari);color:#0A0F1F;font:500 .95rem 'Instrument Sans';cursor:pointer}
+@media(prefers-reduced-motion:reduce){.svc li span{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#landing"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M4 60V26C4 14 16 9 20 1c4 8 16 13 16 25v34" fill="none" stroke="#FF9F1C" stroke-width="4"/></svg><span>Courtyard Stories</span></a>
+  <nav class="links" aria-label="Main"><a href="#landing" data-r="landing">Home</a><a href="#studio" data-r="studio">Studio</a></nav>
+  <a class="cta" href="#landing">Enquire</a>
+</header>
+
+<main id="landing">
+  <section class="hero" id="hero">
+    <h1 class="d"><span id="l1">Stories live</span><span id="l2">in places.</span></h1>
+    <div class="hrow"><p>Five architectural worlds on one private estate in South Delhi. Scroll to walk through them.</p><a class="btn" href="#studio">Explore the studio</a></div>
+  </section>
+
+  <section class="hs" id="hs" aria-label="The five sets">
+    <div class="stick">
+      <div class="sh"><span>Five worlds</span><span id="cnt">01 / 05</span></div>
+      <div class="track" id="track">
+        <article class="card" style="--c:#E0A44A"><h3>Royal Haveli</h3><p>Ochre sandstone, staircases and shaded balconies.</p></article>
+        <article class="card" style="--c:#E2704F"><h3>Mughal Colonnade</h3><p>Terracotta jali screens and long arched corridors.</p></article>
+        <article class="card" style="--c:#4E86E8"><h3>Chefchaouen Suite</h3><p>Moroccan cobalt walls and quiet steps.</p></article>
+        <article class="card" style="--c:#B8975F"><h3>Rustic Village</h3><p>Natural thatch and earth tones.</p></article>
+        <article class="card" style="--c:#E8B84B"><h3>Night Gala</h3><p>Tungsten amber lanterns for after-dark scenes.</p></article>
+      </div>
+      <div class="bar"><i id="bar"></i></div>
+    </div>
+  </section>
+
+  <section class="rows" id="rows" aria-label="Recent shoots">
+    <h2 class="d">Recent shoots</h2>
+    <div class="row">
+      <div class="pill" style="--c:#E2704F">Terracotta jali</div><div class="pill w" style="--c:#4E86E8">Blue arches</div><div class="pill" style="--c:#E0A44A">Haveli staircase</div><div class="pill w" style="--c:#B8975F">Thatched tower</div><div class="pill" style="--c:#E8B84B">Night banquet</div><div class="pill w" style="--c:#D6336C">Festive gathering</div><div class="pill" style="--c:#4E86E8">Brass lanterns</div><div class="pill w" style="--c:#E2704F">Fashion reel</div>
+    </div>
+    <div class="row">
+      <div class="pill w" style="--c:#E8B84B">Commercial reel</div><div class="pill" style="--c:#B8975F">Birdseye cane</div><div class="pill w" style="--c:#D6336C">Events reel</div><div class="pill" style="--c:#E0A44A">Studio reel</div><div class="pill w" style="--c:#4E86E8">Colonnade walk</div><div class="pill" style="--c:#E2704F">Golden hour</div><div class="pill w" style="--c:#E0A44A">Courtyard</div><div class="pill" style="--c:#E8B84B">Lantern glow</div>
+    </div>
+  </section>
+
+  <section class="svc" aria-label="Services">
+    <h2 class="d">What we shoot</h2>
+    <ul>
+      <li>Fashion<span>Editorials, lookbooks and campaigns on real architecture.</span></li>
+      <li>Commercial<span>Brand films and product stories.</span></li>
+      <li>Studio<span>Podcasts, interviews and stills.</span></li>
+      <li>Events<span>Weddings, launches and gala nights.</span></li>
+    </ul>
+  </section>
+
+  <section class="end">
+    <h2 class="d">Book the courtyard.</h2>
+    <a class="btn" href="#landing">Plan a shoot</a>
+  </section>
+</main>
+
+<main id="studio" hidden aria-label="Studio explorer">
+  <div id="cv"><div id="plane"></div></div>
+  <div class="hud t">Drag · arrow keys · Enter to open</div>
+  <div class="hud b"><span id="clk">IST 00:00:00</span> · X <b id="px">+0000</b> Y <b id="py">+0000</b></div>
+  <aside id="detail" role="dialog" aria-modal="true" aria-labelledby="dt" hidden>
+    <h2 id="dt"></h2><p id="dp"></p><button type="button" id="dx">Close ×</button>
+  </aside>
+</main>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce)document.body.classList.add('rm');
+var L=$('#landing'),S=$('#studio');
+
+/* ---------- Landing: one rAF, transform-only, direct scroll mapping ---------- */
+var hs=$('#hs'),track=$('#track'),bar=$('#bar'),cnt=$('#cnt'),l1=$('#l1'),l2=$('#l2'),rs=$('#rows'),rows=[].slice.call(document.querySelectorAll('.row'));
+var dist=0,vh=innerHeight,dirty=true,last=0;
+function measure(){vh=innerHeight;dist=Math.max(0,track.scrollWidth-innerWidth);if(!reduce)hs.style.height=(dist+vh)+'px';dirty=true}
+function frame(){
+  if(dirty&&!L.hidden&&!reduce){
+    var y=scrollY,hp=Math.min(1,y/vh);
+    l1.style.transform='translate3d('+(-hp*16)+'vw,0,0)';
+    l2.style.transform='translate3d('+(hp*16)+'vw,0,0)';
+    var p=dist?Math.min(1,Math.max(0,(y-hs.offsetTop)/dist)):0;
+    track.style.transform='translate3d('+(-p*dist)+'px,0,0)';
+    bar.style.transform='scaleX('+p+')';
+    var n=Math.round(p*4)+1;if(n!==last){last=n;cnt.textContent='0'+n+' / 05'}
+    var t=(y-rs.offsetTop+vh)*.45;
+    rows[0].style.transform='translate3d('+(-t)+'px,0,0)';
+    rows[1].style.transform='translate3d('+(t)+'px,0,0)';
+    dirty=false;
+  }
+  requestAnimationFrame(frame);
+}
+addEventListener('scroll',function(){dirty=true},{passive:true});
+addEventListener('resize',function(){measure();buildPlane()});
+
+/* ---------- Studio: infinite draggable canvas (DOM + transform only) ---------- */
+var T=[["Royal Haveli","Set","#E0A44A","Ochre sandstone, staircases and jharokhas."],["Mughal Colonnade","Set","#E2704F","Terracotta jali and arched corridors."],["Chefchaouen Suite","Set","#4E86E8","Moroccan cobalt walls and steps."],["Rustic Village","Set","#B8975F","Natural thatch and earth tones."],["Night Gala","Set","#E8B84B","Tungsten amber lanterns for night scenes."],["Fashion","Service","#D6336C","Editorials and campaigns."],["Commercial","Service","#E0A44A","Brand films and product stories."],["Podcast","Service","#4E86E8","Studio recording and interviews."],["Events","Service","#E2704F","Launches, weddings, gala nights."],["Kapashera","Location","#B8975F","Palam Farms, New Delhi 110037."],["Reels","Work","#E8B84B","Recent shoots on the estate."],["Visit","Plan","#D6336C","Book a walk-through of the sets."]];
+var cv=$('#cv'),plane=$('#plane'),px=$('#px'),py=$('#py'),W=1920,H=1600,X=0,Y=0,vx=0,vy=0,drag=false,moved=0,lx=0,ly=0,run=false,built=false;
+function fmt(n){n=Math.round(n);return(n<0?'-':'+')+String(Math.abs(n)).padStart(4,'0')}
+function paint(){var ox=((X%W)+W)%W,oy=((Y%H)+H)%H;plane.style.transform='translate3d('+(-ox)+'px,'+(-oy)+'px,0)';px.textContent=fmt(X);py.textContent=fmt(Y)}
+function buildPlane(){
+  if(S.hidden)return;
+  var nx=Math.ceil(innerWidth/W)+1,ny=Math.ceil(innerHeight/H)+1,h='';
+  for(var a=0;a<nx;a++)for(var b=0;b<ny;b++)for(var i=0;i<24;i++){
+    var t=T[i%T.length],c=i%6,r=(i/6)|0,w=230+((i*37)%60),hh=290+((i*53)%80);
+    h+='<button class="tile" style="left:'+(a*W+c*320+((i*29)%40))+'px;top:'+(b*H+r*400+((i*17)%50))+'px;width:'+w+'px;height:'+hh+'px;--c1:'+t[2]+'" data-i="'+(i%T.length)+'"><b>'+t[0]+'</b><span>'+t[1]+'</span></button>';
+  }
+  plane.innerHTML=h;paint();
+}
+function loop(){
+  if(!drag){X+=vx;Y+=vy;vx*=.94;vy*=.94}
+  paint();
+  if(drag||Math.abs(vx)>.1||Math.abs(vy)>.1)requestAnimationFrame(loop);else run=false;
+}
+function kick(){if(!run){run=true;requestAnimationFrame(loop)}}
+cv.addEventListener('pointerdown',function(e){drag=true;moved=0;lx=e.clientX;ly=e.clientY;vx=vy=0;kick()});
+addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;X-=dx;Y-=dy;vx=-dx;vy=-dy;moved+=Math.abs(dx)+Math.abs(dy)});
+addEventListener('pointerup',function(){drag=false});
+var det=$('#detail'),lastFocus=null;
+function open(i,el){var t=T[i];$('#dt').textContent=t[0];$('#dp').textContent=t[1]+' · '+t[3];lastFocus=el||null;det.hidden=false;$('#dx').focus()}
+function close(){det.hidden=true;if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+plane.addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b||moved>6)return;open(+b.dataset.i,b)});
+$('#dx').addEventListener('click',close);
+addEventListener('keydown',function(e){
+  if(S.hidden)return;
+  var k=e.key;
+  if(k==='Escape'&&!det.hidden)close();
+  else if(k==='ArrowLeft'){vx=-22;kick()}else if(k==='ArrowRight'){vx=22;kick()}
+  else if(k==='ArrowUp'){vy=-22;kick()}else if(k==='ArrowDown'){vy=22;kick()}
+  else if(k==='Enter'&&!(document.activeElement&&document.activeElement.classList.contains('tile'))&&det.hidden){
+    var best=null,bd=1e9,cx=innerWidth/2,cy=innerHeight/2;
+    plane.querySelectorAll('.tile').forEach(function(t){var r=t.getBoundingClientRect(),d=Math.hypot(r.left+r.width/2-cx,r.top+r.height/2-cy);if(d<bd){bd=d;best=t}});
+    if(best)open(+best.dataset.i,best);
+  }
+});
+var fm=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});
+setInterval(function(){if(!S.hidden)$('#clk').textContent='IST '+fm.format(new Date())},1000);
+
+/* ---------- Routing (plain #name hashes) ---------- */
+function route(){
+  var st=location.hash==='#studio';
+  L.hidden=st;S.hidden=!st;document.body.classList.toggle('st',st);
+  document.querySelectorAll('.links a').forEach(function(a){a.classList.toggle('on',(a.dataset.r==='studio')===st)});
+  scrollTo(0,0);
+  if(st){buildPlane()}else{measure()}
+}
+addEventListener('hashchange',route);
+route();requestAnimationFrame(frame);
+addEventListener('load',measure);
+})();
+</script>
+</body>
+</html>
