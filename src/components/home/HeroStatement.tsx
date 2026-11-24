@@ -7,7 +7,7 @@ import { initMotionEngine, markMotionDirty, prefersReducedMotion, subscribeMotio
 const MAX_SHIFT_VW = 12;
 const FLOAT_LINE = "Five architectural worlds on one private estate in Kapashera.";
 
-export function HeroStatement() {
+export function HeroStatement({ pinned = false }: { pinned?: boolean }) {
   const line1Ref = useRef<HTMLSpanElement>(null);
   const line2Ref = useRef<HTMLSpanElement>(null);
   const ledeRef = useRef<HTMLDivElement>(null);
@@ -22,15 +22,16 @@ export function HeroStatement() {
     const l1 = line1Ref.current;
     const l2 = line2Ref.current;
     const lede = ledeRef.current;
-    if (!l1 || !l2) return;
+    if (pinned || !l1 || !l2) return;
 
     return subscribeMotion(({ scrollY, vh }) => {
       if (!loaderDone) return;
 
       const hp = Math.min(1, scrollY / Math.max(vh, 1));
-      const shift = Math.min(hp * 16, MAX_SHIFT_VW);
-      l1.style.transform = `translate3d(${-shift}vw, 0, 0)`;
-      l2.style.transform = `translate3d(${shift}vw, 0, 0)`;
+      const narrow = window.innerWidth < 768;
+      const shift = narrow ? 0 : Math.min(hp * 16, MAX_SHIFT_VW);
+      l1.style.transform = narrow ? "none" : `translate3d(${-shift}vw, 0, 0)`;
+      l2.style.transform = narrow ? "none" : `translate3d(${shift}vw, 0, 0)`;
 
       if (lede && !prefersReducedMotion()) {
         const fade = Math.min(1, scrollY / Math.max(vh * 0.42, 1));
@@ -41,7 +42,7 @@ export function HeroStatement() {
         lede.style.pointerEvents = opacity < 0.2 ? "none" : "";
       }
     });
-  }, [loaderDone]);
+  }, [loaderDone, pinned]);
 
   return (
     <section className={`landing-hero landing-band-hero${loaderDone ? " hero-ready" : ""}`} aria-label="Introduction">
@@ -61,6 +62,9 @@ export function HeroStatement() {
           </div>
         </div>
         <p className="visually-hidden">{FLOAT_LINE}</p>
+        <p className="hero-mobile-lede" aria-hidden="true">
+          {FLOAT_LINE}
+        </p>
         <div className="hero-float" aria-hidden="true">
           <div className="hero-float-track">
             <span>
@@ -75,9 +79,9 @@ export function HeroStatement() {
           <div className="landing-hero-row">
             <div ref={ledeRef} className="landing-hero-lede">
               <p className="landing-hero-scroll-cue" aria-hidden="true">
-                <span className="landing-hero-scroll-cue-text">Scroll up</span>
+                <span className="landing-hero-scroll-cue-text">Scroll</span>
                 <span className="landing-hero-scroll-cue-chevron" aria-hidden="true">
-                  ↑
+                  ↓
                 </span>
               </p>
             </div>

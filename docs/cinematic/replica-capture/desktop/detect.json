@@ -1,0 +1,44 @@
+{
+ "title": "The Courtyard Stories — Heritage Architecture & Cinematic Production Venue in Delhi",
+ "scrollHeight": 12913,
+ "storyTrack": {
+  "top": 0,
+  "height": 11520
+ },
+ "innerHeight": 900,
+ "innerWidth": 1440,
+ "canvases": [
+  {
+   "w": 1440,
+   "h": 900,
+   "cls": "",
+   "position": "absolute"
+  }
+ ],
+ "videos": 6,
+ "images": 19,
+ "iframes": 0,
+ "globals": {
+  "gsap": false,
+  "ScrollTrigger": false,
+  "Lenis": false,
+  "THREE": false,
+  "locomotive": false
+ },
+ "customElements": [],
+ "threeSeen": true,
+ "rendererCount": 1,
+ "sceneCount": 1,
+ "renderedFrames": 1,
+ "htmlClass": "js-reveal cinematic-on",
+ "bodyClass": "",
+ "htmlOverflow": "visible",
+ "bodyOverflow": "visible",
+ "fonts": [
+  "Fraunces",
+  "Instrument Sans",
+  "Syne",
+  "Tiro Devanagari Hindi"
+ ],
+ "mode": "three"
+}

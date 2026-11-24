@@ -24,7 +24,7 @@ export function SplitCard({
   description,
   href,
   accent = "var(--marigold)",
-  bgTint = "rgba(15, 21, 48, 0.85)",
+  bgTint = "var(--line)",
   linkLabel = "View",
   className = "",
   footer,

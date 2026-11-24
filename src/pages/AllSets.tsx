@@ -18,7 +18,9 @@ export default function AllSets() {
     () =>
       active.id === "all"
         ? ARCHITECTURAL_SETS
-        : ARCHITECTURAL_SETS.filter((set) => "ids" in active && active.ids.includes(set.id)),
+        : ARCHITECTURAL_SETS.filter(
+            (set) => "ids" in active && (active.ids as readonly string[]).includes(set.id),
+          ),
     [active],
   );
 

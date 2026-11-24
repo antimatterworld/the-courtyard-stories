@@ -1,8 +1,24 @@
 # The Courtyard Stories — Frontend UI Inventory
 
 **Purpose:** Single reference for redesigning, extending, or AI-guiding the frontend (colors, typography, motion, video, layout, performance).  
-**Stack:** Vite 8 · React 19 · React Router 7 · TypeScript · `styles.css` + `cinematic.css` + `home-landing.css` + `studio-explorer.css` · **no WebGL / Three.js in runtime**.  
-**Last audited:** 2026-11-21 (**Pass 4** colour bands, SplitCard pinned rail, recent-shoot rails, statement band, reveal safety, loader slide-up, studio explorer layout/HUD, visit split grid).
+**Stack:** Vite 8 · React 19 · React Router 7 · TypeScript · `styles.css` + `cinematic.css` + `home-landing.css` + `story.css` + `studio-explorer.css`. `/` mounts a Three.js canvas inside `CinematicHome` after the loader. `?cinematic=0`, reduced motion, or no WebGL falls back to `LandingHome`.  
+**Last audited:** 2026-11-24, Playwright on `http://localhost:5174/` (Chrome), 1440×900 and 390×844. Pass 4 notes below still describe the fallback homepage, not the page a visitor gets.
+
+---
+
+## Landing page status — 24 November 2026
+
+Walked as a visitor. The loader finishes and the page does not throw. What is on screen is distorted. The homepage is one very long sticky scene (about 13 screens on a laptop, longer on a phone). A block-built courtyard stays fixed behind the copy, and the real photographs and headlines are laid on top of it instead of replacing it.
+
+**Opening.** The nav pill is intact (Work, All sets, Services, Studio, Visit, Enquire; Menu on a phone). The headline “Stories live in places.” is readable. On a laptop the line “Five architectural worlds on one private estate in Kapashera.” is repeated as a marquee and runs off both sides of the screen, so the sentence is cut in half. Zone name pills (Mughal Colonnade, Chefchaouen, Thatched Lookout) sit on that sentence and on the yellow gate. “Plan a shoot” and “Explore the studio” are usable. “SCROLL” is small and partly behind a column. On a phone the headline wraps cleanly and the marquee does not collide with it. Five chips — Haveli, Mughal, Chefchaouen, Thatch, Gala — wrap above the WhatsApp button.
+
+**Middle of the scroll.** A real set card appears (first the haveli, later the night gala). The words run underneath the floating zone labels and get cut off. The same photograph is drawn twice, so a second copy sticks out under the card. A black band covers the top edge. “Recent shoots” is a strip of real photos whose captions crash into each other, while the orange blocks and the yellow gate poke through the row.
+
+**End of the scroll.** The copy leaves and the visitor is left with the diagram: a yellow gate, blue and orange slabs, straw boxes, two white pads, and a compass. It reads as a rough model, not the photographed estate. The booking and FAQ copy is in the page, but it is not what fills this last frame.
+
+**Zone click.** On a phone, tapping Haveli opens the real haveli photograph. On a laptop the matching control is the name pinned to the 3D building; the phone chip row is present in the page but not visible, so the first click target is easy to miss.
+
+**Measured.** No horizontal page scroll at 1440 or 390. No console page errors. One night-gala video request was aborted while scrolling. The public Worker from 22 November is the same build family; this note is from the local app on 24 November.
 
 ---
 
@@ -26,7 +42,8 @@
 | Scroll reveal | `src/lib/hooks.ts` | `useReveal` (`useTheme` unused in UI) |
 | Loader progress | `src/lib/world-progress.tsx` | `loaderDone`, `loaderRatio`; font + poster weights |
 | JSON-LD | `src/lib/schema.ts` | Uses `STUDIO` address/geo/maps |
-| Fonts + meta | `index.html` | Syne, Instrument Sans, Tiro Devanagari Hindi; `theme-color` `#0A0F1F` |
+| Fonts + meta | `index.html` | **Fraunces** (display titles), Syne, Instrument Sans, Tiro Devanagari Hindi; `theme-color` `#0A0F1F` |
+| **Display type treatment** | end of `src/styles/home-landing.css` | Overrides hero, `.h1`/`.h2`, `.section-pointer`, statement, services, CTA, FAQ, falling-stack, page heroes, `.sets-head h1` |
 | Phase A pipeline | `tools/analyze/analyze_videos.py`, `tools/analyze/REPORT.md` | `npm run analyze:videos` |
 | **Motion reference** | `public/courtyard-landing-studio-preview.html` | Landing + studio interaction prototype |
 | **Theme preview (static)** | `public/courtyard-theme-preview.html` | Token toggles A/B/C |
@@ -48,7 +65,7 @@
 - **Mood:** Film title sequence → editorial landing; **`--bg` landing** often `#07091A` via `LandingHome` inline set (cinematic tokens still `#0A0F1F` base).
 - **Palette anchors:** Night `#0A0F1F`, plaster `#F3EBDD`, marigold CTA `#FF9F1C`, bougainvillea `#D6336C`, cobalt focus `#2F5BD0`, sand `#C9A37A`.
 - **Texture:** Film grain **disabled** (`.grain { display: none }`).
-- **Typography:** **Syne** display, **Instrument Sans** body/UI, **Tiro Devanagari Hindi** on loader footer line.
+- **Typography:** **Fraunces** (italic, `SOFT` 100, `WONK` 1, `opsz` 144) for hero and section titles; **Syne** remains the UI display fallback in tokens; **Instrument Sans** body/UI; **Tiro Devanagari Hindi** on the loader footer line. Title colour is burnt orange `#D94F1F`. The hero band is seafoam `#A8C9BE` with a paper-grain overlay.
 - **Shape:** Pill buttons, cinematic **`--radius: 20px`** on cards.
 - **Home (`/`):** VS/Goods-style **scroll-linked rails** on `#07091A` — no chapter WebGL, no full-page scrub journey.
 - **Studio (`/studio`):** ReframeHK-style **infinite drag** tile plane + detail panel + **List view** (a11y).
@@ -109,21 +126,42 @@ Regenerate: `npm run analyze:videos` → `scene-manifest.json` + `public/assets/
 
 ## 4. Typography
 
+Direction: 1970s editorial poster. Soft high-contrast serif, thick stems, thin joins, rounded terminals, tight leading. Not a geometric inline face and not Bodoni. Recoleta / ITC Souvenir are the visual target; **Fraunces** is the webfont used because those cuts are not on Google Fonts.
+
 ### 4.1 Families (`index.html`)
 
-| Role | Family | CSS var |
-|------|--------|---------|
-| Display | **Syne** 700–800 | `--font-display` |
+| Role | Family | Where |
+|------|--------|--------|
+| Editorial display | **Fraunces** italic 700, axes `SOFT` 100, `WONK` 1, `opsz` 144 | End of `home-landing.css` |
+| UI display (nav, buttons, tokens) | **Syne** 700–800 | `--font-display` |
 | Body / UI | **Instrument Sans** 400–500 | `--font-body`, `--font-mono` |
 | Loader Hindi | **Tiro Devanagari Hindi** | `--font-deva` |
 
-### 4.2 Scale (cinematic + landing)
+Loaded from Google Fonts in `index.html` (Vite, not `next/font`). Fallback stack: `"Fraunces", "Iowan Old Style", "Palatino Linotype", serif`.
 
-Landing hero: `clamp(2.5rem, 7.2vw, 6.2rem)` in `home-landing.css` (`.landing-hero h1`). Cinematic `--t-display` / `--t-h1` etc. still apply on inner pages.
+### 4.2 Where Fraunces is applied
 
-### 4.3 Utilities
+Selectors: `.landing-hero h1`, `.landing-hero .hero-line`, `.section-pointer`, `.landing-statement-copy h2`, `.landing-services h2`, `.landing-band-cta h2`, `.landing-band-faq h2`, `.falling-stack-head`, `.page-hero h1`, `.h1`, `.h2`, `.sets-head h1`.
 
-`.btn` pill primary, `.h1`–`.h3`, `.muted`, `.chip` — mostly `styles.css`, overridden where noted in `cinematic.css`.
+Not applied to card captions, nav, buttons, or body copy.
+
+| Setting | Value |
+|---------|--------|
+| Colour | `#D94F1F` |
+| Style | italic, weight 700, no uppercase, no shadow, no stroke |
+| Tracking | `-0.035em` |
+| Leading | `0.88` |
+| Hero size | `clamp(3.5rem, 11vw, 8.4rem)` |
+| Page / section titles | `clamp(2.5rem, 6.2vw, 5.4rem)` |
+| Smaller section labels (`.section-pointer`, falling-stack, FAQ) | `clamp(1.9rem, 4.2vw, 3.2rem)` |
+
+### 4.3 Hero field
+
+`.landing-band-hero` background is `#A8C9BE` with a lighter radial `#D7EFE6` and the existing SVG noise overlay at `0.35` opacity, `mix-blend-mode: multiply`. Supporting hero lines (`.hero-mobile-lede`, scroll cue) are `#9A3412`.
+
+### 4.4 Utilities
+
+`.btn` pill primary, `.h1`–`.h3`, `.muted`, `.chip` — mostly `styles.css`, overridden where noted in `cinematic.css`. `.h1` and `.h2` pick up the Fraunces treatment above.
 
 ---
 
@@ -282,7 +320,9 @@ Flythroughs `flythrough-01-aerial.mp4` … `05-nightgala.mp4`; portfolio loops �
 
 ## 11. Page layout summary
 
-### `/` Home (`LandingHome`)
+### `/` Home (what loads)
+
+`CinematicHome`: sticky `StoryTrack` + Three.js courtyard, then `LandingClose`. Chapters over the canvas are hero, five set cards, recent shoots, statement. Zone names are 3D labels on desktop and a chip row on a phone. Clicking a name opens that set’s real still. See **Landing page status — 24 November 2026**. The list below is the `LandingHome` fallback only (`?cinematic=0`, reduced motion, or no WebGL).
 
 1. **`HeroStatement`** — headline parallax, featured set video card  
 2. **`PinnedRail`** — five architectural sets (horizontal scroll-scrub)  

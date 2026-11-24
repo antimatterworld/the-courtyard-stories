@@ -1,0 +1,271 @@
+{
+ "stats": {
+  "meshes": 67,
+  "instancedMeshes": 2,
+  "instances": 7200,
+  "points": 0,
+  "skinned": 0,
+  "lines": 0,
+  "objects": 102
+ },
+ "materials": {
+  "MeshStandardMaterial": 67
+ },
+ "lights": [
+  {
+   "type": "HemisphereLight",
+   "color": "#ffffff",
+   "intensity": 1,
+   "castShadow": false,
+   "shadowMapSize": null,
+   "pos": [
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "type": "DirectionalLight",
+   "color": "#ffffff",
+   "intensity": 3.1,
+   "castShadow": false,
+   "shadowMapSize": [
+    512,
+    512
+   ],
+   "pos": [
+    -34,
+    60,
+    42
+   ]
+  }
+ ],
+ "topLevel": [
+  {
+   "type": "HemisphereLight",
+   "name": "",
+   "children": 0
+  },
+  {
+   "type": "DirectionalLight",
+   "name": "",
+   "children": 0
+  },
+  {
+   "type": "Mesh",
+   "name": "",
+   "children": 0
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Group",
+   "name": "",
+   "children": 2
+  },
+  {
+   "type": "Mesh",
+   "name": "",
+   "children": 0
+  },
+  {
+   "type": "Mesh",
+   "name": "",
+   "children": 0
+  }
+ ],
+ "renderer": {
+  "toneMapping": 7,
+  "exposure": 1,
+  "outputColorSpace": "srgb",
+  "shadowMapEnabled": false,
+  "shadowMapType": 2,
+  "pixelRatio": 1.5,
+  "contextAttributes": {
+   "alpha": true,
+   "antialias": true,
+   "depth": true,
+   "desynchronized": false,
+   "failIfMajorPerformanceCaveat": false,
+   "powerPreference": "high-performance",
+   "premultipliedAlpha": true,
+   "preserveDrawingBuffer": false,
+   "stencil": false,
+   "xrCompatible": false
+  },
+  "info": {
+   "memory": {
+    "geometries": 55,
+    "textures": 1
+   },
+   "render": {
+    "frame": 1,
+    "calls": 55,
+    "triangles": 87026,
+    "points": 0,
+    "lines": 0
+   }
+  }
+ },
+ "fog": {
+  "type": "linear",
+  "color": "#e8d8c3",
+  "near": 70,
+  "far": 330
+ },
+ "background": "#e8d8c3",
+ "hasEnvironment": false
+}

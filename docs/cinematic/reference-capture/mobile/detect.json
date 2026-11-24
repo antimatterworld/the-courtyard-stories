@@ -1,0 +1,38 @@
+{
+ "title": "The Courtyard Studio — One Studio. Endless Worlds to Create In.",
+ "scrollHeight": 13587,
+ "innerHeight": 844,
+ "innerWidth": 390,
+ "canvases": [
+  {
+   "w": 585,
+   "h": 1266,
+   "cls": "",
+   "position": "static"
+  }
+ ],
+ "videos": 0,
+ "images": 0,
+ "iframes": 0,
+ "globals": {
+  "gsap": false,
+  "ScrollTrigger": false,
+  "Lenis": false,
+  "THREE": false,
+  "locomotive": false
+ },
+ "customElements": [],
+ "threeSeen": true,
+ "rendererCount": 1,
+ "sceneCount": 2,
+ "renderedFrames": 585,
+ "htmlClass": "",
+ "bodyClass": "",
+ "htmlOverflow": "visible",
+ "bodyOverflow": "visible",
+ "fonts": [
+  "Cormorant Garamond",
+  "Manrope Variable"
+ ],
+ "mode": "three"
+}

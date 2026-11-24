@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SectionDoodle } from "./SectionDoodle";
 import { ChillDoodle } from "./ChillDoodle";
 import { ARCHITECTURAL_SETS } from "../../data/content";
@@ -39,6 +39,17 @@ export function FallingCardStack({ cards, scrollPerCard = 850, onOpen }: Props) 
   const stageRef = useRef<HTMLDivElement>(null);
   const countRef = useRef<HTMLSpanElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [compact, setCompact] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches,
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const onChange = () => setCompact(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useGSAP(
     () => {
@@ -49,7 +60,7 @@ export function FallingCardStack({ cards, scrollPerCard = 850, onOpen }: Props) 
       const nodes = cardRefs.current.filter((n): n is HTMLDivElement => Boolean(n));
       if (nodes.length !== cards.length) return;
 
-      if (prefersReducedMotion()) {
+      if (compact || prefersReducedMotion()) {
         nodes.forEach((node) => {
           node.style.transform = "none";
         });
@@ -147,7 +158,7 @@ export function FallingCardStack({ cards, scrollPerCard = 850, onOpen }: Props) 
         ctx?.revert();
       };
     },
-    { scope: rootRef, dependencies: [cards.length, scrollPerCard] },
+    { scope: rootRef, dependencies: [cards.length, scrollPerCard, compact] },
   );
 
   return (
@@ -181,6 +192,10 @@ export function FallingCardStack({ cards, scrollPerCard = 850, onOpen }: Props) 
             >
               <button type="button" className="falling-card-face" onClick={() => onOpen?.(card.id)}>
                 <img src={card.image} alt="" draggable={false} />
+                <span className="falling-card-mobile-title">
+                  <span style={{ color: card.accent }}>{card.tag}</span>
+                  <strong>{card.title}</strong>
+                </span>
               </button>
             </div>
           ))}

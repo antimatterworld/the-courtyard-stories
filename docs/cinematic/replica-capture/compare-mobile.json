@@ -1,0 +1,375 @@
+{
+ "profile": "mobile",
+ "normalized": false,
+ "sceneDiagonal": {
+  "reference": 905.3,
+  "replica": 905.3
+ },
+ "scrollLengthViewportHeights": {
+  "reference": 16.1,
+  "replica": 15.89,
+  "replicaMeasuredOn": "story track"
+ },
+ "camera": {
+  "meanPosErr": 0,
+  "maxPosErr": 0,
+  "meanLookErrDeg": 0,
+  "maxLookErrDeg": 0.03,
+  "maxFovErr": 0.56
+ },
+ "thresholds": {
+  "posErr": 0.02,
+  "lookErrDeg": 3,
+  "fovErr": 2,
+  "scrollLengthRatio": [
+   0.95,
+   1.05
+  ]
+ },
+ "rows": [
+  {
+   "p": 0,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.025,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.05,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.075,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.1,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.125,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.15,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.175,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.2,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.225,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.25,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.275,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.3,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.325,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.35,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.375,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.4,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.425,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.45,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.475,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.5,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.525,
+   "posErr": 0,
+   "lookErrDeg": 0.02,
+   "fovErr": 0.56
+  },
+  {
+   "p": 0.55,
+   "posErr": 0,
+   "lookErrDeg": 0.02,
+   "fovErr": 0.56
+  },
+  {
+   "p": 0.575,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.6,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.625,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.65,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.675,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.7,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.725,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.75,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.775,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.8,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.825,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.85,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.875,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.9,
+   "posErr": 0,
+   "lookErrDeg": 0.03,
+   "fovErr": 0.39
+  },
+  {
+   "p": 0.925,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 0.95,
+   "posErr": 0,
+   "lookErrDeg": 0.01,
+   "fovErr": 0
+  },
+  {
+   "p": 0.975,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  },
+  {
+   "p": 1,
+   "posErr": 0,
+   "lookErrDeg": 0,
+   "fovErr": 0
+  }
+ ],
+ "headingsAtProgress": [
+  {
+   "p": 0,
+   "reference": [
+    "one studio. endless worlds to create in."
+   ],
+   "replica": [
+    "stories live in places."
+   ]
+  },
+  {
+   "p": 0.1,
+   "reference": [
+    "step through the gate."
+   ],
+   "replica": [
+    "stories live in places."
+   ]
+  },
+  {
+   "p": 0.2,
+   "reference": [
+    "12 sets rise around you."
+   ],
+   "replica": [
+    "stories live in places."
+   ]
+  },
+  {
+   "p": 0.3,
+   "reference": [
+    "12 sets rise around you.",
+    "find the world that fits your story."
+   ],
+   "replica": []
+  },
+  {
+   "p": 0.4,
+   "reference": [
+    "find the world that fits your story."
+   ],
+   "replica": [
+    "the royal ochre haveli & courtyard"
+   ]
+  },
+  {
+   "p": 0.5,
+   "reference": [
+    "find the world that fits your story.",
+    "photographs from the sets."
+   ],
+   "replica": [
+    "the chefchaouen moroccan suite"
+   ]
+  },
+  {
+   "p": 0.6,
+   "reference": [],
+   "replica": [
+    "the thatched lookout & rustic heritage set"
+   ]
+  },
+  {
+   "p": 0.7,
+   "reference": [],
+   "replica": [
+    "recent shoots"
+   ]
+  },
+  {
+   "p": 0.8,
+   "reference": [
+    "what the studio is for."
+   ],
+   "replica": [
+    "what we shoot"
+   ]
+  },
+  {
+   "p": 0.9,
+   "reference": [
+    "how it works",
+    "explore",
+    "discover",
+    "enquire",
+    "confirm"
+   ],
+   "replica": []
+  },
+  {
+   "p": 1,
+   "reference": [
+    "make this space your next story."
+   ],
+   "replica": []
+  }
+ ],
+ "pass": true
+}

@@ -1,0 +1,33 @@
+{
+ "three": [
+  "StudioCanvas-JImnhWH6.js"
+ ],
+ "gsap": [
+  "index-DjPtiLhX.js"
+ ],
+ "ScrollTrigger": [
+  "index-DjPtiLhX.js"
+ ],
+ "lenis": [],
+ "locomotive": [],
+ "GLTFLoader": [],
+ "DRACOLoader": [],
+ "KTX2Loader": [],
+ "EffectComposer": [],
+ "Bloom": [],
+ "DepthOfField": [],
+ "reactThreeFiber": [
+  "StudioCanvas-JImnhWH6.js"
+ ],
+ "drei": [],
+ "theatre": [],
+ "spline": [
+  "StudioCanvas-JImnhWH6.js"
+ ],
+ "CatmullRom": [
+  "StudioCanvas-JImnhWH6.js"
+ ],
+ "framerMotion": [],
+ "lottie": [],
+ "threeRevisionGuess": null
+}

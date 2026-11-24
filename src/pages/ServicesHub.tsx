@@ -68,7 +68,7 @@ export default function ServicesHub() {
                 <p className="muted reveal" style={{ marginTop: "var(--s-4)", lineHeight: 1.7 }}>
                   {s.short}
                 </p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--s-5)", marginTop: "var(--s-6)" }}>
+                <div className="feature-pair">
                   <div>
                     <h3 className="h3" style={{ fontSize: "var(--t-small)" }}>
                       What you get
@@ -104,7 +104,7 @@ export default function ServicesHub() {
         ))}
 
         <section className="section" aria-label="Service FAQs">
-          <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "clamp(32px,5vw,80px)" }}>
+          <div className="container layout-aside layout-aside--wide">
             <div className="reveal">
               <p className="eyebrow">Practical questions</p>
               <h2 className="h2">

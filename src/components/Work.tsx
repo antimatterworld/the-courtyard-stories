@@ -184,16 +184,16 @@ export function WorkLightbox({ item, onClose }: { item: PortfolioItem; onClose: 
                 display: "flex",
                 alignItems: "center",
                 gap: 10,
-                background: "rgba(20,17,13,.75)",
+                background: "var(--line)",
                 fontFamily: "var(--font-mono)",
                 fontSize: 10,
                 letterSpacing: "0.14em",
-                color: "#f4efe7",
+                color: "var(--text)",
               }}
               aria-hidden="true"
             >
               <span style={{ opacity: 0.9, color: "var(--accent)" }}>▸ 4K 50FPS · PRODUCTION MASTER</span>
-              <span style={{ flex: 1, height: 2, background: "rgba(244,239,231,.25)", overflow: "hidden" }}>
+              <span style={{ flex: 1, height: 2, background: "var(--line)", overflow: "hidden" }}>
                 <span
                   style={{
                     position: "relative",

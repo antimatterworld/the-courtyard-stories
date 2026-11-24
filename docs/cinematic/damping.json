@@ -1,0 +1,6 @@
+{
+  "source": "docs/cinematic/reference-capture/desktop/timeseries.json",
+  "samples": 2485,
+  "tauSeconds": null,
+  "note": "OBSERVED: timeseries has no target/pos pair, so no exponential lag was fitted. Native scroll, Lenis false."
+}

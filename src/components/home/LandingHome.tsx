@@ -13,7 +13,7 @@ import { StatementBlock } from "./StatementBlock";
 export function LandingHome() {
   useEffect(() => {
     if (prefersReducedMotion()) document.body.classList.add("landing-reduced-motion");
-    document.documentElement.style.setProperty("--bg", "#07091A");
+    document.documentElement.style.setProperty("--bg", "var(--bg)");
     initRevealSystem();
     return () => document.body.classList.remove("landing-reduced-motion");
   }, []);

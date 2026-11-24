@@ -1,0 +1,656 @@
+[
+ {
+  "url": "http://localhost:5173/?cinematic=1",
+  "status": 200,
+  "type": "text/html",
+  "bytes": 3570
+ },
+ {
+  "url": "http://localhost:5173/src/main.tsx?t=1795328203419",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 19192
+ },
+ {
+  "url": "http://localhost:5173/@react-refresh",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 118969
+ },
+ {
+  "url": "http://localhost:5173/@vite/client",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 222716
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/react.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 755
+ },
+ {
+  "url": "http://localhost:5173/src/lib/reveal.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 4863
+ },
+ {
+  "url": "http://localhost:5173/src/styles/cinematic.css",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 11214
+ },
+ {
+  "url": "http://localhost:5173/src/styles.css",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 50124
+ },
+ {
+  "url": "http://localhost:5173/src/styles/studio-explorer.css",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 10334
+ },
+ {
+  "url": "http://localhost:5173/src/styles/home-landing.css",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 36310
+ },
+ {
+  "url": "http://localhost:5173/src/components/Loader.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 24243
+ },
+ {
+  "url": "http://localhost:5173/src/lib/world-progress.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 8014
+ },
+ {
+  "url": "http://localhost:5173/src/components/Chrome.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 38818
+ },
+ {
+  "url": "http://localhost:5173/src/pages/WorkPage.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 14690
+ },
+ {
+  "url": "http://localhost:5173/src/pages/ServicesHub.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 26163
+ },
+ {
+  "url": "http://localhost:5173/src/pages/Home.tsx?t=1795328203419",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 6033
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 3098225
+ },
+ {
+  "url": "http://localhost:5173/src/pages/Studio.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 3931
+ },
+ {
+  "url": "http://localhost:5173/src/pages/AllSets.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 12477
+ },
+ {
+  "url": "http://localhost:5173/src/pages/ServiceDetail.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 31429
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 1433453
+ },
+ {
+  "url": "http://localhost:5173/src/pages/NotFound.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 7447
+ },
+ {
+  "url": "http://localhost:5173/src/pages/Visit.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 32171
+ },
+ {
+  "url": "http://localhost:5173/node_modules/vite/dist/client/env.mjs",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 3390
+ },
+ {
+  "url": "http://localhost:5173/src/pages/Enquire.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 41806
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 35724
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/react-4hkZzRew.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 135278
+ },
+ {
+  "url": "http://localhost:5173/src/data/content.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 87077
+ },
+ {
+  "url": "http://localhost:5173/src/lib/hooks.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 8605
+ },
+ {
+  "url": "http://localhost:5173/src/components/Work.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 37670
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/scheduler-DgymjHxv.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 34400
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/runtime/capability.ts?t=1795327055449",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 2379
+ },
+ {
+  "url": "http://localhost:5173/src/lib/schema.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 12544
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/rolldown-runtime-SbdDWaPq.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 7801
+ },
+ {
+  "url": "http://localhost:5173/src/components/LazyViewportVideo.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 9784
+ },
+ {
+  "url": "http://localhost:5173/src/components/StudioImage.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 22383
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/LandingHome.tsx?t=1795325378451",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 7051
+ },
+ {
+  "url": "http://localhost:5173/src/components/FAQ.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 5841
+ },
+ {
+  "url": "http://localhost:5173/src/components/SplitCard.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 9701
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/react-dom-CRx58tZq.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 50931
+ },
+ {
+  "url": "http://localhost:5173/src/components/studio/StudioExplorer.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 53025
+ },
+ {
+  "url": "http://localhost:5173/src/components/EnquiryForm.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 75796
+ },
+ {
+  "url": "http://localhost:5173/src/lib/motion.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 7164
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/MarqueeBand.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 4325
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/CounterRails.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 19155
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/HeroStatement.tsx?t=1795325378451",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 18128
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/LandingClose.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 7039
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/SetOfTheMonth.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 6814
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/StatementBlock.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 8346
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/ServiceList.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 12417
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/PinnedRail.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 4527
+ },
+ {
+  "url": "http://localhost:5173/src/lib/submission.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 9950
+ },
+ {
+  "url": "http://localhost:5173/src/components/studio/studioTiles.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 10417
+ },
+ {
+  "url": "http://localhost:5173/src/lib/gsap.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 4149
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/ChillDoodle.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 5411
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/SectionDoodle.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 4613
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/FiveWorldsDetail.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 12057
+ },
+ {
+  "url": "http://localhost:5173/src/components/home/FallingCardStack.tsx",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 26196
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/gsap.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 2478
+ },
+ {
+  "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,700,100,1;1,9..144,700,100,1&family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap",
+  "status": 200,
+  "type": "text/css",
+  "bytes": 0
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/@gsap_react.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 7027
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 376592
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/gsap-CuAjO623.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 630326
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-02-haveli.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 710964
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-03-colonnade.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 1015544
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-thatched-tower.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 1333910
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-04-mediterranean.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 1147718
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-05-nightgala.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 200492
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/CinematicHome.tsx?t=1795328203419",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 4677
+ },
+ {
+  "url": "http://localhost:5173/src/styles/story.css?t=1795326541598",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 3669
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/story/StoryTrack.tsx?t=1795328203419",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 22458
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/story/storyboard.ts?t=1795327014605",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 6296
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/story/StoryProgress.tsx?t=1795327014605",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 5244
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/scene/debugStats.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 701
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/story/storyStore.ts?t=1795325395021",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 1658
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/scene/StoryCanvas.tsx?t=1795328203419",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 3921
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/story/useStoryProgress.ts?t=1795327014605",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 4587
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/scene/GreyVillage.tsx?t=1795328203419",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 28441
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/three.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 45367
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/story/camera-track.desktop.generated.json?import&t=1795328203413",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 215521
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/scene/footprints.json?import",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 11009
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/scene/zone01.ts",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 830
+ },
+ {
+  "url": "http://localhost:5173/src/cinematic/story/camera-track.mobile.generated.json?import&t=1795328203419",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 194516
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/@react-three_fiber.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 1907850
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/jsx-runtime-cNwuCTLA.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 37402
+ },
+ {
+  "url": "http://localhost:5173/node_modules/.vite/deps/three.module-DOkFhzP6.js?v=8fd03158",
+  "status": 200,
+  "type": "text/javascript",
+  "bytes": 6017198
+ },
+ {
+  "url": "https://fonts.gstatic.com/s/tirodevanagarihindi/v7/55xyezN7P8T4e0_CfIJrwdodg9HoYw0i-M9vT-MP.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 26948
+ },
+ {
+  "url": "https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0SZe1Q.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 30092
+ },
+ {
+  "url": "https://fonts.gstatic.com/s/syne/v24/8vIH7w4qzmVxm2BL9A.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 34608
+ },
+ {
+  "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUs8FyLNQOQZAnv9ZwNjucMHVn85Ni7emDWtFKqZTnbB-gzTK0KVBdJdt9hFwpX9W37lrh4mv0iQg.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 41592
+ },
+ {
+  "url": "https://fonts.gstatic.com/s/tirodevanagarihindi/v7/55xyezN7P8T4e0_CfIJrwdodg9HoYw0i-M9vTuMPTG0.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 98828
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-haveli-staircase.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 674456
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-night-banquet.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 200492
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-terracotta-jali.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 1047576
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-blue-arches.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 1147718
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-birdseye-cane.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 401410
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-brass-lanterns.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 491982
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-festive-gathering.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 145024
+ },
+ {
+  "url": "http://localhost:5173/assets/real/fashion-still.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 753772
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-02-haveli.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 3912047
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-03-colonnade.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 3981017
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-04-mediterranean.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 4003054
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-thatched-tower.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 2824689
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-05-nightgala.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 3341057
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-thatched-tower.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 1055217
+ },
+ {
+  "url": "http://localhost:5173/assets/real/portfolio-thatched-tower.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 2824689
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-05-nightgala.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 2194177
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-05-nightgala.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 3341057
+ },
+ {
+  "url": "http://localhost:5173/assets/real/flythrough-02-haveli.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "bytes": 1814895
+ }
+]

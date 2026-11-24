@@ -55,7 +55,7 @@ function RouteEffects() {
 function AppShell() {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", "night");
-    document.documentElement.style.setProperty("--bg", "#07091A");
+    document.documentElement.style.setProperty("--bg", "var(--bg)");
     document.documentElement.style.overflowX = "clip";
   }, []);
 

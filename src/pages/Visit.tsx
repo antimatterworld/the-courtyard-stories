@@ -78,7 +78,7 @@ export default function Visit() {
 
         <section className="section" aria-label="Contact details">
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "clamp(32px,5vw,80px)" }}>
+            <div className="layout-aside layout-aside--visit">
               <div>
                 <p className="eyebrow reveal">Direct lines</p>
                 <h2 className="h2 reveal">

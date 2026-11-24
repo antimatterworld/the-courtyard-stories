@@ -11,12 +11,14 @@ const GAP = 14;
 type PlacedTile = StudioTile & { x: number; y: number; w: number; h: number };
 
 function layoutTiles(vw: number, vh: number): { tiles: PlacedTile[]; periodW: number; periodH: number } {
-  const cellW = Math.max(260, vw / 3.6);
-  const cellH = Math.max(300, (vh - NAV_H) / 2.2);
-  const rows = Math.ceil(STUDIO_TILE_DEFS.length / COLS);
+  const narrow = vw < 768;
+  const cols = narrow ? 1 : COLS;
+  const cellW = narrow ? Math.max(160, vw - 36) : Math.max(260, vw / 3.6);
+  const cellH = narrow ? Math.min(300, Math.max(210, vh * 0.42)) : Math.max(300, (vh - NAV_H) / 2.2);
+  const rows = Math.ceil(STUDIO_TILE_DEFS.length / cols);
   const tiles = STUDIO_TILE_DEFS.map((t, i) => {
-    const col = i % COLS;
-    const row = (i / COLS) | 0;
+    const col = i % cols;
+    const row = (i / cols) | 0;
     const sizeVar = 1 + ((i % 5) - 2) * 0.03;
     const w = (cellW - GAP * 2) * sizeVar;
     const h = (cellH - GAP * 2) * sizeVar;
@@ -28,7 +30,7 @@ function layoutTiles(vw: number, vh: number): { tiles: PlacedTile[]; periodW: nu
       h,
     };
   });
-  return { tiles, periodW: COLS * cellW, periodH: rows * cellH + NAV_H + 48 };
+  return { tiles, periodW: cols * cellW, periodH: rows * cellH + NAV_H + 48 };
 }
 
 const LIGHT_STORY = [
@@ -368,7 +370,10 @@ export function StudioExplorer() {
           <a href={STUDIO.phoneHref}>{STUDIO.phone}</a>
         </li>
       </ul>
-      <p className="studio-hud-pill studio-hud-hint">Drag · scroll · arrow keys</p>
+      <p className="studio-hud-pill studio-hud-hint">
+        <span className="studio-hint-wide">Drag · scroll · arrow keys</span>
+        <span className="studio-hint-narrow">Swipe to explore</span>
+      </p>
       <p className="studio-hud-pill studio-hud-coords">
         <span ref={clkRef}>IST 00:00:00</span>
         {" · "}

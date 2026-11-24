@@ -1,0 +1,86 @@
+[
+ {
+  "url": "https://the-courtyard-studio.vercel.app/",
+  "status": 200,
+  "type": "text/html",
+  "bytes": 0
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/index-BGGDTMO1.css",
+  "status": 200,
+  "type": "text/css",
+  "bytes": 0
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/jsx-runtime-Wy9s6hX0.js",
+  "status": 200,
+  "type": "application/javascript",
+  "bytes": 0
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/studioSets-ovfOXGc0.js",
+  "status": 200,
+  "type": "application/javascript",
+  "bytes": 0
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/SiteFooter-BpIduJK1.js",
+  "status": 200,
+  "type": "application/javascript",
+  "bytes": 0
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/index-DjPtiLhX.js",
+  "status": 200,
+  "type": "application/javascript",
+  "bytes": 0
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/StudioCanvas-JImnhWH6.js",
+  "status": 200,
+  "type": "application/javascript",
+  "bytes": 0
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/cormorant-garamond-latin-400-normal-B-1hWBU7.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 22876
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/cormorant-garamond-latin-500-normal-BsRWmXhO.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 23312
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/cormorant-garamond-latin-400-italic-Dc_OZ8oc.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 23660
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/cormorant-garamond-latin-300-normal-Cw-E_7L1.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 21908
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/favicon.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "bytes": 386
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 24836
+ },
+ {
+  "url": "https://the-courtyard-studio.vercel.app/assets/cormorant-garamond-latin-300-italic-qkwBXYHn.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "bytes": 22484
+ }
+]

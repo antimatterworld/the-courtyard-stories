@@ -1,0 +1,38 @@
+{
+ "three": [],
+ "gsap": [
+  "motion.ts",
+  "CounterRails.tsx",
+  "gsap.ts",
+  "FallingCardStack.tsx",
+  "gsap.js?v=8fd03158",
+  "@gsap_react.js?v=8fd03158",
+  "gsap_ScrollTrigger.js?v=8fd03158",
+  "gsap-CuAjO623.js?v=8fd03158"
+ ],
+ "ScrollTrigger": [
+  "CounterRails.tsx",
+  "gsap.ts",
+  "FallingCardStack.tsx",
+  "gsap_ScrollTrigger.js?v=8fd03158",
+  "gsap-CuAjO623.js?v=8fd03158"
+ ],
+ "lenis": [],
+ "locomotive": [],
+ "GLTFLoader": [],
+ "DRACOLoader": [],
+ "KTX2Loader": [],
+ "EffectComposer": [],
+ "Bloom": [],
+ "DepthOfField": [],
+ "reactThreeFiber": [],
+ "drei": [],
+ "theatre": [],
+ "spline": [
+  "react-dom_client.js?v=8fd03158"
+ ],
+ "CatmullRom": [],
+ "framerMotion": [],
+ "lottie": [],
+ "threeRevisionGuess": null
+}

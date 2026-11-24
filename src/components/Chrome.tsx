@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { STUDIO, waLink } from "../data/content";
 import type { JSONLD } from "../lib/schema";
@@ -82,32 +82,22 @@ export function Page({
    —————————————————————————————— */
 
 export function TopBar() {
+  const [shown, setShown] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
   const location = useLocation();
 
   useEffect(() => {
+    setShown(false);
     setMenuOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
-    lastY.current = window.scrollY;
-    const onScroll = () => {
-      const y = window.scrollY;
-      const delta = y - lastY.current;
-      if (y < 80) {
-        setHidden(false);
-      } else if (delta > 6) {
-        setHidden(true);
-      } else if (delta < -6) {
-        setHidden(false);
-      }
-      lastY.current = y;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [location.pathname]);
+    const narrow = window.matchMedia("(max-width: 1100px)");
+    const sync = () => setMenuOpen(shown && narrow.matches);
+    sync();
+    narrow.addEventListener("change", sync);
+    return () => narrow.removeEventListener("change", sync);
+  }, [shown]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -118,7 +108,15 @@ export function TopBar() {
 
   return (
     <>
-      <header className={`topbar${hidden ? " topbar--hidden" : ""}`}>
+      <button
+        type="button"
+        className="nav-reveal"
+        aria-expanded={shown}
+        onClick={() => setShown((open) => !open)}
+      >
+        {shown ? "Close" : "Menu"}
+      </button>
+      <header className={`topbar${shown ? "" : " topbar--hidden"}`}>
         <div className="topbar-inner">
           <Link to="/" className="brand" aria-label="Courtyard Stories — home">
             <BrandMark />
@@ -169,12 +167,13 @@ export function TopBar() {
 
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer footer-credits">
       <div className="container">
+        <p className="footer-credits-mark">Kapashera · Delhi</p>
         <div className="footer-grid">
           <div>
             <div className="brand">
-              <span className="brand-name" style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem" }}>
+              <span className="brand-name" style={{ fontFamily: "Fraunces, serif", fontStyle: "italic", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 0.95 }}>
                 The Courtyard Stories
               </span>
               <span className="brand-sub">

@@ -12,3 +12,4 @@ src_backup_*/
 .env.*
 *.bak
 dist/
+docs/cinematic/reference-capture/**/video/*.webm

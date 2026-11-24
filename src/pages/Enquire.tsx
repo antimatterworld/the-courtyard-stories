@@ -65,12 +65,12 @@ export default function Enquire() {
         </section>
 
         <section className="section" aria-label="Enquiry form">
-          <div className="container" style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: "clamp(32px,5vw,80px)", alignItems: "start" }}>
+          <div className="container layout-aside">
             <div className="card reveal" style={{ padding: "clamp(24px,4vw,48px)" }}>
               <EnquiryForm initial={validType || initial?.date ? initial : undefined} />
             </div>
 
-            <aside style={{ display: "grid", gap: "var(--s-5)", position: "sticky", top: "calc(var(--topbar-h) + var(--s-5))" }}>
+            <aside className="layout-aside-side">
               <div className="card reveal" style={{ padding: "var(--s-5)" }}>
                 <span className="card-index">What happens next</span>
                 <ol style={{ marginTop: "var(--s-4)", display: "grid", gap: 12, fontSize: "var(--t-small)", color: "var(--ink-soft)", lineHeight: 1.7 }}>
@@ -123,7 +123,7 @@ export default function Enquire() {
         <section className="section-tight" aria-label="Estate location and map">
           <div className="container">
             <div className="card reveal" style={{ padding: "clamp(24px, 3.5vw, 40px)" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "clamp(24px, 4vw, 48px)", alignItems: "center" }}>
+              <div className="auto-grid">
                 <div>
                   <p className="eyebrow" style={{ color: "var(--accent-deep)" }}>Estate Location &amp; Recce</p>
                   <h2 className="h2" style={{ fontSize: "clamp(1.4rem, 2vw, 1.8rem)", margin: "8px 0 12px" }}>
@@ -176,7 +176,7 @@ export default function Enquire() {
 
         <section className="section-tight" aria-label="Quick answers">
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 1, background: "var(--line-soft)", border: "1px solid var(--line-soft)" }}>
+            <div className="auto-grid auto-grid--flush">
               {SITE_FAQS.slice(2, 5).map((f) => (
                 <div key={f.q} className="card" style={{ padding: "var(--s-5)" }}>
                   <h3 className="h3" style={{ fontSize: "var(--t-body)", fontWeight: 500 }}>

@@ -1,0 +1,3405 @@
+[
+ {
+  "i": 40,
+  "p": 1,
+  "y": 12733,
+  "cam": {
+   "pos": [
+    -21.568327042166995,
+    13.250029328059808,
+    28.655310928971716
+   ],
+   "fwd": [
+    0.5443253066717307,
+    -0.2585682307492957,
+    -0.7980303443879219
+   ],
+   "quat": [
+    -0.12460037792413632,
+    -0.29233469453214317,
+    -0.03844798270962962,
+    0.9473842540487576
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 47,
+    "triangles": 86930,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 1.92,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 39,
+  "p": 0.9749,
+  "y": 12414,
+  "cam": {
+   "pos": [
+    -15.319425660311536,
+    10.741178905250301,
+    22.355394807809457
+   ],
+   "fwd": [
+    0.5137672700740531,
+    -0.25579388042229023,
+    -0.8189094473378372
+   ],
+   "quat": [
+    -0.12394579127651677,
+    -0.27419467018145977,
+    -0.035661870597795,
+    0.9529863349777817
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 45,
+    "triangles": 86906,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 1.92,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 38,
+  "p": 0.9501,
+  "y": 12097,
+  "cam": {
+   "pos": [
+    -8.679601937247748,
+    8.116109037742834,
+    15.45342207534062
+   ],
+   "fwd": [
+    0.44962000771465666,
+    -0.2532151429480506,
+    -0.8565768734004382
+   ],
+   "quat": [
+    -0.12394180344288913,
+    -0.23738153394715672,
+    -0.03055214689142008,
+    0.9629927325896828
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 45,
+    "triangles": 86906,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 1.92,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 37,
+  "p": 0.925,
+  "y": 11778,
+  "cam": {
+   "pos": [
+    -3.0414146306248724,
+    5.791517673304944,
+    10.080295580420856
+   ],
+   "fwd": [
+    0.27425522204125247,
+    -0.22190993029588924,
+    -0.9357029742494019
+   ],
+   "quat": [
+    -0.11052048013027496,
+    -0.14118688447257613,
+    -0.015863142374968345,
+    0.9836665328446893
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 42,
+    "triangles": 86870,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 1.92,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 36,
+  "p": 0.8999,
+  "y": 11459,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 1.92,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 35,
+  "p": 0.875,
+  "y": 11142,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 1.92,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 34,
+  "p": 0.85,
+  "y": 10823,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 2.49,
+    "paused": false
+   }
+  ]
+ },
+ {
+  "i": 33,
+  "p": 0.85,
+  "y": 10823,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 3.46,
+    "paused": false
+   }
+  ]
+ },
+ {
+  "i": 32,
+  "p": 0.8,
+  "y": 10186,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 4.53,
+    "paused": false
+   }
+  ]
+ },
+ {
+  "i": 31,
+  "p": 0.775,
+  "y": 9868,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 5.07,
+    "paused": false
+   }
+  ]
+ },
+ {
+  "i": 30,
+  "p": 0.75,
+  "y": 9550,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 29,
+  "p": 0.75,
+  "y": 9550,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 28,
+  "p": 0.7,
+  "y": 8913,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 27,
+  "p": 0.675,
+  "y": 8595,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 1.63,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 26,
+  "p": 0.65,
+  "y": 8276,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 2.13,
+    "paused": false
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 25,
+  "p": 0.65,
+  "y": 8276,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 1.74,
+    "paused": true
+   },
+   {
+    "t": 3.12,
+    "paused": false
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 24,
+  "p": 0.6,
+  "y": 7640,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 2.22,
+    "paused": false
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 23,
+  "p": 0.575,
+  "y": 7322,
+  "cam": {
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "fwd": [
+    0,
+    0,
+    -1
+   ],
+   "quat": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "fov": -90,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.43,
+    "paused": true
+   },
+   {
+    "t": 3.3,
+    "paused": false
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 22,
+  "p": 0.55,
+  "y": 7003,
+  "cam": {
+   "pos": [
+    1.1239255154582123e-37,
+    0.006086771879830977,
+    0.01199818909600836
+   ],
+   "fwd": [
+    -1.3222755787367005e-38,
+    -0.00014836120949772872,
+    -0.9999999889944757
+   ],
+   "quat": [
+    -0.00007418060495296348,
+    6.611377948254763e-39,
+    4.904360171235972e-43,
+    0.9999999972486189
+   ],
+   "fov": -89.8012942368691,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 35,
+    "triangles": 86786,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 2.9,
+    "paused": false
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 21,
+  "p": 0.525,
+  "y": 6685,
+  "cam": {
+   "pos": [
+    1.2167593365769085e-32,
+    4.288491937775048,
+    8.453436110630335
+   ],
+   "fwd": [
+    -1.4314815724434201e-33,
+    -0.10452846326765197,
+    -0.9945218953682735
+   ],
+   "quat": [
+    -0.05233595624294308,
+    7.186969856352757e-34,
+    3.766531299456002e-35,
+    0.9986295347545739
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 3.96,
+    "paused": false
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 20,
+  "p": 0.5,
+  "y": 6366,
+  "cam": {
+   "pos": [
+    2.1295788421274215e-29,
+    4.288491937775048,
+    8.453436110630335
+   ],
+   "fwd": [
+    -2.5053868730910776e-30,
+    -0.10452846326765197,
+    -0.9945218953682735
+   ],
+   "quat": [
+    -0.05233595624294308,
+    1.257867392918826e-30,
+    6.592203669542335e-32,
+    0.9986295347545739
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 1.75,
+    "paused": true
+   },
+   {
+    "t": 4.54,
+    "paused": false
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 19,
+  "p": 0.475,
+  "y": 6048,
+  "cam": {
+   "pos": [
+    3.6533877890474127e-26,
+    4.288491937775048,
+    8.453436110630335
+   ],
+   "fwd": [
+    -4.2981032812322536e-27,
+    -0.10452846326765197,
+    -0.9945218953682735
+   ],
+   "quat": [
+    -0.05233595624294308,
+    2.1579277942767954e-27,
+    1.130922035511966e-28,
+    0.9986295347545739
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 2.21,
+    "paused": false
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 18,
+  "p": 0.45,
+  "y": 5730,
+  "cam": {
+   "pos": [
+    9.052809035377068e-23,
+    4.288491937775048,
+    8.453436110630335
+   ],
+   "fwd": [
+    -1.0650363571031824e-23,
+    -0.10452846326765197,
+    -0.9945218953682735
+   ],
+   "quat": [
+    -0.05233595624294308,
+    5.347176199659298e-24,
+    2.8023363005927148e-25,
+    0.9986295347545739
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 1.7,
+    "paused": true
+   },
+   {
+    "t": 3.29,
+    "paused": false
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 17,
+  "p": 0.425,
+  "y": 5412,
+  "cam": {
+   "pos": [
+    1.2159213432954288e-19,
+    4.288491937775048,
+    8.453436110630335
+   ],
+   "fwd": [
+    -1.4304956979946198e-20,
+    -0.10452846326765197,
+    -0.9945218953682735
+   ],
+   "quat": [
+    -0.05233595624294308,
+    7.182020124493072e-21,
+    3.763937254907876e-22,
+    0.9986295347545739
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 2.2,
+    "paused": false
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 16,
+  "p": 0.4,
+  "y": 5093,
+  "cam": {
+   "pos": [
+    2.7306271269990687e-16,
+    4.288491937775048,
+    8.453436110630335
+   ],
+   "fwd": [
+    -3.212502502351846e-17,
+    -0.10452846326765197,
+    -0.9945218953682735
+   ],
+   "quat": [
+    -0.05233595624294308,
+    1.6128854951622568e-17,
+    8.452774703928095e-19,
+    0.9986295347545739
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.26,
+    "paused": false
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 15,
+  "p": 0.375,
+  "y": 4775,
+  "cam": {
+   "pos": [
+    3.857904385612409e-13,
+    4.288491937774762,
+    8.453436110630612
+   ],
+   "fwd": [
+    -4.538711041896551e-14,
+    -0.1045284632676031,
+    -0.9945218953682786
+   ],
+   "quat": [
+    -0.05233595624291855,
+    2.2787285615648472e-14,
+    1.1942310350039464e-15,
+    0.9986295347545753
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 14,
+  "p": 0.35,
+  "y": 4456,
+  "cam": {
+   "pos": [
+    7.246291891911531e-10,
+    4.28849193722801,
+    8.453436111180192
+   ],
+   "fwd": [
+    -8.525049282462184e-11,
+    -0.10452846317299616,
+    -0.9945218953782222
+   ],
+   "quat": [
+    -0.052335956195419704,
+    4.2801299992940716e-11,
+    2.243121081014789e-12,
+    0.9986295347570644
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 13,
+  "p": 0.325,
+  "y": 4138,
+  "cam": {
+   "pos": [
+    0.0003314332157826061,
+    4.288241728537554,
+    8.453687612203098
+   ],
+   "fwd": [
+    -0.000037653956476684334,
+    -0.10448665405255578,
+    -0.9945262880925175
+   ],
+   "quat": [
+    -0.052314965319251464,
+    0.000018904675965978603,
+    9.903536236747313e-7,
+    0.9986306344416226
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 12,
+  "p": 0.3,
+  "y": 3820,
+  "cam": {
+   "pos": [
+    0.340782413615162,
+    3.9645914155262747,
+    9.017736861024174
+   ],
+   "fwd": [
+    -0.03169478300570423,
+    -0.05030510624067388,
+    -0.9982308535686201
+   ],
+   "quat": [
+    -0.025157349918516432,
+    0.015864455892569344,
+    0.000399284337184705,
+    0.9995575357908759
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 40,
+    "triangles": 86846,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 11,
+  "p": 0.275,
+  "y": 3502,
+  "cam": {
+   "pos": [
+    0.35244577502262103,
+    3.73297668174274,
+    10.074238373599917
+   ],
+   "fwd": [
+    -0.022256433048510337,
+    -0.02533332681371504,
+    -0.9994312751462737
+   ],
+   "quat": [
+    -0.0126668948493049,
+    0.011131585769322973,
+    0.00014102268004991463,
+    0.9998577987322699
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 41,
+    "triangles": 86858,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 10,
+  "p": 0.25,
+  "y": 3183,
+  "cam": {
+   "pos": [
+    0.19306534707492282,
+    3.556982833145151,
+    11.409797853824475
+   ],
+   "fwd": [
+    -0.008896264691100258,
+    -0.017124305658987832,
+    -0.9998137899780356
+   ],
+   "quat": [
+    -0.008562381982532419,
+    0.004448665616498294,
+    0.000038092947712091326,
+    0.9999534456853205
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 43,
+    "triangles": 86882,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 9,
+  "p": 0.225,
+  "y": 2865,
+  "cam": {
+   "pos": [
+    0.03037913869851795,
+    3.394215724915982,
+    12.811168833773802
+   ],
+   "fwd": [
+    -0.001155475954295858,
+    -0.013184637814655632,
+    -0.9999124112646144
+   ],
+   "quat": [
+    -0.006592461064512879,
+    0.0005777757399494327,
+    0.0000038090474779905055,
+    0.9999781025691505
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 45,
+    "triangles": 86906,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 8,
+  "p": 0.2,
+  "y": 2547,
+  "cam": {
+   "pos": [
+    0,
+    3.1849408780307096,
+    14.252390170514586
+   ],
+   "fwd": [
+    0,
+    -0.008117862371042069,
+    -0.9999670496123984
+   ],
+   "quat": [
+    -0.004058964621773139,
+    0,
+    0,
+    0.9999917623691704
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 45,
+    "triangles": 86906,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 7,
+  "p": 0.175,
+  "y": 2228,
+  "cam": {
+   "pos": [
+    0,
+    2.9539095921611334,
+    15.810328358733594
+   ],
+   "fwd": [
+    0,
+    -0.004542910058565666,
+    -0.9999896809308583
+   ],
+   "quat": [
+    -0.002271460889130884,
+    0,
+    0,
+    0.999997420229387
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 45,
+    "triangles": 86906,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 6,
+  "p": 0.15,
+  "y": 1910,
+  "cam": {
+   "pos": [
+    0,
+    2.7431027797958394,
+    17.461304422970823
+   ],
+   "fwd": [
+    0,
+    -0.0013142002132449117,
+    -0.9999991364385269
+   ],
+   "quat": [
+    -0.0006571002484840858,
+    0,
+    0,
+    0.9999997841096084
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 45,
+    "triangles": 86906,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 5,
+  "p": 0.125,
+  "y": 1592,
+  "cam": {
+   "pos": [
+    0,
+    2.558085237564934,
+    19.362582103389396
+   ],
+   "fwd": [
+    0,
+    0.004915588268728851,
+    -0.9999879184230039
+   ],
+   "quat": [
+    0.0024578015579053273,
+    0,
+    0,
+    0.9999969796011895
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 46,
+    "triangles": 86918,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 4,
+  "p": 0.1,
+  "y": 1273,
+  "cam": {
+   "pos": [
+    0,
+    2.403136187633966,
+    21.696244820608776
+   ],
+   "fwd": [
+    0,
+    0.01797233109454101,
+    -0.9998384846139041
+   ],
+   "quat": [
+    0.008986528420248715,
+    0,
+    0,
+    0.9999596203382174
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 47,
+    "triangles": 86930,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 3,
+  "p": 0.075,
+  "y": 955,
+  "cam": {
+   "pos": [
+    0,
+    2.217332292392729,
+    30.651413583706592
+   ],
+   "fwd": [
+    0,
+    0.04267216116968393,
+    -0.9990891284870977
+   ],
+   "quat": [
+    0.021340940852060022,
+    0,
+    0,
+    0.9997722561881525
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 49,
+    "triangles": 86954,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 2,
+  "p": 0.0499,
+  "y": 636,
+  "cam": {
+   "pos": [
+    0,
+    2.290871006608685,
+    42.90540419382029
+   ],
+   "fwd": [
+    0,
+    0.05693952897064778,
+    -0.9983776289764313
+   ],
+   "quat": [
+    0.028481318645461943,
+    0,
+    0,
+    0.9995943249579881
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 55,
+    "triangles": 87026,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 1,
+  "p": 0.0251,
+  "y": 319,
+  "cam": {
+   "pos": [
+    0,
+    2.4706060115914723,
+    56.34107336366642
+   ],
+   "fwd": [
+    0,
+    0.06475431001937237,
+    -0.9979012372644475
+   ],
+   "quat": [
+    0.03239415638315472,
+    0,
+    0,
+    0.9994751715936838
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 55,
+    "triangles": 87026,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ },
+ {
+  "i": 0,
+  "p": 0,
+  "y": 0,
+  "cam": {
+   "pos": [
+    0,
+    2.600000000000001,
+    69.25418702885914
+   ],
+   "fwd": [
+    0,
+    0.07065630102573561,
+    -0.9975007203633292
+   ],
+   "quat": [
+    0.0353502449543905,
+    0,
+    0,
+    0.9993749847688127
+   ],
+   "fov": 50,
+   "zoom": 1,
+   "aspect": 0.46208530805687204,
+   "near": 0.5,
+   "far": 700,
+   "ortho": false,
+   "fog": {
+    "type": "linear",
+    "color": "#e8d8c3",
+    "near": 70,
+    "far": 330
+   },
+   "bg": "#e8d8c3",
+   "exposure": 1,
+   "toneMapping": 7,
+   "dpr": 1.5,
+   "info": {
+    "calls": 55,
+    "triangles": 87026,
+    "geometries": 57,
+    "textures": 1
+   },
+   "lights": [
+    {
+     "t": "HemisphereLight",
+     "c": "#ffffff",
+     "i": 1
+    },
+    {
+     "t": "DirectionalLight",
+     "c": "#ffffff",
+     "i": 3.1
+    }
+   ]
+  },
+  "videos": [
+   {
+    "t": 3.3,
+    "paused": true
+   },
+   {
+    "t": 3.31,
+    "paused": true
+   },
+   {
+    "t": 4.57,
+    "paused": true
+   },
+   {
+    "t": 3.33,
+    "paused": true
+   },
+   {
+    "t": 3.16,
+    "paused": true
+   },
+   {
+    "t": 5.1,
+    "paused": true
+   }
+  ]
+ }
+]

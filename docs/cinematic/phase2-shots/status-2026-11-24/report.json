@@ -1,0 +1,196 @@
+[
+  {
+    "name": "desktop",
+    "errors": [],
+    "failed": [
+      "http://localhost:5174/assets/real/flythrough-05-nightgala.mp4 net::ERR_ABORTED"
+    ],
+    "early": {
+      "title": "The Courtyard Stories — Heritage Architecture & Cinematic Production Venue in Delhi",
+      "loader": true,
+      "text": "Skip to content\nCourtyard Stories\nWork\nAll sets\nServices\nStudio\nVisit\nEnquire\nHERO\nStories live\nin places.\n\nFive architectural worlds on one private estate in Kapashera.\n\nFive architectural worlds on one private estate in Kapashera. · Five architectural worlds on one private estate in Kapashera. ·\nFive architectural worlds on one private estate in Kapashera. · Five architectural worlds on one private estate in Kapashera. ·\n\nSCROLL\n↓\n\nPlan a shoot\nExplore the studio\nRoyal Haveli\nMughal Colonnade\n",
+      "scrollW": 1440,
+      "inner": 1440
+    },
+    "after": {
+      "loader": false,
+      "story": true,
+      "landing": true,
+      "canvas": true,
+      "nav": [
+        "Courtyard Stories",
+        "Work",
+        "All sets",
+        "Services",
+        "Studio",
+        "Visit",
+        "Enquire",
+        "Work",
+        "All sets",
+        "Services",
+        "Studio",
+        "Visit"
+      ],
+      "headings": [
+        "Stories live\nin places.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "text": "Skip to content\nCourtyard Stories\nWork\nAll sets\nServices\nStudio\nVisit\nEnquire\nHERO\nStories live\nin places.\n\nFive architectural worlds on one private estate in Kapashera.\n\nFive architectural worlds on one private estate in Kapashera. · Five architectural worlds on one private estate in Kapashera. ·\nFive architectural worlds on one private estate in Kapashera. · Five architectural worlds on one private estate in Kapashera. ·\n\nSCROLL\n↓\n\nPlan a shoot\nExplore the studio\nRoyal Haveli\nMughal Colonnade\nChefchaouen\nThatched Lookout\nNight Gala\n\nStudio journey chapters\n\nBook the courtyard.\nPlan a shoot\nLocation FAQs\nfrom the studio desk\nWhere is The Courtyard Stories located in Delhi?\n+\n\nWe are at Farm",
+      "scrollW": 1440,
+      "inner": 1440,
+      "zones": [
+        "Haveli",
+        "Mughal",
+        "Chefchaouen",
+        "Thatch",
+        "Gala",
+        "Royal Haveli",
+        "Mughal Colonnade",
+        "Chefchaouen",
+        "Thatched Lookout",
+        "Night Gala"
+      ]
+    },
+    "shots": [
+      {
+        "p": 0.2,
+        "y": 2006,
+        "active": "hero",
+        "h": [
+          "Stories live\nin places."
+        ],
+        "scrollW": 1440
+      },
+      {
+        "p": 0.45,
+        "y": 4488,
+        "active": "set",
+        "h": [
+          "The Royal Ochre Haveli & Courtyard"
+        ],
+        "scrollW": 1440
+      },
+      {
+        "p": 0.7,
+        "y": 7101,
+        "active": "set",
+        "h": [
+          "The Grand Courtyard Gala & Night Set"
+        ],
+        "scrollW": 1440
+      },
+      {
+        "p": 1,
+        "y": 10168,
+        "active": "empty",
+        "h": [],
+        "scrollW": 1440
+      }
+    ],
+    "click": "click-failed locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('.zone-dock button, .zone-label').first()\n    - locator resolved to <button class=\"\" type=\"button\">Haveli</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    55 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+  },
+  {
+    "name": "mobile",
+    "errors": [],
+    "failed": [],
+    "early": {
+      "title": "The Courtyard Stories — Heritage Architecture & Cinematic Production Venue in Delhi",
+      "loader": true,
+      "text": "Skip to content\nCourtyard Stories\nMenu\nHaveli\nMughal\nChefchaouen\nThatch\nGala\nHERO\nStories live\nin places.\n\nFive architectural worlds on one private estate in Kapashera.\n\nFive architectural worlds on one private estate in Kapashera.\n\nSCROLL\n↓\n\nPlan a shoot\nExplore the studio\n\nStudio journey chapters\n\nBook the courtyard.\nPlan a shoot\nLocation FAQs\nfrom the studio desk\nWhere is The Courtyard Stories located in Delhi?\n+\n\nWe are at Farm No. 3, The Courtyard Stories, behind FIMT College, Kapashera, Pa",
+      "scrollW": 390,
+      "inner": 390
+    },
+    "after": {
+      "loader": false,
+      "story": true,
+      "landing": true,
+      "canvas": true,
+      "nav": [
+        "Courtyard Stories",
+        "Work",
+        "All sets",
+        "Services",
+        "Studio",
+        "Visit",
+        "Enquire",
+        "Work",
+        "All sets",
+        "Services",
+        "Studio",
+        "Visit"
+      ],
+      "headings": [
+        "Stories live\nin places.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "text": "Skip to content\nCourtyard Stories\nMenu\nHaveli\nMughal\nChefchaouen\nThatch\nGala\nHERO\nStories live\nin places.\n\nFive architectural worlds on one private estate in Kapashera.\n\nFive architectural worlds on one private estate in Kapashera.\n\nSCROLL\n↓\n\nPlan a shoot\nExplore the studio\n\nStudio journey chapters\n\nBook the courtyard.\nPlan a shoot\nLocation FAQs\nfrom the studio desk\nWhere is The Courtyard Stories located in Delhi?\n+\n\nWe are at Farm No. 3, The Courtyard Stories, behind FIMT College, Kapashera, Palam Farms, New Delhi 110037 (see Google Maps). The estate is about 15–20 minutes from Dwarka Sector 21 Metro (Blue Line), with secure on-site parking for up to 25 production vehicles and vanity vans.\n",
+      "scrollW": 390,
+      "inner": 390,
+      "zones": [
+        "Haveli",
+        "Mughal",
+        "Chefchaouen",
+        "Thatch",
+        "Gala",
+        "Royal Haveli",
+        "Mughal Colonnade",
+        "Chefchaouen",
+        "Thatched Lookout",
+        "Night Gala"
+      ]
+    },
+    "shots": [
+      {
+        "p": 0.2,
+        "y": 2345,
+        "active": "hero",
+        "h": [
+          "Stories live\nin places."
+        ],
+        "scrollW": 390
+      },
+      {
+        "p": 0.45,
+        "y": 5297,
+        "active": "set",
+        "h": [
+          "The Royal Ochre Haveli & Courtyard"
+        ],
+        "scrollW": 390
+      },
+      {
+        "p": 0.7,
+        "y": 8435,
+        "active": "set",
+        "h": [
+          "The Grand Courtyard Gala & Night Set"
+        ],
+        "scrollW": 390
+      },
+      {
+        "p": 1,
+        "y": 11775,
+        "active": "empty",
+        "h": [],
+        "scrollW": 390
+      }
+    ],
+    "click": {
+      "dialog": true,
+      "title": "The Royal Ochre Haveli & Courtyard",
+      "img": true
+    }
+  }
+]

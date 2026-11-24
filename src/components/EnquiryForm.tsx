@@ -240,7 +240,7 @@ export function EnquiryForm({ initial }: { initial?: Prefill }) {
       {step === 0 && (
         <fieldset style={{ display: "grid", gap: 12, border: "none", padding: 0, margin: 0 }}>
           <legend className="sr-only">Choose a shoot type</legend>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+          <div className="choice-grid">
             {SHOOT_TYPES.map((t) => (
               <button
                 type="button"
@@ -406,7 +406,7 @@ export function EnquiryForm({ initial }: { initial?: Prefill }) {
       {/* STEP 3 — contact details */}
       {step === 3 && (
         <div style={{ display: "grid", gap: 16, maxWidth: "56ch" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
+          <div className="choice-grid">
             <div className={`field ${errors.name ? "has-err" : ""}`}>
               <label htmlFor="name">Your name</label>
               <input
@@ -433,7 +433,7 @@ export function EnquiryForm({ initial }: { initial?: Prefill }) {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
+          <div className="choice-grid">
             <div className={`field ${errors.contact ? "has-err" : ""}`}>
               <label htmlFor="contact">
                 {form.contactType === "phone" ? "Phone (with country code)" : "Email"}
@@ -497,7 +497,7 @@ export function EnquiryForm({ initial }: { initial?: Prefill }) {
       )}
 
       {/* actions */}
-      <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+      <div className="form-actions">
         <button
           type="button"
           className="btn btn-ghost"
@@ -507,7 +507,7 @@ export function EnquiryForm({ initial }: { initial?: Prefill }) {
         >
           ← Back
         </button>
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+        <div className="form-actions-next">
           <a className="btn btn-ghost" href={waMsg} target="_blank" rel="noreferrer">
             WhatsApp the desk
           </a>
