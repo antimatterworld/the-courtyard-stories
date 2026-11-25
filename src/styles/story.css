@@ -12,19 +12,28 @@ html.cinematic-on body::-webkit-scrollbar {
   height: 0;
 }
 
-/* Phase 1 story shell. Flat stand-in for the observed world colour. No seam treatment yet. */
+/* The sections below the courtyard read these. Without them their padding collapses to zero. */
+.cinematic-home {
+  --landing-gutter: clamp(20px, 5vw, 72px);
+}
+
+/* The dark page showed through the gap above the footer. */
+html.cinematic-on .footer {
+  margin-top: 0;
+}
+
+/* The set sheet needs the corner the WhatsApp button sits in. */
+html:has(.zone-reveal) .wa-fab {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* One journey length on every screen: 12.8 screens of camera path, less the removed card stretch. */
 .story-track {
   position: relative;
   height: 972.8vh;
   background: #e8d8c3;
   color: #1c120c;
-}
-
-/* PROPOSED: 768–1024px uses the desktop length. Only 390 and 1440 were captured. */
-@media (max-width: 767px) {
-  .story-track {
-    height: 1223.6vh;
-  }
 }
 
 .story-stage {
@@ -48,10 +57,6 @@ html.cinematic-on body::-webkit-scrollbar {
   pointer-events: auto;
 }
 
-.story-chapter {
-  z-index: 2;
-}
-
 .story-debug {
   position: absolute;
   top: 84px;
@@ -69,6 +74,7 @@ html.cinematic-on body::-webkit-scrollbar {
 .story-chapter {
   position: absolute;
   inset: 0;
+  z-index: 2;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
@@ -83,13 +89,63 @@ html.cinematic-on body::-webkit-scrollbar {
   pointer-events: none;
 }
 
-.story-chapter[data-kind="hero"],
-.story-chapter[data-kind="shoots"],
-.story-chapter[data-kind="statement"] {
+.story-chapter[data-kind="hero"] {
   align-items: flex-start;
   padding-top: 88px;
 }
 
+.story-chapter.is-active a,
+.story-chapter.is-active button {
+  pointer-events: auto;
+}
+
+.story-stage:has(.zone-reveal) .story-chapter {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* ——— Headline over the courtyard ——— */
+.story-track .landing-band-hero {
+  min-height: 0;
+  height: auto;
+  align-items: flex-start;
+  padding-top: 108px;
+  background: transparent;
+  color: #1c120c;
+}
+
+/* The fallback hero's paper grain and glow drew a pale box over the gate. */
+.story-track .landing-band-hero::after,
+.story-track .landing-hero-glow {
+  display: none;
+}
+
+/* The marquee line and the floating doodle belong to the flat hero; here they sat on the buttons. */
+.story-chapter[data-kind="hero"] .hero-float,
+.story-chapter[data-kind="hero"] .landing-marquee,
+.story-chapter[data-kind="hero"] .chill-doodle {
+  display: none;
+}
+
+/* Names wait for the headline to leave, on every screen: over the gate they sat on the
+   headline and the buttons. The fade is on the pill; the wrapper is positioned by the scene. */
+.zone-label-wrap .zone-label {
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.story-stage.is-hero .zone-label-wrap .zone-label {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Pale text on sand was unreadable. */
+.story-track .landing-hero-actions .btn-ghost {
+  color: #1c120c;
+  border-color: rgb(28 18 12 / 0.4);
+  background: rgb(246 239 228 / 0.72);
+}
+
+/* ——— After the courtyard ——— */
 .cinematic-after {
   position: relative;
   z-index: 2;
@@ -112,7 +168,7 @@ html.cinematic-on body::-webkit-scrollbar {
 }
 
 .recent-shoots h2 {
-  margin: 0 32px 28px;
+  margin: 0 var(--landing-gutter) 28px;
   font-family: Fraunces, serif;
   font-style: italic;
   font-weight: 700;
@@ -132,8 +188,15 @@ html.cinematic-on body::-webkit-scrollbar {
   animation: recent-shoots-rtl 40s linear infinite;
 }
 
-.recent-shoots-viewport:hover .recent-shoots-track {
+.recent-shoots-viewport.is-held .recent-shoots-track {
   animation-play-state: paused;
+}
+
+/* Hover only where there is a pointer to hover with; on touch it sticks after a tap. */
+@media (hover: hover) {
+  .recent-shoots-viewport:hover .recent-shoots-track {
+    animation-play-state: paused;
+  }
 }
 
 .recent-shoot-card {
@@ -176,161 +239,11 @@ html.cinematic-on body::-webkit-scrollbar {
   to { transform: translateX(-50%); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .recent-shoots-track {
-    animation: none;
-    flex-wrap: wrap;
-    width: auto;
-    padding: 0 32px;
-  }
-}
-
-.story-stage:has(.zone-reveal) .story-chapter {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-.story-chapter.is-active a,
-.story-chapter.is-active button,
-.story-chapter.is-active input,
-.story-chapter.is-active textarea,
-.story-chapter.is-active .story-set,
-.story-chapter.is-active .story-shoots {
-  pointer-events: auto;
-}
-
-.story-track .landing-band-hero {
-  min-height: 0;
-  height: auto;
-  align-items: flex-start;
-  padding-top: 108px;
-  background: transparent;
-  color: #1c120c;
-}
-
-.story-chapter[data-kind="hero"] .hero-float,
-.story-chapter[data-kind="hero"] .landing-marquee {
-  display: none;
-}
-
-.story-set {
-  width: min(920px, calc(100% - 48px));
-  margin: 0 auto 11vh;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: minmax(180px, 280px) minmax(0, 1fr);
-  gap: 20px;
-  align-items: center;
-  background: rgb(246 239 228 / 0.94);
-  border-radius: 16px;
-}
-
-.story-set h2 {
-  margin: 0;
-}
-
-.story-set p,
-.story-set a {
-  color: #9a3412;
-}
-
-.story-shoots {
-  width: min(1080px, calc(100% - 48px));
-  margin: 0 auto 10vh;
-  padding: 22px;
-  background: rgb(246 239 228 / 0.94);
-  border-radius: 16px;
-}
-
-.story-shoots ul {
-  list-style: none;
-  margin: 16px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px 12px;
-}
-
-.story-shoots button {
-  display: grid;
-  gap: 6px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #9a3412;
-  text-align: left;
-  cursor: pointer;
-}
-
-.story-shoots img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-
-.story-set img,
-.story-set video {
-  width: 100%;
-  max-height: 46vh;
-  object-fit: cover;
-  display: block;
-}
-
-.story-progress {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 18px;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  color: #9a3412;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
-.story-progress i {
-  flex: 1;
-  height: 2px;
-  background: rgb(154 52 18 / 0.25);
-  align-self: center;
-}
-
-.story-progress i span {
-  display: block;
-  height: 100%;
-  background: #9a3412;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-}
-
+/* ——— Yard names pinned to the buildings ——— */
 .zone-label-wrap {
   pointer-events: auto !important;
   z-index: 1 !important;
-}
-
-.zone-dock {
-  display: none;
-}
-
-.zone-dock button {
-  flex: 0 0 auto;
-  min-height: 40px;
-  border: 0;
-  border-radius: 999px;
-  padding: 8px 12px;
-  background: #1c120c;
-  color: #fff6ea;
-  font-family: Syne, sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.zone-dock button.is-on {
-  background: #d94f1f;
+  transition: opacity 0.35s ease;
 }
 
 .zone-label-short {
@@ -375,6 +288,7 @@ html.cinematic-on body::-webkit-scrollbar {
   outline: none;
 }
 
+/* ——— A yard, opened ——— */
 .zone-reveal {
   position: absolute;
   inset: 0;
@@ -507,19 +421,98 @@ html.cinematic-on body::-webkit-scrollbar {
   to { clip-path: inset(0 round 12px); }
 }
 
+/* ============================================================
+   Phones. Same journey, same pinned names, same split set view —
+   re-cut for a tall screen.
+   ============================================================ */
 @media (max-width: 767px) {
-  .zone-label-wrap {
-    display: none !important;
+  /* Headline at the top, the gate in the middle, both actions on one line at the bottom. */
+  .story-chapter[data-kind="hero"] {
+    align-items: stretch;
+    padding-top: 0;
   }
 
-  .zone-dock {
+  .story-track .landing-band-hero {
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    overflow: visible;
+    padding: 78px 20px calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .story-track .landing-hero-grid {
+    width: 100%;
+    margin: 0;
     display: flex;
+    flex-direction: column;
   }
 
+  .story-track .landing-hero-headline {
+    overflow: visible;
+  }
+
+  .story-track .landing-hero h1 {
+    font-size: clamp(3.2rem, 17.5vw, 4.6rem);
+  }
+
+  /* The laptop headline steps to the right on its second line. */
+  .story-track .landing-hero h1 span + span {
+    text-align: right;
+  }
+
+  .story-track .hero-mobile-lede {
+    display: none;
+  }
+
+  .story-track .landing-hero-copy:last-child {
+    margin-top: auto;
+  }
+
+  .story-track .landing-hero-row {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .story-track .landing-hero-lede {
+    max-width: none;
+  }
+
+  .story-track .landing-hero-scroll-cue {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .story-track .landing-hero-actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .story-track .landing-hero-actions .btn {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    min-height: 48px;
+    padding-inline: 10px;
+    justify-content: center;
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
+
+  /* From the air the yards are small, so the pill is small and sits above its building.
+     The invisible ring keeps the tap target finger sized. */
   .zone-label {
-    min-height: 36px;
-    padding: 8px 12px;
-    font-size: 13px;
+    padding: 7px 10px;
+    font-size: 11px;
+    transform: translateY(-55%);
+  }
+
+  .zone-label::before {
+    content: "";
+    position: absolute;
+    inset: -10px -6px;
   }
 
   .zone-label-full {
@@ -530,40 +523,7 @@ html.cinematic-on body::-webkit-scrollbar {
     display: inline;
   }
 
-  .story-set,
-  .story-shoots {
-    width: calc(100% - 24px);
-    margin-bottom: 96px;
-    grid-template-columns: 1fr;
-  }
-
-  .story-shoots ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .zone-reveal-card {
-    grid-template-columns: 1fr;
-  }
-
-  .zone-dock {
-    position: absolute;
-    z-index: 6;
-    left: 8px;
-    right: 72px;
-    bottom: calc(34px + env(safe-area-inset-bottom));
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    overflow: visible;
-  }
-
-  .story-progress {
-    left: 12px;
-    right: 12px;
-    bottom: calc(10px + env(safe-area-inset-bottom));
-    font-size: 0.65rem;
-  }
-
+  /* The set opens as a sheet: film on top, words beneath, the yard still visible above it. */
   .zone-reveal {
     padding: 12px;
     padding-bottom: calc(12px + env(safe-area-inset-bottom));
@@ -571,34 +531,106 @@ html.cinematic-on body::-webkit-scrollbar {
   }
 
   .zone-reveal-card {
-    max-height: calc(100dvh - 24px - env(safe-area-inset-bottom));
-    overflow: auto;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
     padding: 10px;
+    max-height: calc(100dvh - 96px);
+    overflow-y: auto;
   }
 
   .zone-reveal-stage {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 10;
+  }
+
+  .zone-reveal-copy {
+    gap: 8px;
+    padding: 2px 6px 6px;
+  }
+
+  .zone-reveal-copy ul {
+    display: none;
   }
 
   .zone-reveal-card h2 {
     font-size: 1.7rem;
   }
 
+  .zone-reveal-actions {
+    flex-wrap: nowrap;
+  }
+
   .zone-reveal-actions a,
   .zone-reveal-actions button {
-    min-height: 44px;
+    flex: 1 1 0;
+    min-height: 46px;
+    padding-inline: 10px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .recent-shoots {
+    padding: 56px 0 64px;
+  }
+
+  .recent-shoots h2 {
+    margin-bottom: 20px;
+  }
+
+  .recent-shoot-card {
+    width: min(260px, 68vw);
+  }
+}
+
+/* A phone on its side: the headline shrinks to fit the short screen. */
+@media (max-height: 480px) and (orientation: landscape) {
+  .story-chapter[data-kind="hero"] {
+    padding-top: 0;
+  }
+
+  .story-track .landing-band-hero {
+    padding-top: 64px;
+  }
+
+  .story-track .landing-hero h1 {
+    font-size: clamp(2.4rem, 17vh, 4rem);
+  }
+
+  .story-track .landing-hero-row {
+    margin-top: 16px;
+  }
+
+  .zone-reveal {
+    padding: 12px 76px 12px 12px;
+  }
+
+  .zone-reveal-card {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+  }
+
+  .zone-reveal-copy ul {
+    display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .recent-shoots-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+    padding: 0 var(--landing-gutter);
+  }
+
   .zone-reveal-backdrop,
   .zone-reveal-card,
   .zone-reveal-stage {
     animation: none;
   }
 
-  .zone-reveal-stage video {
+  .zone-reveal-stage video,
+  .zone-label-wrap {
     transition: none;
   }
 }

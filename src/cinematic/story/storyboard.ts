@@ -2,7 +2,7 @@
 export const CAMERA_DAMPING = 0;
 
 /** OBSERVED document height / viewport from detect.json, before the set-card gap is removed. */
-const CAMERA_SPAN = { desktop: 12.8, mobile: 16.1 } as const;
+const CAMERA_SPAN_VH = 12.8;
 
 /**
  * The five set cards used to sit on this stretch. The camera is already held still
@@ -12,10 +12,8 @@ export const SCROLL_GAP = { from: 0.43, to: 0.67 } as const;
 
 const SCROLL_KEPT = 1 - (SCROLL_GAP.to - SCROLL_GAP.from);
 
-export const SCROLL_VH = {
-  desktop: Math.round(CAMERA_SPAN.desktop * SCROLL_KEPT * 100) / 100,
-  mobile: Math.round(CAMERA_SPAN.mobile * SCROLL_KEPT * 100) / 100,
-} as const;
+/** One journey length for every screen. Phones follow the same path as laptops. */
+export const SCROLL_VH = Math.round(CAMERA_SPAN_VH * SCROLL_KEPT * 100) / 100;
 
 /** Scroll fraction across the shortened track → camera progress, skipping SCROLL_GAP. */
 export function cameraProgress(scrollP: number) {
@@ -27,40 +25,45 @@ export function cameraProgress(scrollP: number) {
   return to + u * (1 - to);
 }
 
-/** Mobile track at <=767px or portrait. Desktop otherwise. Tablet 768–1024 landscape stays desktop (PROPOSED, uncaptured). */
-export function cameraProfile(): "mobile" | "desktop" {
-  if (typeof window === "undefined") return "desktop";
-  const narrow = window.matchMedia("(max-width: 767px)").matches;
-  const portrait = window.innerHeight > window.innerWidth;
-  return narrow || portrait ? "mobile" : "desktop";
+const smooth = (edge0: number, edge1: number, x: number) => {
+  const t = Math.min(1, Math.max(0, (x - edge0) / (edge1 - edge0)));
+  return t * t * (3 - 2 * t);
+};
+
+/**
+ * Framing for narrow screens. The path is the same as on a laptop; a tall screen
+ * sees a thin slice of it, so the lens opens up and the camera steps back.
+ *
+ * `aspect` is canvas width / height. On a 16:10 laptop this returns the track's
+ * own lens and no step back.
+ */
+export function portraitFraming(p: number, aspect: number, trackFov: number) {
+  // Horizontal angle the story needs: the gate at the start, the whole ring from the air.
+  const horizontal = 24 + 7 * smooth(0.27, 0.42, p);
+  const needed = (2 * Math.atan(Math.tan((horizontal * Math.PI) / 360) / aspect) * 180) / Math.PI;
+  const fov = Math.min(62, Math.max(trackFov, needed));
+
+  const tall = Math.min(1, Math.max(0, (1.1 - aspect) / 0.6));
+  // Step back for the gate, walk through it at the track's own position, step back again in the air,
+  // and once more on the closing move, which swings in close to the yards.
+  const dolly =
+    tall * (15 * (1 - smooth(0, 0.06, p)) + 20 * smooth(0.27, 0.42, p) + 24 * smooth(0.86, 1, p));
+  return { fov, dolly };
 }
 
-export type ChapterKind = "hero" | "set" | "shoots" | "statement" | "empty";
+export type ChapterKind = "hero" | "empty";
 
 export type Chapter = {
   id: string;
   from: number;
   to: number;
   kind: ChapterKind;
-  setId?: string;
 };
 
-/**
- * Windows are PROPOSED placements on OBSERVED overlay ranges.
- * The camera samples are not split, duplicated, or reordered.
- * Desktop camera-down speed is ~0 from p 0.43–0.83 (one hold).
- */
+/** The headline holds for the approach, then the courtyard has the screen. */
 export const CHAPTERS: Chapter[] = [
   { id: "hero", from: 0, to: 0.1, kind: "hero" },
-  { id: "worlds", from: 0.1, to: 0.38, kind: "empty" },
-  { id: "set-royal-haveli", from: 0.38, to: 0.438, kind: "set", setId: "royal-haveli" },
-  { id: "set-mughal-colonnade", from: 0.438, to: 0.496, kind: "set", setId: "mughal-colonnade" },
-  { id: "set-chefchaouen-suite", from: 0.496, to: 0.554, kind: "set", setId: "chefchaouen-suite" },
-  { id: "set-rustic-village", from: 0.554, to: 0.612, kind: "set", setId: "rustic-village" },
-  { id: "set-night-gala", from: 0.612, to: 0.67, kind: "set", setId: "night-gala" },
-  { id: "shoots", from: 0.67, to: 0.76, kind: "shoots" },
-  { id: "statement", from: 0.76, to: 0.86, kind: "statement" },
-  { id: "exit", from: 0.86, to: 1, kind: "empty" },
+  { id: "courtyard", from: 0.1, to: 1, kind: "empty" },
 ];
 
 export function chapterIndexAt(p: number) {

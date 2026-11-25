@@ -1,23 +1,24 @@
-import { useRef } from "react";
+import { useRef, type PointerEvent } from "react";
 import { PORTFOLIO, type PortfolioItem } from "../../data/content";
 
 function ShootCard({ item }: { item: PortfolioItem }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const play = () => {
+  // Hover belongs to a mouse. A finger is handled by the row, as a tap.
+  const hover = (event: PointerEvent<HTMLElement>, entering: boolean) => {
+    if (event.pointerType !== "mouse") return;
     const video = videoRef.current;
     if (!video) return;
-    void video.play().catch(() => {});
-  };
-
-  const stop = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.pause();
+    if (entering) void video.play().catch(() => {});
+    else video.pause();
   };
 
   return (
-    <article className="recent-shoot-card" onMouseEnter={play} onMouseLeave={stop} onFocus={play} onBlur={stop}>
+    <article
+      className="recent-shoot-card"
+      onPointerEnter={(event) => hover(event, true)}
+      onPointerLeave={(event) => hover(event, false)}
+    >
       <div className="recent-shoot-frame">
         {item.video ? (
           <video ref={videoRef} src={item.video} poster={item.img} muted playsInline loop preload="none" />
@@ -67,10 +68,43 @@ const EXTRA_SHOOTS: PortfolioItem[] = [
 export function RecentShoots() {
   const unique = [...PORTFOLIO, ...EXTRA_SHOOTS];
   const loop = [...unique, ...unique];
+  const viewport = useRef<HTMLDivElement>(null);
+  const byTouch = useRef(false);
+  const watching = useRef<HTMLVideoElement | null>(null);
+
+  /**
+   * Touch has no hover, so a tap stands in for it: the row holds still and that
+   * film plays. Tapping it again, or tapping the row elsewhere, lets the row go.
+   * A scroll that starts on the row is not a tap and changes nothing.
+   */
+  const tap = (target: EventTarget) => {
+    const card = target instanceof Element ? target.closest(".recent-shoot-card") : null;
+    const video = card?.querySelector("video") ?? null;
+    const previous = watching.current;
+    previous?.pause();
+    if (!video || video === previous) {
+      watching.current = null;
+      viewport.current?.classList.remove("is-held");
+      return;
+    }
+    watching.current = video;
+    void video.play().catch(() => {});
+    viewport.current?.classList.add("is-held");
+  };
+
   return (
     <section className="recent-shoots" aria-label="Recent shoots">
       <h2>Recent shoots</h2>
-      <div className="recent-shoots-viewport">
+      <div
+        ref={viewport}
+        className="recent-shoots-viewport"
+        onPointerDown={(event) => {
+          byTouch.current = event.pointerType !== "mouse";
+        }}
+        onClick={(event) => {
+          if (byTouch.current) tap(event.target);
+        }}
+      >
         <div className="recent-shoots-track">
           {loop.map((item, index) => (
             <ShootCard key={`${item.id}-${index}`} item={item} />

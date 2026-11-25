@@ -2,9 +2,8 @@ import { useEffect, useLayoutEffect, useRef, type ReactNode, type RefObject } fr
 import { Html } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { DoubleSide, NeutralToneMapping, Object3D, PerspectiveCamera, InstancedMesh, Quaternion, Vector3 } from "three";
-import desktopTrack from "../story/camera-track.desktop.generated.json";
-import mobileTrack from "../story/camera-track.mobile.generated.json";
-import { cameraProfile } from "../story/storyboard";
+import journeyTrack from "../story/camera-track.desktop.generated.json";
+import { portraitFraming } from "../story/storyboard";
 import { getStory, subscribeStory } from "../story/storyStore";
 import { debugStats } from "./debugStats";
 import { Neighbourhood } from "./Neighbourhood";
@@ -26,8 +25,8 @@ function usable(track: Sample[]) {
   return good.length > 2 ? good : track;
 }
 
-const desktop = usable(desktopTrack as Sample[]);
-const mobile = usable(mobileTrack as Sample[]);
+/** One path for every screen. Narrow screens reframe it in `portraitFraming`. */
+const journey = usable(journeyTrack as Sample[]);
 const boxes = footprints as Box[];
 
 function sampleAt(track: Sample[], p: number) {
@@ -90,9 +89,13 @@ function CameraRig({
 }) {
   const camera = useThree((state) => state.camera) as PerspectiveCamera;
   const advance = useThree((state) => state.advance);
+  const size = useThree((state) => state.size);
+  const aspect = useRef(1.6);
+  aspect.current = size.width / Math.max(1, size.height);
   const onArrivedRef = useRef(onArrived);
   onArrivedRef.current = onArrived;
   const flyHome = useRef<() => void>(() => {});
+  const redraw = useRef<() => void>(() => {});
 
   useEffect(() => {
     camera.near = 0.5;
@@ -100,13 +103,27 @@ function CameraRig({
     let raf = 0;
     let flying = false;
 
+    /** Where the scroll puts the camera on this screen shape. */
+    const viewAt = (p: number) => {
+      const sample = sampleAt(journey, p);
+      const framing = portraitFraming(p, aspect.current, sample.fov);
+      const pos = new Vector3(sample.pos[0], sample.pos[1], sample.pos[2]);
+      if (framing.dolly > 0) {
+        const back = new Vector3(0, 0, 1).applyQuaternion(sample.quat);
+        pos.addScaledVector(back, framing.dolly);
+        // Looking up at the gate, stepping back would sink the camera into the road.
+        pos.y = Math.max(pos.y, sample.pos[1]);
+      }
+      return { pos, quat: sample.quat, fov: framing.fov };
+    };
+
     const applyScroll = (p: number) => {
       if (flying) return;
-      const sample = sampleAt(cameraProfile() === "mobile" ? mobile : desktop, p);
-      camera.position.set(sample.pos[0], sample.pos[1], sample.pos[2]);
-      camera.quaternion.copy(sample.quat);
+      const view = viewAt(p);
+      camera.position.copy(view.pos);
+      camera.quaternion.copy(view.quat);
       camera.up.set(0, 1, 0);
-      camera.fov = sample.fov;
+      camera.fov = view.fov;
       camera.updateProjectionMatrix();
       camera.updateMatrixWorld();
     };
@@ -139,51 +156,61 @@ function CameraRig({
       raf = requestAnimationFrame(step);
     };
 
+    /** The front of a yard. A tall screen stands further back with a wider lens so the facade fits. */
     const poseFor = (id: string) => {
       const marker = ZONE_MARKERS.find((item) => item.id === id);
+      const tall = Math.min(1, Math.max(0, (1.1 - aspect.current) / 0.6));
       const eye = new Vector3();
       const look = new Vector3();
       if (!marker || id === "royal-haveli") {
-        eye.set(0, 3.6, 46);
-        look.set(0, 4.4, 27.2);
+        eye.set(0, 3.6 + 0.6 * tall, 46 + 18 * tall);
+        look.set(0, 4.4 + 0.8 * tall, 27.2);
       } else {
         const [x, , z] = marker.position;
         const span = Math.hypot(x, z) || 1;
-        const stand = Math.max(9, span - 20);
-        eye.set((x / span) * stand, 6.4, (z / span) * stand);
+        const stand = Math.max(9 - 8 * tall, span - 20 - 9 * tall);
+        eye.set((x / span) * stand, 6.4 + 1.2 * tall, (z / span) * stand);
         look.set(x * 0.94, 3.1, z * 0.94);
       }
       const rig = new PerspectiveCamera(32, 1, 0.5, 700);
       rig.position.copy(eye);
       rig.up.set(0, 1, 0);
       rig.lookAt(look);
-      return { eye, quat: rig.quaternion.clone() };
+      return { eye, quat: rig.quaternion.clone(), fov: 32 + 20 * tall };
     };
 
     flyTo.current = (id: string) => {
       const pose = poseFor(id);
-      glide(pose.eye, pose.quat, 32, 1700, () => onArrivedRef.current(id));
+      glide(pose.eye, pose.quat, pose.fov, 1700, () => onArrivedRef.current(id));
     };
 
     flyHome.current = () => {
-      const sample = sampleAt(cameraProfile() === "mobile" ? mobile : desktop, getStory().p);
-      glide(new Vector3(...sample.pos), sample.quat.clone(), sample.fov, 1100, () => {
+      const view = viewAt(getStory().p);
+      glide(view.pos, view.quat.clone(), view.fov, 1100, () => {
         flying = false;
         applyScroll(getStory().p);
       });
     };
 
+    // The canvas only draws when asked, so a rotate or resize has to ask.
+    redraw.current = () => {
+      applyScroll(getStory().p);
+      advance(performance.now());
+    };
+
     applyScroll(0);
-    const onResize = () => applyScroll(getStory().p);
-    window.addEventListener("resize", onResize);
     const stop = subscribeStory(({ p }) => applyScroll(p));
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("resize", onResize);
       stop();
       flyTo.current = () => {};
+      redraw.current = () => {};
     };
   }, [advance, camera, flyTo]);
+
+  useEffect(() => {
+    redraw.current();
+  }, [size.width, size.height]);
 
   useEffect(() => {
     if (!returnTick) return;
@@ -327,11 +354,11 @@ function Gate({ box }: { box: Box }) {
           color="#a33b32"
         />
       ))}
-      <mesh position={[0, -h * 0.02, d * 0.15]} rotation={[0, 0, Math.PI]}>
-        <torusGeometry args={[w * 0.11, h * 0.012, 8, 20, Math.PI]} />
+      {/* The camera walks through this opening, so it stays open. The arch springs above head height. */}
+      <mesh position={[0, h * 0.15, 0]}>
+        <torusGeometry args={[w * 0.11, h * 0.014, 8, 24, Math.PI]} />
         <meshStandardMaterial color="#f4e2b0" roughness={0.45} />
       </mesh>
-      <Solid position={[0, -h * 0.16, d * 0.08]} args={[w * 0.16, h * 0.36, 0.12]} color="#4a241c" />
     </group>
   );
 }
@@ -415,12 +442,13 @@ function Chefchaouen({ w, h, d }: { w: number; h: number; d: number }) {
         const x = -bay / 2 + (bay / arches) * (i + 0.5);
         const aw = bay / arches * 0.72;
         const pier = h * 0.46;
-        const radius = aw * 0.46;
+        const radius = aw * 0.38;
         return (
           <group key={i} position={[x, -h * 0.02, d * 0.34]}>
             <Solid position={[-aw * 0.38, -h * 0.08, 0]} args={[aw * 0.16, pier, aw * 0.22]} color="#f7f3ea" />
             <Solid position={[aw * 0.38, -h * 0.08, 0]} args={[aw * 0.16, pier, aw * 0.22]} color="#f7f3ea" />
-            <mesh position={[0, -h * 0.08 + pier * 0.42, 0]} rotation={[0, 0, Math.PI]}>
+            {/* Arch springs from the pier tops and curves upward. */}
+            <mesh position={[0, -h * 0.08 + pier * 0.5, 0]}>
               <torusGeometry args={[radius, Math.max(aw * 0.07, 0.05), 8, 20, Math.PI]} />
               <meshStandardMaterial color="#f7f3ea" roughness={0.4} />
             </mesh>
@@ -458,8 +486,8 @@ function Mughal({ w, h, d }: { w: number; h: number; d: number }) {
           <group key={i} position={[x, -h * 0.04, d * 0.32]}>
             <Solid position={[-aw * 0.36, -h * 0.06, 0]} args={[aw * 0.18, pier, aw * 0.22]} color="#f3e6cf" />
             <Solid position={[aw * 0.36, -h * 0.06, 0]} args={[aw * 0.18, pier, aw * 0.22]} color="#f3e6cf" />
-            <mesh position={[0, -h * 0.06 + pier * 0.4, 0]} rotation={[0, 0, Math.PI]}>
-              <torusGeometry args={[aw * 0.4, Math.max(aw * 0.07, 0.05), 8, 18, Math.PI]} />
+            <mesh position={[0, -h * 0.06 + pier * 0.5, 0]}>
+              <torusGeometry args={[aw * 0.36, Math.max(aw * 0.07, 0.05), 8, 18, Math.PI]} />
               <meshStandardMaterial color="#f3e6cf" roughness={0.42} />
             </mesh>
             <Solid position={[0, -h * 0.1, -aw * 0.06]} args={[aw * 0.48, pier * 0.72, 0.05]} color="#6e2c28" />
@@ -496,8 +524,8 @@ function Gala({ w, h, d }: { w: number; h: number; d: number }) {
       <Solid position={[0, -h * 0.08, -d * 0.06]} args={[w * 0.88, h * 0.68, d * 0.74]} color="#d08a62" />
       <Solid position={[0, h * 0.3, 0]} args={[w * 0.96, h * 0.08, d * 0.9]} color="#7a3a32" />
       <Solid position={[0, -h * 0.1, d * 0.32]} args={[w * 0.2, h * 0.42, 0.08]} color="#6a2434" />
-      <mesh position={[0, h * 0.02, d * 0.34]} rotation={[0, 0, Math.PI]}>
-        <torusGeometry args={[w * 0.12, Math.max(h * 0.012, 0.05), 8, 18, Math.PI]} />
+      <mesh position={[0, h * 0.11, d * 0.34]}>
+        <torusGeometry args={[w * 0.1, Math.max(h * 0.012, 0.05), 8, 18, Math.PI]} />
         <meshStandardMaterial color="#f3e6cf" roughness={0.4} />
       </mesh>
       <Solid position={[0, -h * 0.46, d * 0.4]} args={[w * 0.9, h * 0.04, d * 0.16]} color="#2a2428" />

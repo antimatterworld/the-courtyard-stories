@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { SERVICES } from "../../data/content";
 import { SectionDoodle } from "./SectionDoodle";
@@ -15,6 +15,8 @@ type Slug = (typeof ROWS)[number]["slug"];
 export function ServiceList() {
   const [active, setActive] = useState<Slug>(ROWS[0].slug);
   const [paused, setPaused] = useState(false);
+  // A finger has no hover: the first tap on a closed still opens it, the next one follows the link.
+  const tapOpens = useRef(false);
 
   useEffect(() => {
     if (paused) return;
@@ -48,6 +50,16 @@ export function ServiceList() {
               to={row.to}
               className={open ? "is-open" : undefined}
               aria-expanded={open}
+              onPointerDown={(event) => {
+                tapOpens.current = event.pointerType !== "mouse" && !open;
+              }}
+              onClick={(event) => {
+                if (!tapOpens.current) return;
+                tapOpens.current = false;
+                event.preventDefault();
+                setPaused(true);
+                setActive(row.slug);
+              }}
               onMouseEnter={() => setActive(row.slug)}
               onFocus={() => {
                 setPaused(true);

@@ -60,24 +60,20 @@ function debugFlags() {
   return { cam: value.split(",").includes("cam"), boxes: value.split(",").includes("boxes") };
 }
 
-const ZONE_DOCK = [
-  ["royal-haveli", "Haveli"],
-  ["mughal-colonnade", "Mughal"],
-  ["chefchaouen-suite", "Chefchaouen"],
-  ["rustic-village", "Thatch"],
-  ["night-gala", "Gala"],
-] as const;
-
 export function StoryTrack() {
   const trackRef = useRef<HTMLElement>(null);
   const debug = useRef(debugFlags());
   const hud = useRef<HTMLPreElement>(null);
   const chapters = useRef<Array<HTMLElement | null>>([]);
+  const stage = useRef<HTMLDivElement | null>(null);
   const [portal, setPortal] = useState<HTMLDivElement | null>(null);
   const [openZoneId, setOpenZoneId] = useState<string | null>(null);
   const [returnTick, setReturnTick] = useState(0);
   const flyTo = useRef<(id: string) => void>(() => {});
-  const openZone = useCallback((id: string) => flyTo.current(id), []);
+  const mountStage = useCallback((node: HTMLDivElement | null) => {
+    stage.current = node;
+    setPortal(node);
+  }, []);
   const closeZone = useCallback(() => {
     setOpenZoneId(null);
     setReturnTick((tick) => tick + 1);
@@ -112,14 +108,10 @@ export function StoryTrack() {
           else video.pause();
         });
       });
-      const covering = chapters.current.some((el, index) => {
-        const kind = CHAPTERS[index]?.kind;
-        if (!el || (kind !== "set" && kind !== "shoots" && kind !== "statement")) return false;
-        return Number(el.style.opacity) > 0.25;
-      });
-      document.querySelectorAll<HTMLElement>(".zone-label-wrap").forEach((label) => {
-        label.style.visibility = covering ? "hidden" : "";
-      });
+      // Phones keep the yard names out of the headline; they arrive as it fades.
+      const heroIndex = CHAPTERS.findIndex((chapter) => chapter.kind === "hero");
+      const heroShowing = Number(chapters.current[heroIndex]?.style.opacity ?? 0) > 0.4;
+      stage.current?.classList.toggle("is-hero", heroShowing);
       if (!debug.current.cam || !hud.current) return;
       const chapter = CHAPTERS[snap.chapterIndex];
       hud.current.textContent = [
@@ -140,7 +132,7 @@ export function StoryTrack() {
 
   return (
     <section ref={trackRef} className="story-track" aria-label="Studio journey">
-      <div className="story-stage" ref={setPortal}>
+      <div className="story-stage is-hero" ref={mountStage}>
         <StoryCanvas
           showWorldBounds={debug.current.boxes}
           portal={portal}
@@ -149,13 +141,6 @@ export function StoryTrack() {
           onArrived={setOpenZoneId}
           activeId={openZoneId}
         />
-        <nav className="zone-dock" aria-label="Zones">
-          {ZONE_DOCK.map(([id, label]) => (
-            <button key={id} type="button" className={openZoneId === id ? "is-on" : ""} onClick={() => openZone(id)}>
-              {label}
-            </button>
-          ))}
-        </nav>
         {revealed ? <ZoneReveal key={revealed.id} set={revealed} onClose={closeZone} /> : null}
         {debug.current.cam ? <pre className="story-debug" ref={hud} /> : null}
         {CHAPTERS.map((chapter, index) => (

@@ -1175,26 +1175,50 @@ html.studio-route .app-layer { overflow: hidden; }
   line-height: 1.45;
 }
 
+/* Phones: the same stills stack. Closed ones are strips, the open one stands tall.
+   `flex: none` matters — a zero flex-basis in a column collapsed the strips to nothing. */
 @media (max-width: 767px) {
+  .shoot-accordion h2 {
+    margin-bottom: 20px;
+  }
+
   .shoot-accordion-row {
     flex-direction: column;
     height: auto;
+    gap: 8px;
+  }
+
+  .shoot-accordion-row a,
+  .shoot-accordion-row a.is-open {
+    flex: none;
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .shoot-accordion-row a {
-    height: 84px;
+    height: 72px;
+    border-radius: 16px;
   }
 
   .shoot-accordion-row a.is-open {
-    height: 320px;
-    flex: none;
+    height: min(52vh, 340px);
+  }
+
+  .shoot-veil {
+    background: linear-gradient(180deg, rgb(7 9 26 / 0.3), rgb(7 9 26 / 0.78));
   }
 
   .shoot-spine {
     writing-mode: horizontal-tb;
-    transform: none;
-    left: 16px;
-    bottom: 16px;
+    transform: translateY(-50%);
+    left: 18px;
+    top: 50%;
+    bottom: auto;
+  }
+
+  .shoot-copy {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
   }
 }
 
@@ -1505,14 +1529,57 @@ html.studio-route .app-layer { overflow: hidden; }
   to { opacity: 1; transform: none; }
 }
 
+/* On a laptop the answer sits on the note beside the list. */
+.faq-desk-inline {
+  display: none;
+}
+
+/* Phones: one column. The call sheet keeps a little of its tilt, and each
+   answer opens under its own question so it never lands off screen. */
 @media (max-width: 767px) {
   .book-invite,
   .faq-desk-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .book-invite {
+    gap: 32px;
+  }
+
+  .book-invite h2 {
+    font-size: clamp(3rem, 15vw, 4rem);
   }
 
   .book-card {
-    transform: none;
+    transform: rotate(-1.5deg);
+  }
+
+  .book-card:active {
+    transform: rotate(0deg);
+  }
+
+  .faq-desk h2 {
+    margin-bottom: 16px;
+  }
+
+  .faq-desk button {
+    min-height: 52px;
+    align-items: baseline;
+  }
+
+  .faq-desk article {
+    display: none;
+  }
+
+  .faq-desk-inline {
+    display: block;
+    margin: 12px 0 8px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f6efe4;
+    color: #1c120c;
+    line-height: 1.6;
+    animation: desk-note 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
@@ -1520,6 +1587,7 @@ html.studio-route .app-layer { overflow: hidden; }
   .book-card,
   .book-card path,
   .faq-desk article,
+  .faq-desk-inline,
   .footer-credits .brand-name,
   .footer-credits a {
     animation: none;

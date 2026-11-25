@@ -46,6 +46,8 @@ export function LandingClose() {
                   <i>0{index + 1}</i>
                   {item.q}
                 </button>
+                {/* Phones show the answer here; laptops show it on the note beside the list. */}
+                {open === index ? <p className="faq-desk-inline">{item.a}</p> : null}
               </li>
             ))}
           </ol>

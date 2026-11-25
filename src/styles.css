@@ -2204,6 +2204,8 @@ html.studio-route .app-layer {
   .footer-bottom {
     flex-direction: column;
     gap: var(--s-2);
+    /* The WhatsApp button sat on the last line. */
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
 
   /* WA fab */
